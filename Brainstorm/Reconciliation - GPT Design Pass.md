@@ -13,7 +13,7 @@ Four fresh notes were pulled from GPT on 2026-10-20: `nodawnDNL`, `nodawnINFECTE
 | File | What is new and worth keeping | What fights the vault | Verdict |
 |---|---|---|---|
 | **DNL — Death and Loss** | 2×2 secure container; server-side enforcement; atomic death transaction; reanimation with no player control; disconnect-as-death | Body persists **20 min** vs the Raid Frame's **5 min**; loot location was undefined | Keep the container and transaction rules; reject 20 min; **loot stays on the reanimated body** ([[Idea - Death and Loss]]) |
-| **INFECTED** | Lighting in the vision check; attack wind-up/recovery; local horde only; 30-local cap; AI update budget; server-validated bite/damage | **120 active / 30 local** vs the Detroit Map's **80 total / ~20 active** | Keep senses, telegraphs and horde logic; use 80/20 at launch, 120 only as a measured stress valve |
+| **INFECTED** | Lighting in the vision check; attack wind-up/recovery; local horde only; 30-local cap; AI update budget; server-validated bite/damage | **120 active / 30 local** vs the Detroit Map's **80 total / ~20 active** | Keep senses, telegraphs and horde logic; scale 4–5 per player, cap 100, 20–24 local; 120 only as a measured stress valve |
 | **ENL — Economy and Loot** | 25% vendor buyback; launch price table; no starting Dollars; anti-inflation metrics; finite vendor restock | **Basic armour 180** and **weapon repair 40** vs the Combat Frame's **no armour, no malfunctions in v1** | Keep the metrics and most prices; cut armour; defer repairs; tune the 25% |
 | **CAC — Character Creation** | All attributes 5; no free allocation; one positive/one negative trait; Sadist server-side rules | **No free points** vs the Master Context's **5-point pool**; **skills improve through use** vs the no-power-growth model | Adopt the Sadist almost verbatim; no-allocation is a real change to approve; skills need a definition or a cut |
 
@@ -21,15 +21,15 @@ Four fresh notes were pulled from GPT on 2026-10-20: `nodawnDNL`, `nodawnINFECTE
 
 ### 2.1 Body persistence — 5 or 20 minutes?
 
-The Raid Frame says five minutes. GPT says 20, or until the server closes. In a 50-minute raid, 20 minutes turns a corpse into a free cache and removes the race. Five minutes creates the decision: camp the body, or leave before the noise brings company.
+The Raid Frame says five minutes. GPT says 20, or until the server closes. In an open server that refills its containers, 20 minutes makes a static cache and removes the race. Five minutes creates the decision: camp the body, or leave before the noise brings company.
 
-**Recommendation: 5 minutes, or 8 if five feels too tight.** The 20-minute version belongs to a game with longer raids and fewer players. The five-minute clock is for a corpse that stays down; a reanimated body is an NPC and runs on its own timer — see §5.
+**Recommendation: 5 minutes, or 8 if five feels too tight.** A corpse is a performance cost and a static cache; the reanimated body is the interesting timer. The five-minute clock is for a corpse that stays down; a reanimated body is an NPC and runs on its own timer — see §5.
 
 ### 2.2 Infected — 80/20 or 120/30?
 
-The Detroit Map is built on 80 infected, ~20 active within 200 studs. GPT proposes 120 active with a 30-local cap. 120 active humanoids with pathfinding is a server-cost risk, and 120 on 0.40 km² is 300/km², denser than the map's density argument.
+The Detroit Map is authored on 80 infected and ~20 active. GPT proposes 120 active with a 30-local cap. Open servers make both fixed numbers wrong: the population moves between 8 and 32, so the infected count has to move with it.
 
-**Recommendation: 80 authored, 20 active baseline, 30 local, 120 global cap only after measurement.** The cap is a safety valve for hordes, not the population. If the server holds 120, raise the authored count deliberately; do not let a cap become the design.
+**Recommendation: 4–5 active per player, cap 100, 20–24 local (within 200 studs of any player).** At 24 players that is ~100 active, near GPT's number; at 8 players it is ~40, and the map is not overrun. 120 stays the measured stress valve, not the design. The authored 80 remains the 16–20-average budget.
 
 ### 2.3 Skills — the third rail
 
@@ -63,7 +63,7 @@ Two additions:
 
 His call, and it is better than the cache: the loot stays **on the body**. If the brain is intact, the body gets up carrying the gear. It is a loot container on legs — you kill it to open it.
 
-The rules are in [[Idea - Death and Loss]] §4–6. The short version: 10-second reanimation delay, headshot kill or melee finisher destroys the brain, 80-stud leash, 10-minute despawn, no late joiners so the victim's squad recovers the body, not the victim.
+The rules are in [[Idea - Death and Loss]] §4–6. The short version: 10-second reanimation delay, headshot kill or melee finisher destroys the brain, 80-stud leash, 10-minute despawn. Late join is normal, so the victim can return to the same server if it has space and the body timer is live; the squad can recover the body too.
 
 The old static-cache idea is dead.
 

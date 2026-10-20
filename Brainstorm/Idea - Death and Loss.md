@@ -35,7 +35,7 @@ The death transaction is atomic and server-owned: one item UID moves once, or no
 
 - A corpse that does **not** reanimate persists **5 minutes** and is lootable by anyone.
 - A reanimated body is an NPC and persists until killed, **10 minutes**, or server close.
-- A 20-minute corpse is rejected. In a 50-minute raid, 20 turns a corpse into a free cache and removes the race.
+- A 20-minute corpse is rejected. In an open server that already refills its containers, 20 minutes makes a static cache and removes the race.
 
 ## 4. Reanimation — the body keeps the loot
 
@@ -46,7 +46,7 @@ This is the rule that makes death physical.
 - The body is a **loot container on legs**: it cannot be looted while animate. Kill it and the loot drops at the new death spot as a normal corpse, with the same five-minute window.
 - If the body despawns, falls out of the world, or the server closes, the loot is lost.
 - The body is **leashed** to the death point: 80 studs. It can chase a target beyond the leash, but returns when it loses them. The loot stays findable.
-- The body counts against the infected budget. Player bodies reserve slots; with 16 players there are at most 16 of them, and the 80/20 budget absorbs them.
+- The body counts against the infected budget. Player bodies reserve slots; a 24-player server has at most 24 of them, and the dynamic budget absorbs them.
 - It does not use the player's gun. It attacks as a standard infected. The gear is cargo, not a weapon.
 
 ## 5. Destroying the brain
@@ -60,17 +60,18 @@ This is the rule that makes death physical.
 ## 6. Who can recover it
 
 - The victim returns to the hub with clothing and a knife. No free gun, armour, ammunition or healing.
-- **No late joiners in v1**, so the victim cannot re-enter the same raid.
-- The body stays in the raid for the players still inside. The victim's squad can kill it and extract the gear; a solo victim cannot.
-- A party-only marker shows the **death point**, not a live tracker, so the squad can find the body.
-- This is the squad dividend and the solo risk. It is not a second chance; it is a recovery job for someone else.
+- **Late join is normal.** The victim can redeploy into the same server if it has space and the body has not despawned. The hub stores the last raid job id and offers a return to that district for the body timer.
+- The victim's map and the party marker show the **death point**, not a live tracker.
+- If the server is full, the victim cannot rejoin, but the squad is already inside and can still recover the body. If the body has despawned, it is gone.
+- Re-entry is a knife run unless the vault holds a spare kit. The body is the prize.
+- The squad dividend is speed; the solo cost is the knife run and the timer.
 - The dog tag is on the body. The tag design is account-bound; the dropped tag is a trophy.
 
 ## 7. Disconnect and combat logging
 
 - A deliberate leave, timeout, or disconnect during an active raid counts as death.
 - The body drops at the last server-validated position. If the brain is intact, it reanimates.
-- Rejoining does not restore gear. No inventory rollback, no duplicate loot.
+- Re-entry returns the player to their hub state; the old body remains an NPC until its timer. No inventory rollback, no duplicate loot.
 - If persistence fails, do not overwrite a valid profile with a blank one. Log the failure and use the safe recovery path.
 
 ## 8. The fallback loop
@@ -85,7 +86,7 @@ This is the rule that makes death physical.
 - A gunfight ends when the brains are destroyed, not when the last player drops.
 - Every kill leaves a body that may get up. The killer chooses: loot, stomp, or leave.
 - Long fights feed the horde. The dead count against the AI budget.
-- Squads can recover a body; solos cannot. The risk is real, and the squad is worth something.
+- Squads can recover a body without the victim; solos can return for it, but the window is the timer. The risk is real, and the squad is worth something.
 
 ## 10. Open questions
 
@@ -93,6 +94,6 @@ This is the rule that makes death physical.
 2. Reanimation delay: 8, 10, or 12 seconds?
 3. Leash: 60, 80, or 100 studs?
 4. Despawn: 10 minutes, or until server close?
-5. Can the victim re-enter the same raid? **Recommend no.**
+5. Can the victim re-enter the same server? **Yes, if it has space and the body timer is live.** Add a redeploy cooldown if it feels too fast.
 6. Does the secure container hold quest items? **Recommend yes.**
 7. Does a reanimated body drop the dog tag, or is the tag on the corpse only? **Recommend on the body.**
