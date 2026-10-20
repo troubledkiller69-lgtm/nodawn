@@ -153,3 +153,10 @@
   NightLamp 27 unchanged.
 - Captures: not taken. After the usage-limit break every screen_capture came back blank white (only the view cube
   drawn), even from the user's own view, so the viewport was not rendering. Visual check still owed.
+
+## Design rulings (2026-10-20)
+- Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
+  pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.
+- Death loot stays **on the body**. A reanimated body carries the gear; the static death cache is rejected. A headshot
+  kill or a melee finisher destroys the brain; otherwise the body rises and becomes a loot container on legs. See
+  [[Idea - Death and Loss]].

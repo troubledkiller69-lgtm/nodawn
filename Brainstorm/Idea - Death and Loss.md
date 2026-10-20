@@ -35,7 +35,7 @@ The death transaction is atomic and server-owned: one item UID moves once, or no
 
 - A corpse that does **not** reanimate persists **5 minutes** and is lootable by anyone.
 - A reanimated body is an NPC and persists until killed, **10 minutes**, or server close.
-- The 20-minute GPT version is rejected. In a 50-minute raid, 20 turns a corpse into a free cache and removes the race.
+- A 20-minute corpse is rejected. In a 50-minute raid, 20 turns a corpse into a free cache and removes the race.
 
 ## 4. Reanimation — the body keeps the loot
 
