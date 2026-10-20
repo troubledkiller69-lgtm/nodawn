@@ -25,7 +25,7 @@ The Raid Frame says five minutes. GPT says 20, or until the server closes. In an
 
 **Recommendation: 5 minutes, or 8 if five feels too tight.** A corpse is a performance cost and a static cache; the reanimated body is the interesting timer. The five-minute clock is for a corpse that stays down; a reanimated body is an NPC and runs on its own timer — see §5.
 
-### 2.2 Infected — 80/20 or 120/30?
+### 2.2 Infected — how many?
 
 The Detroit Map is authored on 80 infected and ~20 active. GPT proposes 120 active with a 30-local cap. Open servers make both fixed numbers wrong: the population moves between 8 and 32, so the infected count has to move with it.
 
@@ -77,9 +77,9 @@ From CAC: the Sadist, one positive/one negative trait, occupation kits that neve
 ## 7. Open questions for He
 
 1. Corpse persistence: 5 or 8 minutes? 20 is rejected; a reanimated body is an NPC.
-2. Infected: 80/20 or 120/30?
+2. Infected scaling: 4–5 per player, cap 100, 20–24 local? **Recommend yes.**
 3. Skills: cut, codex, or capped sidegrades?
 4. Attributes: no allocation or the five-point pool?
 5. Starting economy: first contract, creation stipend, or neither?
 6. Does the secure container hold quest items, or only loot?
-7. Can the victim re-enter the same raid to recover their body? **Recommend no.**
+7. Can the victim re-enter the same server to recover their body? **Yes, if it has space and the body timer is live.**

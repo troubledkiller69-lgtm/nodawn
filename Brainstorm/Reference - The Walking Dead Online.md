@@ -42,6 +42,7 @@ What the Roblox game does, and what No Dawn borrows or rejects. Public sources, 
 - The death body stays in the world, searchable, and can reanimate.
 - A periodic supply drop or crash as a contested loot event (v1.1).
 - Party identity and a party marker on the death point.
+- Hunger and thirst as a personal clock; No Dawn uses a light two-meter version ([[Idea - Injury and Survival]]).
 
 ## 5. What No Dawn rejects
 
@@ -50,7 +51,6 @@ What the Roblox game does, and what No Dawn borrows or rejects. Public sources, 
 - **50 players on 0.40 km².** TWD's world is much larger; No Dawn's cap is 24 launch / 32 ceiling.
 - **Walkers only die to headshots.** No Dawn's damage model gives body shots value.
 - **In-map respawn banners.** No Dawn respawns in the hub.
-- **Hunger/thirst in v1.** TWD has it; No Dawn has not designed it. It is the missing sink for open servers — see [[Idea - Raid Frame]] §9.
 - **A separate RP mode.** Not a priority.
 
 ## 6. The lesson

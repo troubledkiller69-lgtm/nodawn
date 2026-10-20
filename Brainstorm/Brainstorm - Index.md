@@ -40,8 +40,9 @@ updated: YYYY-MM-DD
 ## Threads
 
 ### Raids
-- [[Idea - Raid Frame]] — 24 design ceiling, 16 at launch, open-ended sessions, no boss
+- [[Idea - Raid Frame]] — the server is the world, the raid is your deployment. No timer, late join, loot respawns, extraction-only banking
 - [[Idea - Detroit Map]] — Eastern Market and the Dequindre Cut at 1:1. The density correction, the 0.40 km² frame, the rope lines
+- [[Reference - The Walking Dead Online]] — the open-server precedent: join/leave, loot respawns, late join, 50-player caps
 - [[Idea - Raid Map]] — superseded by the Detroit map. The 800 × 800 highway exit, kept for the small-map reasoning
 - What a run costs to enter, and what makes extraction tense rather than long.
 - The profile-lock hand-off on teleport.
@@ -60,9 +61,13 @@ updated: YYYY-MM-DD
 - Lean and prone force the `HitboxService` decision; the grapple forces a map with rooftops worth reaching.
 
 ### Infected
-- [[Reconciliation - GPT Design Pass]] — 80/20 vs 120/30, lighting in the vision check, attack telegraphs.
+- [[Reconciliation - GPT Design Pass]] — dynamic infected scaling (4–5 per player, cap 100), lighting in the vision check, attack telegraphs.
 - Density against server cost. Sound as the primary threat cue.
 - Special types that change how you move, not just how much health they have.
+
+### Survival
+- [[Idea - Injury and Survival]] — procedural wounds by cause and body part, treatment, pain, fractures, hunger and thirst.
+- The personal clock that replaces the server timer; the body as the story.
 
 ### Death and loss
 - [[Idea - Death and Loss]] — what drops, the 2×2 secure container, and loot on the reanimated body.
