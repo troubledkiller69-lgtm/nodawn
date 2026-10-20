@@ -1,0 +1,67 @@
+---
+tags: [nodawn, todo]
+updated: 2026-10-20
+---
+
+# Open Items
+
+Back to [[No Dawn - Home]] · History: [[Tracker]] · Decisions: [[Realism Ledger]]
+
+The live list. Finished work leaves this note; it does not accumulate here. Anything older is in [[Tracker]] or [[Hub - Build History]].
+
+## Blocking
+
+- [ ] **Save the place.** The latest hub work exists only in the open Studio session. Publish when ready.
+- [ ] Set `Lighting.Technology = Future` by hand (Explorer → Lighting → Properties). Scripts can't set it.
+- [ ] Review or remove the Studio plugins `cloud_4771536187` and `cloud_7352299243`. They inject GUI scripts and errors into every playtest.
+
+## Stage 4 close-out
+
+- [ ] Capture the wrecked sedan. The other eight bus and pickup shots are in `Screenshots/stage4`.
+- [ ] A wide field shot that includes the bus line.
+- [ ] Bus road side and flat tyre; pickup from the plaza.
+- [ ] Then judge the touch-ups visible in the shots: the stretched side mirror reads as a black slab, the grey primer plates look near-black at night, the windshield guard reads as a white grid.
+
+## Stage 5 — final verify
+
+- [ ] SectionGate on every section, LeakProbe, part budget against the current 10,693 parts / 109 lights.
+- [ ] Playtest walk: spawn → vendors → lockers → workshop → gate. Console clean.
+- [ ] Unit tests if any runtime code changed.
+- [ ] Before and after shot set.
+
+## Hub backlog
+
+- [ ] Interiors: the quartermaster's customer side (bare walls), plus armory, Services, cells and medical.
+- [ ] Declutter the exterior and set a focal hierarchy so vendors, lockers and the gate read first.
+- [ ] The No Dawn UI pass (not started).
+- [ ] Small: `Kit.debris` reads as blocky; `HubAssets.Bus` and `Pickup` are unused; `DevTools.KitDraft` and `SectionsDraft` match live code and can be deleted.
+- [ ] Living hub steps 2–5 (NPC routines, VFX, crows, events), parked. Favour sound and motion over more props.
+- [ ] Judge by ear and eye: soundscape volumes, the boulders, and whether more boulders are wanted.
+
+## Phase 1 loose ends
+
+These need a published place, a second client, or hardware.
+
+- [ ] Two clients: lock contention (#6) and cross-player access (#15).
+- [ ] DataStore on a live server (#20).
+- [ ] A real gamepad pass over the creator, inventory, vault and vendor screens (#17).
+- [ ] Client fps on a published client, shadow-casting floodlights first.
+
+## Decided — do not reopen
+
+- **Signs.** All 71 removed on 2026-10-17. Handoff §4.9 asked for signage; the ruling overrides it.
+- **Day/night cycling.** The hub is a permanent foggy night. Living Hub step 5 contradicts this and is obsolete.
+
+## Phase 2 prerequisites
+
+- [ ] Publish first, then clear the multi-client tests above.
+- Raids as separate places; a profile-lock hand-off on teleport; teleport data for the deployment; raid damage rules; loot through `InventoryTx`.
+
+## Phase 2 — code in progress
+
+- [ ] Deploy `Shared.Rules.HitSelect` and `Shared.Rules.Rewind`, then run `nodawn/tests/run_rules.lua`. Both are pure; no rig needed.
+- [ ] Rewrite `HitboxService` to a margin ray plus `HitSelect`, set `HumanoidRootPart.CanQuery = false` at spawn, and silence accessory handles.
+- [ ] Run the synthetic-rig probe (blocked: Studio closed). Verify `Spherecast.Distance` semantics while it is open.
+- [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
+- [ ] Hand off the movement animation set to Claude ([[Working Agreement]]).
+
