@@ -65,7 +65,7 @@ These need a published place, a second client, or hardware.
 - [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
 - [ ] `Shared.Rules.WoundRules` and `SurvivalRules` with tests; wound state, treatment actions, hunger/thirst meters.
 - [ ] Rename the player-facing currency from Chits to Dollars in the HUD, vendor UI, item prices and tests. Keep `wallet.chits` internally until a schema pass.
-- [ ] Hand off the movement animation set to Claude ([[Working Agreement]]).
+- [ ] Movement animation set: work order written, in progress with Claude ([[Work Order - Movement Animation Set]]).
 
 ## Phase 2 — design decisions
 
