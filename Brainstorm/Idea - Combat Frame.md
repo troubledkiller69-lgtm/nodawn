@@ -62,13 +62,13 @@ That last point matters: ammo is an item, so it can be looted, sold and lost on 
 
 ## 5. Damage model
 
-HP plus hit zones. Not a wound simulation.
+HP plus hit zones, with a light wound layer on top. Not per-limb HP.
 
 | Zone | Multiplier | Notes |
 |---|---|---|
 | Head | 3.0 | Lethal for .45 against an unarmoured player |
-| Torso | 1.0 | Causes bleeding |
-| Limbs | 0.7 | No dismemberment in v1 |
+| Torso | 1.0 | Causes a wound; see [[Idea - Injury and Survival]] |
+| Limbs | 0.7 | No dismemberment; the wound lands on the part |
 
 Player HP 100. Standard infected 80.
 
@@ -78,7 +78,7 @@ Player HP 100. Standard infected 80.
 | 9×19 later | 35 | 3 | 1 |
 | 5.56 later | 55 | 2 | 1 |
 
-Bleeding: a torso hit applies 1 HP/s until bandaged, capped so it cannot kill alone from full health. It exists to make fights feel expensive, not to add a second health bar.
+Bleeding: a wound applies its own bleed rate until bandaged; light wounds cannot kill alone, deep and lodged wounds can. The wound layer is [[Idea - Injury and Survival]]; it is status on a body part, not per-limb health. This replaces the flat 1 HP/s in the earlier draft.
 
 Armour is out of v1. When it arrives it is a penetration check against a class rating, not a flat damage reduction.
 
@@ -163,12 +163,12 @@ Build exactly this, then stop:
 - One weapon: M1911A1, iron sights, one suppressor configuration.
 - One ammo type: .45 ACP, as an inventory item.
 - One melee: pipe wrench.
-- Hit zones, bleeding, no armour.
+- Hit zones, procedural wounds, hunger/thirst, no armour.
 - Camera-axis raycast, server-authoritative.
 - Noise events, no infected consumer yet.
 - A dev-only test range — targets at 10, 25 and 50 studs — so hit registration and sight zeroing can be tested without a raid.
 
-No malfunctions, no attachments beyond the suppressor, no second firearm, no armour, no ballistics, no rewind.
+No malfunctions, no attachments beyond the suppressor, no second firearm, no armour, no ballistics, no rewind, no per-limb HP, no First Aid skill.
 
 ## 13. Test plan
 
@@ -191,6 +191,6 @@ Exploit pass:
 1. **Camera-axis raycast** rather than bore-axis. Recommended: yes. It is the difference between sights that feel right and hit detection that feels broken.
 2. **No lag rewind in v1.** Recommended: yes, with a 0.6-stud tolerance and measurement before adding complexity.
 3. **Ammo as inventory items**, not a counter on the weapon. Recommended: yes. It makes ammo lootable and losable for free.
-4. **HP plus hit zones**, not per-limb health. Recommended: yes for v1; per-limb health is a Project Zomboid import that costs a lot and reads poorly at Roblox fidelity.
+4. **HP plus hit zones, no per-limb HP.** Recommended: yes. The wound layer is status on a part, not a second health pool; per-limb HP remains a Project Zomboid import that costs a lot and reads poorly at Roblox fidelity.
 5. **Melee on the same framework**, sharing cooldown and stamina but not the firearm state machine. Recommended: yes.
 6. **The inventory schema question** — if weapons cannot carry per-instance state today, do we migrate the schema first? Recommended: yes, migration before weapon code.

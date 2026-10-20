@@ -18,12 +18,12 @@ The metric is not players per square kilometre. It is **encounter cadence**:
 
 | Encounter | Target | Filled by |
 |---|---|---|
-| Infected contact | every 45–90 s of movement | 80 infected, noise-driven |
+| Infected contact | every 45–90 s of movement | 4–5 per player, cap 100, noise-driven |
 | Point of interest | every 60–90 s on foot, 40–60 s on roofs | loot nodes, landmarks, extracts |
-| PvP contact | every 10–20 min per player | 16 players, concentrated by loot and noise |
-| Extract reachable | within 2–3 min of any point | 5 extracts |
+| PvP contact | every 10–20 min at 16–20 average; 7–13 at 24 | 24 cap, concentrated by loot and noise |
+| Extract reachable | within 2–3 min of any point | 5 extracts, 3 active |
 
-At **0.40 km²**, 16 players is 40/km² and 80 infected is 200/km². The infected outnumber the players five to one. The city is populated; it is just not populated by people. A player can cross 896 m in 160 s at sprint, so the map is never a hike — and the quiet between fights is the game, not the failure.
+At **0.40 km²**, 24 players is 60/km²; the 16–20 average is 40–50/km². Infected scale at 4–5 per player, cap 100, so the dead still outnumber the living. A player can cross 896 m in 160 s at sprint, so the map is never a hike — and the quiet between fights is the game, not the failure.
 
 The PvP density table is still correct for *PvP*, and the extract layout below still uses it. It is simply not the whole population.
 
@@ -51,7 +51,7 @@ Why this slice and not the others:
 Every block, street width and building footprint stays true. Only the *count* of blocks is cut. That matters because the rope is tuned to 60 studs; a compressed map makes every gap a rope-length longer and breaks the swing without changing a single number.
 
 - The whole district is ~0.7 km². That is the expansion, not the first map.
-- 16 players → 40/km² raw. Add five vertical layers and 15–18 enterable buildings and the same 16 players are spread across far more floor area, so the effective density is lower than the footprint suggests.
+- 24 players → 60/km² raw; the 16–20 average → 40–50/km². Add five vertical layers and 15–18 enterable buildings and the same players are spread across far more floor area, so the effective density is lower than the footprint suggests.
 - End to end: 896 m, 160 s at sprint, ~2 minutes on the roof line with a rope.
 
 **Engine budget, PC-first:**
@@ -87,7 +87,7 @@ Five extracts, cost-asymmetric:
 4. **The viaduct** — needs a generator switched on.
 5. **I-75 storm drain** — far, covered, the safe-but-long exit.
 
-Rotation: two of the five are inactive per server, so no extract becomes "the good one".
+Rotation: two of the five are inactive per server, fixed for the server's life and marked in the HUD, so no extract becomes "the good one".
 
 ## 5. Routes and layers
 
@@ -131,10 +131,10 @@ A swing line is a kill zone. Attach point, length and release fix the landing wi
 
 ## 7. Loot, spawns, infected
 
-- **500 loot nodes** — one per ~800 m². Hot: market stalls, Shed 3, the pharmacy on Russell. Warm: warehouses, offices, cold storage. Cold: prairie shells, the Cut service rooms.
+- **500 loot nodes** — one per ~800 m², refilling on the timers in [[Idea - Raid Frame]] §4. Hot: market stalls, Shed 3, the pharmacy on Russell. Warm: warehouses, offices, cold storage. Cold: prairie shells, the Cut service rooms. Food, water and medical supplies are their own class: the residential blocks, the market stalls and the pharmacy carry them.
 - **15–18 enterable buildings**, each with a full ground floor, a stair core and at least one upper floor. Below ~150 m² of enterable floor, seal it; one-room stubs teach players that doors are empty.
-- **24 spawns in 8 clusters**, ringing the long edges 80–120 m in, with three clusters pushed deeper. 120 m minimum separation plus a line-of-sight check. 8-second freeze, facing inward.
-- **80 infected**, ~20 active within 200 studs of a player, respawning at the edges. Noise-driven: gunfire pulls them, the market centre is a permanent hotspot, the prairie and the Cut hold more than the roofs. They are the pacing system that fills the ten minutes between PvP contacts.
+- **24 spawns in 8 clusters**, ringing the long edges 80–120 m in, with three clusters pushed deeper. 120 m minimum separation plus a line-of-sight check, and late join uses the same set, chosen away from players. 8-second freeze, facing inward.
+- **4–5 infected per player, cap 100**, 20–24 active within 200 studs of any player, respawning at the edges. Noise-driven: gunfire pulls them, the market centre is a permanent hotspot, the prairie and the Cut hold more than the roofs. They are the pacing system that fills the ten minutes between PvP contacts.
 
 ## 8. Vegetation
 
@@ -152,22 +152,22 @@ Palette, fog and species are in [[Reference - Detroit Overgrowth]].
 
 - **No signage.** The Cut's graffiti is the signature the rule deletes. Replace it with abstract colour fields, blank enamel panels and structural marks, or the corridor reads sterile.
 - **The Cut is a natural funnel.** Give every segment at least three exits — bridge, ladder, rope — or it becomes a death pit with one mouth.
-- **40/km² is not "rare PvP" by arithmetic.** It is rare by behaviour: players avoid each other, move quietly, and only converge on loot and noise. Test it. If it feels crowded, lower the player count to 12 before shrinking the map.
+- **60/km² is not "rare PvP" by arithmetic.** It is rare by behaviour: players avoid each other, move quietly, and only converge on loot and noise. Test it. If it feels crowded, lower the cap to 20 before shrinking the map.
 - **15–18 enterable buildings is a compromise.** If the map feels empty, add interiors before adding area.
-- **80 Humanoids is a server cost.** Twenty active is the budget; the rest are dormant. Measure before authoring the spawner.
+- **100 Humanoids is a server cost.** Twenty-four local is the budget; the rest are dormant. Measure before authoring the spawner.
 
 ## 10. Open questions
 
 1. Is the whole district (0.7 km²) the expansion, or do we push north into the market sheds?
 2. Is the Cut playable at night, or a black hole that nobody enters? It needs its own light source — a few sodium lamps under the bridges.
-3. Does the first map ship at 16 players or 12? The density argument says 12 for the feel in this note; 16 is the design ceiling.
+3. Does the first map ship at 24 players or 32? The density argument says 24; 32 is the ceiling to test.
 4. Is the Gratiot tower the only landmark visible from everywhere, or does the map need a second silhouette for the north end?
-5. Does the infected count scale with players, or is it fixed at 80?
+5. Answered: the infected count scales with players at 4–5 each, cap 100, 20–24 local.
 
 ## 11. Decisions to approve
 
 1. **Eastern Market + the Cut**, built on the real ~28° grid. Recommended: yes.
 2. **1,600 × 3,200 studs, 1:1 crop, 0.40 km².** Recommended: yes.
 3. **Five cost-asymmetric extracts, two rotated.** Recommended: yes.
-4. **80 infected as the baseline population, 20 active.** Recommended: yes, pending a server measurement.
+4. **4–5 infected per player, cap 100, 20–24 local.** Recommended: yes, pending a server measurement.
 5. **Five vertical layers and a descending roof route.** Recommended: yes.

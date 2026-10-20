@@ -105,7 +105,7 @@ No timer means no natural end to a session. The sinks have to carry the load.
 - **Death** removes the kit and the haul. That is the biggest sink.
 - **Contested rare loot**: armory, clinic, keyholder. The good stuff is where the fights are.
 - **Vendor stock**: firearms and rare gear are limited per restock; the hub is not a supermarket. The rotating stock already in the plan does this.
-- **No hunger/thirst in v1.** It is the obvious missing sink for long sessions. If the economy trivializes, add a light hunger/thirst system before adding a timer; a timer is the thing we removed.
+- **Hunger and thirst are in v1.** They are the personal clock that replaces the server timer: a long deployment drains both, food and water take slots, and the hub canteen refills. See [[Idea - Injury and Survival]].
 - Watch the faucet: Dollars per hour, extracts per hour, death rate. If the average extract pays 1.5–2× the kit, the loop is healthy; if it pays 5×, the loot tables are too rich.
 
 ## 10. Death and recovery
@@ -139,7 +139,7 @@ TWD Online's helicopter crash is the model: a periodic, announced, contested loo
 1. Server cost at 16, 24 and 32 players with the infected cap running.
 2. Loot respawn values: timers, active caps, value per hour. `Config/Items` first.
 3. Server shutdown policy: extracted or secure-container-only.
-4. Hunger/thirst: add or not, after the first economy read.
+4. Hunger/thirst rates and severity: tune after the first long-session read.
 5. Extract hold: 8 or 10 seconds; damage reset or not.
 6. Soft recycle after 4–6 hours: needed or not.
 7. Does the active extract set rotate during a long server, or stay fixed? Recommend fixed for the server's life; the HUD marks it.

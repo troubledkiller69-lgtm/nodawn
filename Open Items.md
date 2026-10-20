@@ -55,7 +55,7 @@ These need a published place, a second client, or hardware.
 ## Phase 2 prerequisites
 
 - [ ] Publish first, then clear the multi-client tests above.
-- Raids as separate places; a profile-lock hand-off on teleport; teleport data for the deployment; raid damage rules; loot through `InventoryTx`.
+- Raids as separate places; a profile-lock hand-off on teleport; teleport data for the deployment; server lifecycle (no timer, late join, loot respawn); raid damage rules; loot through `InventoryTx`.
 
 ## Phase 2 — code in progress
 
@@ -63,6 +63,7 @@ These need a published place, a second client, or hardware.
 - [ ] Rewrite `HitboxService` to a margin ray plus `HitSelect`, set `HumanoidRootPart.CanQuery = false` at spawn, and silence accessory handles.
 - [ ] Run the synthetic-rig probe (blocked: Studio closed). Verify `Spherecast.Distance` semantics while it is open.
 - [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
+- [ ] `Shared.Rules.WoundRules` and `SurvivalRules` with tests; wound state, treatment actions, hunger/thirst meters.
 - [ ] Rename the player-facing currency from Chits to Dollars in the HUD, vendor UI, item prices and tests. Keep `wallet.chits` internally until a schema pass.
 - [ ] Hand off the movement animation set to Claude ([[Working Agreement]]).
 
@@ -71,5 +72,7 @@ These need a published place, a second client, or hardware.
 - [ ] Approve the cosmetic-only store and the Dollars/Robux firewall ([[Idea - Monetisation]]).
 - [ ] Approve the launch roster of eight firearms and the melee damage fix ([[Idea - Weapon Roster]]).
 - [ ] Approve the account-renown model, or supply the level system He has in mind ([[Idea - Progression]]).
-- [ ] Decide 12 or 16 players for the first Detroit map ([[Idea - Detroit Map]]).
+- [ ] Approve the open-server model: no timer, late join, loot respawns, extraction-only banking ([[Idea - Raid Frame]]).
+- [ ] Decide 24 or 32 players for the first Detroit map; the model recommends 24 launch, 32 ceiling ([[Idea - Detroit Map]]).
+- [ ] Approve procedural injuries and hunger/thirst ([[Idea - Injury and Survival]]).
 
