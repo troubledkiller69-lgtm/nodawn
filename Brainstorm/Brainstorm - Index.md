@@ -44,6 +44,7 @@ updated: YYYY-MM-DD
 
 ### Combat
 - [[Idea - Combat Frame]] — server-owned state, hitscan plus hit zones, noise as a system. The plan to approve before modelling a pistol
+- [[Idea - Weapon Roster]] — eight firearms at launch, chosen by job. The damage spine, the melee math fix, and the post-launch six
 - Weapon instance state in the inventory, and whether the schema needs a v3 migration first.
 
 ### Movement
@@ -63,6 +64,7 @@ updated: YYYY-MM-DD
 - How a player rebuilds without being handed a loadout.
 
 ### Economy
+- [[Idea - Monetisation]] — sell identity, never capability. The Commissary, the cosmetic contract, and the Chits/Robux firewall
 - Chits in versus chits out once raids pay. What stops inflation.
 - Static vendor stock versus rotation.
 
@@ -74,6 +76,7 @@ updated: YYYY-MM-DD
 - [[Reference - Detroit Overgrowth]] — 14 references, species and placement, staging by age, palette and fog, Roblox translation
 
 ### Progression
+- [[Idea - Progression]] — account renown, not survivor power. The level 1 vs level 50 test, contracts, and the three models
 - Skills, blueprints, permanent unlocks. What is protected on death.
 - Whether attributes grow or stay fixed at creation.
 

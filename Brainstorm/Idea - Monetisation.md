@@ -109,7 +109,7 @@ That means the hub's social density is a monetisation feature, not a luxury:
 
 ## 9. Roblox economics
 
-- **Game passes** for permanent cosmetics; **developer products** for the seasonal pass and the supporter pack. No consumable currency.
+- **Game passes** for permanent cosmetics, the supporter pack and each season's pass. No developer products at launch, because there is no consumable currency.
 - Roblox takes its platform cut, and DevEx takes another. Model at roughly a fifth to a third of player spend reaching the developer; price for volume, not margin.
 - **Premium payouts** reward retention. A hub players return to is worth more than a store they scroll once.
 - **No paid random items.** Direct purchase, visible item, known price.
