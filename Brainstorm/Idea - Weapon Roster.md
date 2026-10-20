@@ -130,7 +130,7 @@ Attachments are inventory items with their own `uid`, lootable and lost on death
 
 ## 8. Acquisition and the ladder
 
-- **Vendors:** rotating stock, Chits, limited quantity. The workhorse tier is always available; the professional tier is a few units per restock.
+- **Vendors:** rotating stock, Dollars, limited quantity. The workhorse tier is always available; the professional tier is a few units per restock.
 - **Raid loot by provenance:** residential (.22, .38, pump, 1911), police (Glock, MP5, pump), gun store (SKS, 1911, hunting rifles), military (AKM, AR-15, .308).
 - **Player corpses:** everything, including the loaded magazine.
 - **No level gates.** A level 1 can find an AKM. That is the extraction dream and the anti-headstart rule. Levels unlock vendor variety, not exclusivity ([[Idea - Progression]]).

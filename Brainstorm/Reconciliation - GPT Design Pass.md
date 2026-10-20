@@ -12,9 +12,9 @@ Four fresh notes were pulled from GPT on 2026-10-20: `nodawnDNL`, `nodawnINFECTE
 
 | File | What is new and worth keeping | What fights the vault | Verdict |
 |---|---|---|---|
-| **DNL — Death and Loss** | 2×2 secure container; server-side enforcement; atomic death transaction; reanimation with no player control; disconnect-as-death | Body persists **20 min** vs the Raid Frame's **5 min**; reanimated body's loot location is undefined | Keep the container and transaction rules; reject 20 min; define the death cache |
+| **DNL — Death and Loss** | 2×2 secure container; server-side enforcement; atomic death transaction; reanimation with no player control; disconnect-as-death | Body persists **20 min** vs the Raid Frame's **5 min**; loot location was undefined | Keep the container and transaction rules; reject 20 min; **loot stays on the reanimated body** ([[Idea - Death and Loss]]) |
 | **INFECTED** | Lighting in the vision check; attack wind-up/recovery; local horde only; 30-local cap; AI update budget; server-validated bite/damage | **120 active / 30 local** vs the Detroit Map's **80 total / ~20 active** | Keep senses, telegraphs and horde logic; use 80/20 at launch, 120 only as a measured stress valve |
-| **ENL — Economy and Loot** | 25% vendor buyback; launch price table; no starting Chits; anti-inflation metrics; finite vendor restock | **Basic armour 180** and **weapon repair 40** vs the Combat Frame's **no armour, no malfunctions in v1** | Keep the metrics and most prices; cut armour; defer repairs; tune the 25% |
+| **ENL — Economy and Loot** | 25% vendor buyback; launch price table; no starting Dollars; anti-inflation metrics; finite vendor restock | **Basic armour 180** and **weapon repair 40** vs the Combat Frame's **no armour, no malfunctions in v1** | Keep the metrics and most prices; cut armour; defer repairs; tune the 25% |
 | **CAC — Character Creation** | All attributes 5; no free allocation; one positive/one negative trait; Sadist server-side rules | **No free points** vs the Master Context's **5-point pool**; **skills improve through use** vs the no-power-growth model | Adopt the Sadist almost verbatim; no-allocation is a real change to approve; skills need a definition or a cut |
 
 ## 2. The four fights
@@ -23,7 +23,7 @@ Four fresh notes were pulled from GPT on 2026-10-20: `nodawnDNL`, `nodawnINFECTE
 
 The Raid Frame says five minutes. GPT says 20, or until the server closes. In a 50-minute raid, 20 minutes turns a corpse into a free cache and removes the race. Five minutes creates the decision: camp the body, or leave before the noise brings company.
 
-**Recommendation: 5 minutes, or 8 if five feels too tight.** The 20-minute version belongs to a game with longer raids and fewer players.
+**Recommendation: 5 minutes, or 8 if five feels too tight.** The 20-minute version belongs to a game with longer raids and fewer players. The five-minute clock is for a corpse that stays down; a reanimated body is an NPC and runs on its own timer — see §5.
 
 ### 2.2 Infected — 80/20 or 120/30?
 
@@ -45,10 +45,10 @@ The Master Context §8 says occupations provide free attribute points, with a ba
 
 ## 3. The economy fights
 
-- **25% buyback.** It is a strong sink and prevents buy-low/sell-high loops. It may also make looting feel bad: a 300-Chit firearm against common loot at 5–15 Chits is a long early game. **Test 35–40% first**, or keep 25% and add a first contract that pays 150–200. The anti-inflation metrics will decide.
+- **25% buyback.** It is a strong sink and prevents buy-low/sell-high loops. It may also make looting feel bad: a 300-Dollar firearm against common loot at 5–15 Dollars is a long early game. **Test 35–40% first**, or keep 25% and add a first contract that pays 150–200. The anti-inflation metrics will decide.
 - **Armour 180.** Cut. The Combat Frame says no armour in v1; penetration arrives with it. A price for something that does not exist is a promise the code cannot keep.
 - **Repair 40.** Defer until condition degrades and malfunctions exist. At launch condition is value, not function. A repair service with nothing to repair is a UI stub.
-- **Starting Chits.** GPT says none. The fallback knife run then needs a path to the first gun. **Recommendation: no starting Chits, but a first contract worth 150–200 and one free bandage on creation.** The no-free-gun rule survives; the new player does not starve.
+- **Starting Dollars.** GPT says none. The fallback knife run then needs a path to the first gun. **Recommendation: no starting Dollars, but a first contract worth 150–200 and one free bandage on creation.** The no-free-gun rule survives; the new player does not starve.
 
 ## 4. The Sadist — adopt
 
@@ -59,26 +59,27 @@ Two additions:
 - The Master Context says stress **and boredom**. Add boredom relief, or state that boredom is cut.
 - Decide the assignment: developer-controlled test occupation until an unlock condition is designed. Do not invent a client-visible eligibility check.
 
-## 5. The death cache
+## 5. Loot on the reanimated body
 
-The DNL note says reanimated bodies do not retain player control, but it does not say where the loot is. If the corpse gets up and walks, a player's gear can travel across the map.
+His call, and it is better than the cache: the loot stays **on the body**. If the brain is intact, the body gets up carrying the gear. It is a loot container on legs — you kill it to open it.
 
-**Recommendation:** on death, the loot drops into a static **death cache** at the death position. The reanimated body is a separate NPC and carries no player loot. The player returns to the hub. The cache persists for five minutes and is lootable by anyone.
+The rules are in [[Idea - Death and Loss]] §4–6. The short version: 10-second reanimation delay, headshot kill or melee finisher destroys the brain, 80-stud leash, 10-minute despawn, no late joiners so the victim's squad recovers the body, not the victim.
 
-This also solves the disconnect case: the body drops a cache at the last valid server position, then the player is removed.
+The old static-cache idea is dead.
 
 ## 6. What survives
 
-From DNL: the 2×2 container, server-side enforcement, atomic death transaction, reconnect-as-death, reanimation without player control.
+From DNL: the 2×2 container, server-side enforcement, atomic death transaction, reconnect-as-death, reanimation without player control, and loot on the body.
 From INFECTED: lighting in the vision check, attack telegraphs, local hordes only, AI budget, server-validated bites.
-From ENL: the price table minus armour and repairs, the 25% rule as a tuning knob, the metrics, finite restock, no starting Chits plus a first contract.
+From ENL: the price table minus armour and repairs, the 25% rule as a tuning knob, the metrics, finite restock, no starting Dollars plus a first contract.
 From CAC: the Sadist, one positive/one negative trait, occupation kits that never include a firearm, fixed attributes at launch.
 
 ## 7. Open questions for He
 
-1. Body persistence: 5 or 20 minutes?
+1. Corpse persistence: 5 or 8 minutes? 20 is rejected; a reanimated body is an NPC.
 2. Infected: 80/20 or 120/30?
 3. Skills: cut, codex, or capped sidegrades?
 4. Attributes: no allocation or the five-point pool?
 5. Starting economy: first contract, creation stipend, or neither?
 6. Does the secure container hold quest items, or only loot?
+7. Can the victim re-enter the same raid to recover their body? **Recommend no.**

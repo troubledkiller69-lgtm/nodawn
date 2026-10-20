@@ -16,11 +16,13 @@ The test is not "is it cosmetic?" It is "does it change a fight or a haul?" A ba
 
 ## 2. The firewall
 
-**Chits and Robux never touch.**
+**Dollars and Robux never touch.**
 
-- Chits are earned in raid and spent on gear, ammo and attachments.
+Dollars are pre-war US cash, symbol `$`, code `USD`. The prison honors them because the outside traders still do; the vendors price food, water, ammo and gear in the same note.
+
+- Dollars are earned in raid and spent on gear, ammo and attachments.
 - Robux buys appearance.
-- No Chits for Robux. No Robux item that grants Chits. No cosmetic that sells for Chits. No crate that contains either.
+- No Dollars can be bought with Robux. No Robux item grants Dollars. No cosmetic sells for Dollars. No crate contains either.
 - No third currency. A premium currency is a dark pattern and a second ledger to exploit.
 
 If the two economies ever meet, the game is pay-to-win and the promise is dead.
@@ -31,7 +33,7 @@ If the two economies ever meet, the game is pay-to-win and the promise is dead.
 |---|---|
 | Stash / vault expansion | Direct haul advantage. The vault is the scoreboard. |
 | Secure container / insurance | Removes the loss that makes extraction mean something. |
-| XP / loot / Chit boosters | Sells time, which is the only thing a new player has. |
+| XP / loot / currency boosters | Sells time, which is the only thing a new player has. |
 | Weapons, ammo, armour, attachments | The raid is the only place gear should come from. |
 | Extra extracts, revive tokens, private raid servers | Sells safety. |
 | Trader reputation | Access is earned, not bought. |
@@ -86,13 +88,13 @@ The **wardrobe** is in the cell, next to a mirror. The mirror is the only place 
 - One cell pack (bunk, shelf, radio).
 - One dog tag.
 - Name in the credits (UI, not the world).
-- No Chits. No gear. No XP. No early access.
+- No Dollars. No gear. No XP. No early access.
 
 **Season 1 pass — 399–499 Robux.**
 
 - 50 tiers, 8–10 weeks.
 - Free track: 15–20 cosmetic items, including one full outfit.
-- Paid track: 25–30 items; no power, no boosters, no Chits.
+- Paid track: 25–30 items; no power, no boosters, no currency.
 - Progress comes from renown ([[Idea - Progression]]), not from purchases.
 - Items return in the archive after the season. No permanent missables, no countdown pressure.
 

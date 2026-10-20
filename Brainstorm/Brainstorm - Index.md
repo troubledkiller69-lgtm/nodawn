@@ -65,14 +65,14 @@ updated: YYYY-MM-DD
 - Special types that change how you move, not just how much health they have.
 
 ### Death and loss
-- [[Reconciliation - GPT Design Pass]] — the 2×2 secure container, 5 vs 20 minutes, and the death cache.
+- [[Idea - Death and Loss]] — what drops, the 2×2 secure container, and loot on the reanimated body.
 - What drops, what survives, how the secure container behaves in practice.
 - How a player rebuilds without being handed a loadout.
 
 ### Economy
-- [[Idea - Monetisation]] — sell identity, never capability. The Commissary, the cosmetic contract, and the Chits/Robux firewall
+- [[Idea - Monetisation]] — sell identity, never capability. The Commissary, the cosmetic contract, and the Dollars/Robux firewall
 - [[Reconciliation - GPT Design Pass]] — 25% buyback, the price table, and the armour/repair cuts.
-- Chits in versus chits out once raids pay. What stops inflation.
+- Dollars in versus dollars out once raids pay. What stops inflation.
 - Static vendor stock versus rotation.
 
 ### The hub as a place

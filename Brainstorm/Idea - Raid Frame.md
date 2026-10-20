@@ -75,11 +75,11 @@ For a 50-minute raid with 20 players, a realistic uncontested route loots 15–2
 | Rare | 4–6 | 300–700 | Armory cage, manager's office, locked storage |
 | Elite | 1 | 800–1,500 | Behind the key |
 
-Total map value lands around 6,000–8,000 Chits. That is deliberately less than twenty players × a good haul: scarcity is the point. Not everyone gets rich in the same session.
+Total map value lands around 6,000–8,000 Dollars. That is deliberately less than twenty players × a good haul: scarcity is the point. Not everyone gets rich in the same session.
 
 **Loot half-life.** Common and uncommon containers can restock once, 25–30 minutes after being emptied, at a reduced tier. Rare and elite never restock. That keeps a long-lived server playable without turning it into a farming route.
 
-*These values are placeholders until we pull real sell values out of `Config/Items`. Without those, the Chit column is a guess.*
+*These values are placeholders until we pull real sell values out of `Config/Items`. Without those, the Dollar column is a guess.*
 
 ## Day and night
 

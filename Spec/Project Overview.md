@@ -9,7 +9,8 @@ Back to [[No Dawn - Home]]
 ## The game
 - Survival extraction shooter on Roblox. **Phase 1** (done) is the hub and everything a player keeps between raids:
   a persistent profile, survivor creation (appearance, occupation, attributes), a grid inventory and a vault
-  (locker), currency (Chits) and two vendors. **Phase 2** adds raids, run as separate places.
+  (locker), currency (Dollars) and two vendors. **Phase 2** adds raids, run as separate places.
+  The internal profile key remains `wallet.chits` until a schema pass; all player-facing text says Dollars.
 - The hub is a prison (West Georgia prison from *The Walking Dead*) with a yard, cell blocks, quartermaster and armory
   (vendors), lockers, a medical ward, a vehicle workshop, Services and offices, and a front field with a farm, an
   animal pen and the double main gate. It is always a foggy, rainy night, and 59 NPCs live there.

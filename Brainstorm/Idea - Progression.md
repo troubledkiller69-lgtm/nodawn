@@ -19,7 +19,7 @@ The test applies to every unlock: HP, stamina, aim sway, carry weight, reload sp
 | Track | Persists | Holds | Lost on death |
 |---|---|---|---|
 | **Account renown** | Forever | level, cosmetics, vendor contacts, contract board, cell decor slots | Nothing |
-| **Survivor** | Until death? | gear, Chits carried, injuries, infection, raid history | Gear, carried Chits, the extract bonus |
+| **Survivor** | Until death? | gear, Dollars carried, injuries, infection, raid history | Gear, carried Dollars, the extract bonus |
 
 The account is the wardrobe and the address book. The survivor is the run.
 
@@ -36,7 +36,7 @@ The account is the wardrobe and the address book. The survivor is the run.
 | First discovery | 25 | Locations, lore, weapon manuals; once per account. |
 | Survival time | 1 / minute, cap 30 | Rewards the quiet raid. |
 | Revive a teammate | 40 | If co-op downing exists. |
-| Chits spent / items bought | 0 | Never. |
+| Dollars spent / items bought | 0 | Never. |
 | Time in hub | 0 | The hub is not a treadmill. |
 
 Actions award XP immediately; the extract bonus is the big one. A death costs the bonus and the loot, not the whole raid's progress. That keeps a bad night from being a zero.
@@ -68,12 +68,12 @@ Separate from renown, per trader:
 - Earned by trading and contracts.
 - Unlocks **stock variety** (a different gun on the shelf, not a better gun) and a **small discount** (5–10%, capped).
 - The same guns can be found in raid at any reputation. Reputation is convenience, not exclusivity.
-- Not purchasable with Robux or Chits. Ever.
+- Not purchasable with Robux or Dollars. Ever.
 
 ## 7. Contracts
 
-- **Daily:** 3, rotate. Fetch, mark, recover, eliminate, extract. 50–100 XP, Chits.
-- **Weekly:** 1–2, larger. 150–300 XP, a fixed cosmetic or a Chit bundle. No random rolls.
+- **Daily:** 3, rotate. Fetch, mark, recover, eliminate, extract. 50–100 XP, Dollars.
+- **Weekly:** 1–2, larger. 150–300 XP, a fixed cosmetic or a currency bundle. No random rolls.
 - **Story:** one-off, hand-authored, unlocks a vendor or a location. No power.
 - The contract board is how the level system creates **routes** through the map. It is also how the game concentrates players without forcing PvP.
 
@@ -108,7 +108,7 @@ The seasonal cosmetic pass ([[Idea - Monetisation]]) is fed by renown. Free trac
 
 ## 10. Death and renown
 
-- Death loses gear, carried Chits, and the extract bonus.
+- Death loses gear, carried Dollars, and the extract bonus.
 - Death does not lose account level, cosmetics, vendor contacts, or the contract board.
 - The hardcore loss is **gear**, not identity. That is the retention valve: a player can lose a kit and still come back to a level, a wardrobe and a contact list.
 - If the survivor dies permanently, the new survivor starts at the same account renown and the same floor gear (basic clothing and a knife). The level is not a headstart; the gear is the run.

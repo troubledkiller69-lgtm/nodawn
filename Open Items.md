@@ -67,7 +67,7 @@ These need a published place, a second client, or hardware.
 
 ## Phase 2 — design decisions
 
-- [ ] Approve the cosmetic-only store and the Chits/Robux firewall ([[Idea - Monetisation]]).
+- [ ] Approve the cosmetic-only store and the Dollars/Robux firewall ([[Idea - Monetisation]]).
 - [ ] Approve the launch roster of eight firearms and the melee damage fix ([[Idea - Weapon Roster]]).
 - [ ] Approve the account-renown model, or supply the level system He has in mind ([[Idea - Progression]]).
 - [ ] Decide 12 or 16 players for the first Detroit map ([[Idea - Detroit Map]]).
