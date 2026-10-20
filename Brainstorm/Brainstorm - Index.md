@@ -33,6 +33,10 @@ updated: YYYY-MM-DD
 **Open questions:**
 ```
 
+## Design passes
+
+- [[Reconciliation - GPT Design Pass]] — four fresh GPT notes compared to the vault: what is new, what fights standing rulings, and what survives.
+
 ## Threads
 
 ### Raids
@@ -56,15 +60,18 @@ updated: YYYY-MM-DD
 - Lean and prone force the `HitboxService` decision; the grapple forces a map with rooftops worth reaching.
 
 ### Infected
+- [[Reconciliation - GPT Design Pass]] — 80/20 vs 120/30, lighting in the vision check, attack telegraphs.
 - Density against server cost. Sound as the primary threat cue.
 - Special types that change how you move, not just how much health they have.
 
 ### Death and loss
+- [[Reconciliation - GPT Design Pass]] — the 2×2 secure container, 5 vs 20 minutes, and the death cache.
 - What drops, what survives, how the secure container behaves in practice.
 - How a player rebuilds without being handed a loadout.
 
 ### Economy
 - [[Idea - Monetisation]] — sell identity, never capability. The Commissary, the cosmetic contract, and the Chits/Robux firewall
+- [[Reconciliation - GPT Design Pass]] — 25% buyback, the price table, and the armour/repair cuts.
 - Chits in versus chits out once raids pay. What stops inflation.
 - Static vendor stock versus rotation.
 
@@ -77,10 +84,12 @@ updated: YYYY-MM-DD
 
 ### Progression
 - [[Idea - Progression]] — account renown, not survivor power. The level 1 vs level 50 test, contracts, and the three models
+- [[Reconciliation - GPT Design Pass]] — the skills fight: cut, codex, or capped sidegrades.
 - Skills, blueprints, permanent unlocks. What is protected on death.
 - Whether attributes grow or stay fixed at creation.
 
 ### The Sadist
+- [[Reconciliation - GPT Design Pass]] — the server-side rules are adoptable almost verbatim.
 - Concealed occupation with no defined effect. Stress, infected killing, what other players can observe.
 - Must never leak through replication. Nothing about it goes in a client-readable field.
 
