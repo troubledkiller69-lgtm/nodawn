@@ -90,6 +90,18 @@ If growth is wanted later:
 
 But the clean version is fixed attributes plus gear. The survivor creator's choices define the run; the account renown defines the wardrobe.
 
+### Skills
+
+The Master Context §8 says skills improve through use, with anti-farming and diminishing returns, and persist through death. That is power progression by another name. If a level 50 reloads faster, aims steadier and carries more because they used a gun more, the level 1 vs 50 test fails even though no level is involved.
+
+Three options:
+
+- **Cut stat skills at launch.** Attributes fixed, gear and player skill are the progression. Cleanest.
+- **Knowledge skills.** A codex of manuals, locations and vendors. No stat effect; cosmetics for completion.
+- **Capped sidegrades.** A small pool of perks with trade-offs, earned by use, capped early, respecable. Risky.
+
+Recommend the first or second. The third is how the no-headstart promise quietly dies.
+
 ## 9. Renown and the pass
 
 The seasonal cosmetic pass ([[Idea - Monetisation]]) is fed by renown. Free track and paid track, all cosmetic. No XP boosters, no tier skips for sale. The pass and the level curve should finish together; if the pass finishes first, the last tiers are a grind; if the level finishes first, the pass is a second job.
@@ -120,4 +132,5 @@ Levels give HP, stamina, damage, carry weight or stash. The test fails, the stor
 - Seasonal renown reset? **Recommend no; seasons add cosmetics, not power.**
 - Do attributes grow? **Recommend no; fixed at creation.**
 - What does a max-level player have that a new player does not? **A wardrobe, a contact list and a contract board. Not a stat.**
+- Are use-based skills in? **The Master Context says yes; the no-headstart model says no. This needs a ruling.**
 - What is the shape of the level system He has in mind? **Waiting.**
