@@ -9,7 +9,7 @@ updated: 2026-10-20
 
 - Place: `placeholder`, PlaceId **119649394550657**, UniverseId **10771286228**
 - Scale: 1 stud ≈ 0.28 m
-- Source of truth: the place itself. There is no git repo. This vault is the record.
+- Source of truth: the place itself. This vault is the record, versioned at [github.com/troubledkiller69-lgtm/nodawn](https://github.com/troubledkiller69-lgtm/nodawn). The place itself is still not under git.
 
 ## Status at a glance (2026-10-18)
 
