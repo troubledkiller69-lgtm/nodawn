@@ -42,6 +42,11 @@ updated: 2026-10-20
 - [[Open Items]] — the live list, and nothing else
 - [[Brainstorm - Index]] — Phase 2 and everything after
 
+**The vault itself**
+- `CLAUDE.md` — note shape, naming, where a thing goes, frozen-record banners. Read before editing
+- `Templates/` — insert a note from a template: Idea, Spec, Record, Work Order, Design Pass, Daily
+- [[How this is used]] — the daily scratchpad, and where its contents get triaged to
+
 **Reference and history**
 - [[Lessons]] — Studio and MCP gotchas. Read before touching the place
 - [[Realism Ledger]] — decisions, gate results, build numbers

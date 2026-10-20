@@ -1,4 +1,11 @@
+---
+tags: [nodawn, spec, context]
+updated: 2026-10-20
+---
+
 # NO DAWN — MASTER PROJECT CONTEXT & HANDOFF
+
+Back to [[No Dawn - Home]] · Contract: [[Phase 1 Handoff]], [[Addendum - Infected and Firearms]], [[Weapon - M1911A1 Build Spec]]
 
 > **Context snapshot, written before Phase 2.** §11's Phase 1 status is stale: it records 125/125 tests, 14/6 acceptance and 7,377 parts, all superseded by the later passes (137/137, 15/5/0, 10,693 parts, 59 NPCs — see [[No Dawn - Home]]). Everything else — raid direction, infected, factions, combat philosophy — is current intent, not implemented state.
 

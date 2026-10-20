@@ -1,4 +1,11 @@
-## ADDENDUM — SPECIAL INFECTED AND FIREARM REALISM
+---
+tags: [nodawn, spec, infected, firearms]
+updated: 2026-10-20
+---
+
+# ADDENDUM — SPECIAL INFECTED AND FIREARM REALISM
+
+Back to [[No Dawn - Home]] · Contract: [[Master Project Context]], [[Weapon - M1911A1 Build Spec]], [[Idea - Combat Frame]]
 
 ### A. Special Infected — No Dawn
 

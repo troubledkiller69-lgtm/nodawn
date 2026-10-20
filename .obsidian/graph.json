@@ -1,12 +1,55 @@
 {
   "collapse-filter": true,
   "search": "",
-  "showTags": false,
-  "showAttachments": false,
+  "showTags": true,
+  "showAttachments": true,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "path:Spec",
+      "color": {
+        "a": 1,
+        "rgb": 20807334
+      }
+    },
+    {
+      "query": "path:Brainstorm",
+      "color": {
+        "a": 1,
+        "rgb": 26015317
+      }
+    },
+    {
+      "query": "path:Build",
+      "color": {
+        "a": 1,
+        "rgb": 30444094
+      }
+    },
+    {
+      "query": "path:Records",
+      "color": {
+        "a": 1,
+        "rgb": 23767119
+      }
+    },
+    {
+      "query": "path:Templates",
+      "color": {
+        "a": 1,
+        "rgb": 25988236
+      }
+    },
+    {
+      "query": "path:Daily",
+      "color": {
+        "a": 1,
+        "rgb": 31506496
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,

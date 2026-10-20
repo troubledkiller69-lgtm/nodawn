@@ -1,4 +1,11 @@
+---
+tags: [nodawn, lessons]
+updated: 2026-10-20
+---
+
 # Lessons
+
+Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 
 ## Studio MCP
 - **SurfaceGui text needs a moment to render.** A `screen_capture` taken right after a rebuild showed blank signs. Never capture in the same batch as a rebuild; render first, then capture. Don't "fix" blank signs before re-capturing.

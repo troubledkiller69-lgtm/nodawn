@@ -1,1 +1,10 @@
-{}
+{
+  "accentColor": "",
+  "theme": "obsidian",
+  "cssTheme": "",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "baseFontSize": 16,
+  "enabledCssSnippets": []
+}

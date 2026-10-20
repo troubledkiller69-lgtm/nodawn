@@ -1,4 +1,11 @@
+---
+tags: [nodawn, record, ledger]
+updated: 2026-10-20
+---
+
 # SDD ledger — plan: tasks/todo.md (Realism pass v2)
+
+Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · History: [[Tracker]]
 
 ## Setup (2026-10-17)
 - Backups in ServerStorage.DevTools: SectionsBackup_20261017d (12 section modules), KitBackup_20261017d (65,559 chars),

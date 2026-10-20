@@ -1,4 +1,11 @@
+---
+tags: [nodawn, spec, weapon]
+updated: 2026-10-20
+---
+
 # NO DAWN — M1911A1 WEAPON BUILD SPECIFICATION
+
+Back to [[No Dawn - Home]] · Contract: [[Addendum - Infected and Firearms]], [[Idea - Weapon Roster]], [[Idea - Combat Frame]]
 
 Act as a senior Roblox FPS engineer, weapon animator, 3D hard-surface artist, and technical systems developer. Build one production-quality, fully functional **M1911A1 .45 ACP pistol** for my Roblox first-person zombie survival extraction game, No Dawn.
 

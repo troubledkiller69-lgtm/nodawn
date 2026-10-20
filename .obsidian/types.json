@@ -1,0 +1,54 @@
+{
+  "types": [
+    {
+      "id": "status",
+      "name": "status",
+      "type": "select",
+      "propertyType": "select",
+      "options": {
+        "raw": {
+          "id": "raw",
+          "name": "raw",
+          "color": "1",
+          "order": 0
+        },
+        "shaping": {
+          "id": "shaping",
+          "name": "shaping",
+          "color": "3",
+          "order": 1
+        },
+        "decided": {
+          "id": "decided",
+          "name": "decided",
+          "color": "4",
+          "order": 2
+        },
+        "dead": {
+          "id": "dead",
+          "name": "dead",
+          "color": "5",
+          "order": 3
+        },
+        "in-progress": {
+          "id": "in-progress",
+          "name": "in-progress",
+          "color": "2",
+          "order": 4
+        }
+      }
+    },
+    {
+      "id": "updated",
+      "name": "updated",
+      "type": "date",
+      "propertyType": "date"
+    },
+    {
+      "id": "tags",
+      "name": "tags",
+      "type": "tags",
+      "propertyType": "tags"
+    }
+  ]
+}

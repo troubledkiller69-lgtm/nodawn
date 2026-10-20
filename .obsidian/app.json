@@ -1,1 +1,16 @@
-{}
+{
+  "alwaysUpdateLinks": true,
+  "alwaysUpdateFrontmatter": true,
+  "attachmentFolderPath": "Screenshots",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Brainstorm",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "showLineNumber": true,
+  "strictLineBreaks": false,
+  "readableLineLength": true,
+  "useTab": false,
+  "promptDelete": false,
+  "showUnsupportedFiles": true,
+  "trashOption": "local"
+}

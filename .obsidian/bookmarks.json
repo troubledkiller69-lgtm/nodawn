@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "title": "Launchpad",
+      "ctime": 1790000000000,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "No Dawn - Home.md",
+          "title": "Home"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Open Items.md",
+          "title": "Open Items"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Brainstorm/Brainstorm - Index.md",
+          "title": "Brainstorm"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Lessons.md",
+          "title": "Lessons"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Spec/Master Project Context.md",
+          "title": "Master Context"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Build record",
+      "ctime": 1790000000000,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Build/Hub - Build History.md",
+          "title": "Build History"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Build/Hub - How It Is Built.md",
+          "title": "How It Is Built"
+        },
+        {
+          "type": "file",
+          "ctime": 1790000000000,
+          "path": "Records/Realism Ledger.md",
+          "title": "Realism Ledger"
+        }
+      ]
+    }
+  ]
+}
