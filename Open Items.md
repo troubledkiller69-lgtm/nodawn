@@ -63,6 +63,7 @@ These need a published place, a second client, or hardware.
 - [ ] Rewrite `HitboxService` to a margin ray plus `HitSelect`, set `HumanoidRootPart.CanQuery = false` at spawn, and silence accessory handles.
 - [ ] Run the synthetic-rig probe (blocked: Studio closed). Verify `Spherecast.Distance` semantics while it is open.
 - [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
+- [ ] Rename the player-facing currency from Chits to Dollars in the HUD, vendor UI, item prices and tests. Keep `wallet.chits` internally until a schema pass.
 - [ ] Hand off the movement animation set to Claude ([[Working Agreement]]).
 
 ## Phase 2 — design decisions
