@@ -37,6 +37,7 @@ updated: 2026-10-20
 - [[Hub - How It Is Built]] — HubBuilder, Kit, the generated-prop pipeline, gates, backups
 - [[Hub - Build History]] — every pass in order
 - [[Phase 1 - Game Systems]] — milestones A–G, tests, acceptance results
+- [[Toolchain]] — where the code lives outside Studio, Rojo, and the Studio MCP bridge
 
 **What's next**
 - [[Open Items]] — the live list, and nothing else

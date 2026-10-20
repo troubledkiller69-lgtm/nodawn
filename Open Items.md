@@ -11,6 +11,7 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 
 ## Blocking
 
+- [ ] **Turn on "Enable Studio as MCP server".** Studio → Assistant → … → Manage MCP Servers. Until it is on, nothing can read or write the place from outside Studio, so no code work can start. See [[Toolchain]].
 - [ ] **Save the place.** The latest hub work exists only in the open Studio session. Publish when ready.
 - [ ] Set `Lighting.Technology = Future` by hand (Explorer → Lighting → Properties). Scripts can't set it.
 - [ ] Review or remove the Studio plugins `cloud_4771536187` and `cloud_7352299243`. They inject GUI scripts and errors into every playtest.
