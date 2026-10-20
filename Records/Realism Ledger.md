@@ -160,3 +160,8 @@
 - Death loot stays **on the body**. A reanimated body carries the gear; the static death cache is rejected. A headshot
   kill or a melee finisher destroys the brain; otherwise the body rises and becomes a loot container on legs. See
   [[Idea - Death and Loss]].
+- **Open servers replace the 50-minute batch.** No gameplay timer, late join is normal, loot respawns on a timer, and
+  extraction is still the only bank. The server lives while it is populated. See [[Idea - Raid Frame]].
+- **Procedural injuries and hunger/thirst are in v1.** Global HP stays 100; a wound is a status on a body part, not a
+  per-limb HP pool. Hunger and thirst are the personal clock that replaces the server timer. See
+  [[Idea - Injury and Survival]].

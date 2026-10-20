@@ -57,7 +57,7 @@ Bleed is HP per second before location multipliers. Pain is points. All numbers 
 | Laceration | Blade, low-damage bullet, infected | 0.8 | 15 | Bandage; disinfect | −10% | 15 Dollars |
 | Deep wound | Blade ≥30, bullet 25–39, glass | 1.5 | 25 | Bandage; stitch | −25% | 40 Dollars |
 | Lodged bullet | Bullet ≥40 | 1.8 | 30 | Tweezers; stitch; bandage | −30% | 80 Dollars |
-| Fracture | Fall ≥20 studs, blunt ≥30 to a limb | 0 | 35 | Splint | Leg: no sprint/jump, walk ×0.6. Arm: recoil +50%, reload +50% | 100 Dollars |
+| Fracture | Fall ≥25 studs, heavy blunt ≥50 to a limb (sledge) | 0 | 35 | Splint | Leg: no sprint/jump, walk ×0.6. Arm: recoil +50%, reload +50% | 100 Dollars |
 | Burn | Fire, explosion | 0.5 | 30 | Water; bandage | −15% | 60 Dollars |
 | Bite | Infected bite | 1.2 | 28 | Bandage; disinfect | −15% | 70 Dollars; virus flag is v4 |
 
@@ -71,7 +71,7 @@ A wound is a record, not a hit reaction. It survives the fight, the extraction a
    - **Infected scratch** → scratch. **Infected bite** → bite.
    - **Bullet:** <25 laceration, 25–39 deep, ≥40 lodged. A non-lethal head hit adds concussion.
    - **Blade:** <30 laceration, ≥30 deep.
-   - **Blunt:** <30 bruise (scratch tier), ≥30 fracture on a limb. Head/torso blunt adds concussion/internal.
+   - **Blunt:** <50 contusion (scratch tier), ≥50 fracture on a limb. A bat is a contusion; the sledge breaks bone. Head/torso blunt adds concussion/internal.
    - **Fall:** <15 studs scratch, 15–25 laceration, ≥25 leg fracture.
    - **Fire/explosion:** burn.
 4. If a limb hit carries to the torso, the wound goes on the torso. The final part owns the consequence.
@@ -81,7 +81,7 @@ Examples:
 
 - .45 torso, 50 damage → lodged bullet, 1.8 HP/s. At 50 HP the player has ~28 s to bandage and stitch or bleed out.
 - 9mm limb, 35 damage → deep wound, 1.5 HP/s. Three limb hits still kill, but the second one is now a race.
-- Bat to the arm, 30 → fracture. The rifle is now a bad idea; the pistol is not.
+- Sledge to the arm, 70 → fracture. A bat at 42 is a contusion; it hurts, it does not break the arm.
 - Fall 30 studs → leg fracture. The extract is a walk, not a sprint.
 - Infected bite, 12 → bite wound. The virus is not in v1; the bleeding is.
 
@@ -124,6 +124,7 @@ Painkillers subtract 30 for 5 minutes. Pain does not decay while a wound is untr
 - Self-treatment takes 1.5× the time; a squadmate takes 1.0×. Both players must be stationary. Damage interrupts and resets the action.
 - Field treatment stops the immediate threat. The wound itself persists until the hub.
 - **Hub medical ward:** instant treatment for Dollars at the prices in §4, plus a full HP restore. No real-time timer. The ward is a money sink, not a gate.
+- The ward never lets a player bleed out in the hub: stopping the bleed is free; closing the wound and mending the bone cost. A broke player can always stop the bleed.
 - No First Aid skill. Treatment speed comes from the item and the animation, not the account. A level 1 and a level 50 with the same bandage are identical.
 
 ## 8. Infection
@@ -135,7 +136,7 @@ Painkillers subtract 30 for 5 minutes. Pain does not decay while a wound is untr
 - Disinfectant before bandaging prevents it for 15 minutes; antibiotics clear it in 30 s; the hub clears it for 20 Dollars.
 - A dirty bandage is the tell: the health panel says `Dirty` and the wound row turns.
 
-**Zombie infection is v4, not v1.** A bite is a severe wound now. The virus — the Knox equivalent, the Antizin timer, the guaranteed turn — waits for the infection and reanimation system to be stable. Why:
+**Zombie infection is v4, not v1.** A bite is a severe wound now. The virus — the Knox equivalent, the Antizin timer, the guaranteed turn — waits for the infection and reanimation system to be stable. PZ's defaults are bite 100%, laceration 25%, scratch 7%, with death in 2–3 in-game days. That is a survival-game clock, not a 40-minute deployment clock. Why:
 
 - A second invisible death timer fights the extraction loop. The player already has bleeding, pain, hunger and thirst; a fifth clock that only a rare loot item can pause is a different game.
 - The reanimation rule already makes death physical. The bite virus should arrive with the system that lets a player manage it, not before.
