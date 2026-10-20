@@ -87,7 +87,7 @@ Examples:
 
 ## 6. Bleeding, pain, fracture
 
-**Bleeding** is the sum of the wounds, capped at 3.0 HP/s. A bandage stops light bleeding and slows a deep wound; a deep or lodged wound needs a stitch to stop. A bandage goes dirty after 8 minutes and must be replaced. Light wounds cannot kill alone from full health; deep and lodged wounds can. This replaces the flat 1 HP/s in [[Idea - Combat Frame]] §5.
+**Bleeding** is the sum of the wounds, capped at 3.0 HP/s. A bandage stops the bleeding on any wound; a deep or lodged wound is not closed, so it re-opens when the bandage goes dirty after 8 minutes or is removed. A stitch closes it. Light wounds cannot kill alone from full health; deep and lodged wounds can. This replaces the flat 1 HP/s in [[Idea - Combat Frame]] §5.
 
 **Pain** is the sum of the wounds, capped at 100.
 
@@ -112,7 +112,7 @@ Painkillers subtract 30 for 5 minutes. Pain does not decay while a wound is untr
 
 | Item | Time | Does | Notes |
 |---|---|---|---|
-| Bandage | 2.0 s | Stops light bleed; slows deep | Dirty after 8 min |
+| Bandage | 2.0 s | Stops bleeding; a deep wound re-opens when the bandage goes dirty | Dirty after 8 min |
 | Disinfectant | 2.0 s | Prevents bacterial infection for 15 min | Pain +5 |
 | Suture needle | 4.0 s | Closes deep/lodged after extraction | Consumed |
 | Needle and thread | 5.0 s | Same, +10 pain | Consumed |
@@ -202,11 +202,11 @@ This is the sink the open server needed. [[Idea - Raid Frame]] removed the serve
 1. Bullet, torso, 50 → lodged bullet; bleed 1.8.
 2. Bullet, limb, 35 → deep wound; bleed 1.5.
 3. Blade, arm, 30 → deep wound.
-4. Blunt, arm, 30 → fracture.
+4. Blunt, arm, 50 → fracture; blunt, arm, 42 → contusion.
 5. Fall, leg, 25 studs → fracture.
 6. Infected scratch, torso, 8 → scratch.
 7. Infected bite, hand, 12 → bite.
-8. Bandage on a deep wound → bleed 0, still deep; stitch closes it.
+8. Bandage on a deep wound → bleed 0, still deep; dirty at 8 min → bleed returns; stitch closes it.
 9. Splint on a leg fracture → walk ×0.8, no sprint.
 10. Dirty bandage at 10 min → infected.
 11. Pain 60 → aim sway 40%, stamina regen −30%.
