@@ -71,7 +71,10 @@ Held, not in this order:
 
 ## Progress
 
-- [ ] v1 locomotion: Idle, Walk, Jog, Sprint
+- [x] v1 locomotion: Idle, Walk, Jog, Sprint
+  - 2026-10-20: `out/ND_Movement_v1.rbxm` (4 KeyframeSequences) and `out/manifest.txt` written; Lune export verify PASS.
+  - Loop seam 0.000°, stance slide ≤0.032 studs, sole below floor 0.000, head pitch within ±3°, 0 IK clamps.
+  - Review scene: `NoDawn_Movement.blend`; static part-CFrame preview `blender/static_preview.py`; `out/jog_cycle.gif`.
 - [ ] v1 remainder: SprintStop, CrouchIdle, CrouchWalk, Jump, Fall, LandSoft, LandHard, Vault, Mantle, Slide
 - [ ] v2
 - [ ] v3
