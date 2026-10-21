@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, overview]
-updated: 2026-10-18
+updated: 2026-10-21
 ---
 # Project Overview
 
@@ -21,7 +21,7 @@ Back to [[No Dawn - Home]]
 | `ServerScriptService` | One server Script (`Main`) and the services: profiles (PlayerDataService, ProfileSessions, ProfileRepository, Migrations), InventoryService / InventoryTx, SurvivorService, EconomyService, DamageService, RemoteRouter + RequestGuard, interaction and NPC services |
 | `ReplicatedStorage.Shared` | Config (Items, Inventory, Occupations, Attributes, Appearance, Vendors, World, Ambience) and pure rules (grid/inventory rules, TradeRules, WorldClock) |
 | `StarterPlayer` client | `ClientMain` and controllers: CreationScreen, InventoryScreen, VendorScreen, SessionScreen, ScreenManager, WorldController (night lighting, lamps), AmbienceController (soundscape) |
-| `ServerStorage.UnitTest` | Unit suite (137 tests); run `RunUnitTest()` on a playtest server |
+| `ServerStorage.UnitTest` | Unit suite (150 tests); run `RunUnitTest()` on a playtest server |
 | `ServerStorage.DevTools` | Edit-time tools only: **HubBuilder** (Kit + Sections), HubAssets (generated meshes, foliage, NPC gear), PropTools, SectionGate, LeakProbe, AppearanceLibrary, and the dated backups |
 | `Workspace.Hub` | The built hub. **Never edit it by hand**: a rebuild replaces it. Change the HubBuilder instead |
 

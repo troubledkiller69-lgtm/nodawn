@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, phase1]
-updated: 2026-10-18
+updated: 2026-10-21
 ---
 # Phase 1 — Game Systems
 
@@ -21,7 +21,8 @@ Order built: A → B → C → E1 → D → E2 → F → G (E1 was moved ahead o
 | G. Integration and acceptance | 20 acceptance tests, duplicate-system audit, perf check, Phase 2 readiness | Done |
 
 ## Tests
-- **Unit suite: 137/137 passing** (latest run during the realism pass; 125 at the Phase 1 report, then WorldClock tests).
+- **Unit suite: 150/150 passing** (latest run 2026-10-21 with the Dollars change; 125 at the Phase 1 report, then
+  WorldClock, HitZones and Money tests).
 - **Acceptance: 15 passed, 5 partial, 0 failed.** Partial: #5 failed-load handling (unit only), #12 overweight
   (unit only), #15 cross-player access (one client only), #17 gamepad (never driven with a real controller),
   #20 DataStore on a published server.

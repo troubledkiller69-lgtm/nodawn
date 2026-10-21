@@ -105,6 +105,10 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   `workspace.Terrain` swapped for a stub that reads through and drops writes, Atmosphere and Surface skipped) and
   diff part keys against the live hub. Key rotations by their vectors, not Euler angles (`-0,180` and `0,-180` are
   the same), and compare NPCs as whole models: live limbs settle and accessory welds convert.
+- **A module whose `require` failed stays failed for the whole Studio session.** So a red test run in Edit mode
+  (`RunUnitTest(filter)`, before the module under test exists) must run a fresh clone of the case under a new name,
+  or the real case stays broken. Run the green check as the full suite on a playtest server: it starts with an
+  empty require cache.
 - **`py -3.14` is not on Lando's machine.** Plain `python` (3.11) there has Pillow.
 - **Studio plugins cloud_4771536187 and cloud_7352299243 throw errors in every playtest** (a shop/trading/chat UI kit,
   a "Base Qi" thumbnail GUI). They are not in the place; ignore them when judging the game's console.

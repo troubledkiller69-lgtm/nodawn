@@ -198,6 +198,18 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   by any code in this pass; source not traced.
 - Captures: `Screenshots/readability`, before and after from the same camera positions.
 
+## Dollars in the UI (2026-10-21)
+- The 2026-10-20 currency ruling, implemented. `Config.Economy`: CurrencyName "Dollars", CurrencySymbol "$",
+  CurrencyCode "USD" (CurrencyShort "CH" removed). New `Shared.Util.Money.format(amount)` -> "$1,250" (whole
+  dollars, comma groups, "-$45" for negatives); the HUD, inventory, survivor creator and vendor counter all format
+  through it. Comments in Items, Vendors, TradeRules and SurvivorService and two test names now say Dollars.
+- Ruling: `wallet.chits`, `Economy.StartingChits` and `Economy.MaxChits` keep their names until the schema pass
+  (Open Items) — cost if wrong: none; no player ever sees them.
+- Backup: DevTools.RuntimeBackup_20261021 (the 11 touched modules, each with an OriginalPath attribute).
+- Tests: new `UnitTest.Cases.Money_Test` (4 cases) written first and seen failing (module missing), then the full
+  suite on a playtest server: 150/150 passed. The playtest HUD read "$400". Console clean apart from the known
+  plugins.
+
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
   pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.

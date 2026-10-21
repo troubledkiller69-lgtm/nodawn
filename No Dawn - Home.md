@@ -15,7 +15,7 @@ updated: 2026-10-21
 
 | Area | State |
 |---|---|
-| Phase 1 systems (A–G) | Done. Unit tests 137/137. Acceptance 15 passed, 5 partial, 0 failed |
+| Phase 1 systems (A–G) | Done. Unit tests 150/150. Acceptance 15 passed, 5 partial, 0 failed. Currency shown as Dollars ($) |
 | Hub | 10,795 parts, 122 lights, 0 text, 59 NPCs. Realism v2, v3, Stage 4 vehicles and the readability pass done |
 | Stage 4 | Bus, pickup and wreck built at real scale; gates and paths verified. Captures outstanding |
 | Blocking | The place is not saved or published — the latest work lives only in the open Studio session. The Studio MCP is on |
