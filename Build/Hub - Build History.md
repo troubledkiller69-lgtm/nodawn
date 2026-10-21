@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, hub, history]
-updated: 2026-10-18
+updated: 2026-10-21
 ---
 # Hub — Build History
 
@@ -65,3 +65,33 @@ The bus, pickup and wrecked sedan were toy-sized (the bus was 13.5 studs; a real
 ![[pickup_side_yard.jpg|600]]
 
 More shots: `Screenshots/stage4` (bus close-ups, pickup stretch comparison).
+
+## 2026-10-21: readability pass
+A first-person walk from the spawn plaza found the lighting upside down: the garage and the cell-block door were
+the best-lit things in the yard, while the vendor doors, the lockers and the way out to the gate were among the
+darkest. Three objects also rendered as black slabs. Everything below is HubBuilder code; one rebuild.
+- **Field gate:** each leaf's `LeafFrame` was a solid 0.3-stud Metal box over the chain-link, so the open leaves
+  read as two black walls. It stays as the leaf's invisible collider; a painted tube frame (stiles, three rails, a
+  brace) now goes round the wire, and you see through it.
+- **Vault terminals:** painted steel instead of near-black DiamondPlate, and the screen throws a small green glow.
+- **Bus:** the stretched livery on the band above the windows read as scrawled lettering. Welded plates cover it,
+  matching the barricaded lower sides.
+- **Light hierarchy:** floods under both vendor awnings, the Services canopy, the field-gate header (one per
+  apron) and the main-gate gantry; the main-gate frames are painted so the gate reads under them. Measured from
+  the same camera positions: vendor door aprons +42–44%, armory doorway +132%, main gate +95–110%, its apron +100%.
+- **Vendor rooms:** the armory's DiamondPlate partition (a black wall from the door) is olive-drab painted steel,
+  with a gunmetal dado and a yellow-and-black line across the queue lane; the quartermaster's customer side has an
+  institutional-green dado and a notice board of blank notes. Both windows got a brighter warm light and a caged
+  lamp either side.
+- **People:** the pointing survivor at the south bench stood 0.7 studs from the fallback spawn with his arm through
+  the seated man's chest; he now talks from the bench end. Both window queuers moved fully outside the prompt zone.
+- Gates and numbers in [[Records/Realism Ledger]]. Hub 10,795 parts, 122 lights, 0 text.
+
+![[before_spawn_east_vendors.jpg|600]]
+![[after_spawn_east_vendors.jpg|600]]
+![[before_main_gate.jpg|600]]
+![[after_main_gate.jpg|600]]
+![[after_field_gate_leaf.jpg|600]]
+![[after_armory_window.jpg|600]]
+
+More shots: `Screenshots/readability` (quartermaster window, vault terminal, bus band, the gate leaf before).

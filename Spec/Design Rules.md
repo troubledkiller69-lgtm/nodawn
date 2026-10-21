@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, rules]
-updated: 2026-10-18
+updated: 2026-10-21
 ---
 # Design Rules (standing preferences)
 
@@ -15,7 +15,7 @@ Back to [[No Dawn - Home]]
 | **Ground is terrain; no pebble scatter** | Terrain dirt, mud and grass were liked. A 2,000-piece rock scatter was rejected. A few big boulders are wanted. |
 | **Always night** | A permanent foggy, rainy night (day-for-night rendering). Don't bring back day/night or weather cycling unless asked. |
 | **A populated hub** | Fill it with people going about their lives: the med bay, courtyard, camp and farm all have NPCs. |
-| **"Too much going on"** | Earlier feedback: declutter the exterior and give the yard a clear focal hierarchy (vendors, lockers, gate first). Still to do. |
+| **"Too much going on"** | Earlier feedback: declutter the exterior and give the yard a clear focal hierarchy (vendors, lockers, gate first). The hierarchy is carried by light, never signs: the destinations are the brightest thresholds (done 2026-10-21). Declutter still to do. |
 | **The game is called No Dawn** | A UI pass to fit the name is wanted (not started). |
 
 How work is divided: code and UI are Nyx's; meshes, textures, animation clips and front-end visuals go to Claude as a work order ([[Working Agreement]]). Studio captures and camera restore still apply ([[Lessons|Lessons]]).

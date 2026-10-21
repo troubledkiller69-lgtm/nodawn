@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Open Items
@@ -11,8 +11,7 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 
 ## Blocking
 
-- [ ] **Turn on "Enable Studio as MCP server".** Studio → Assistant → … → Manage MCP Servers. Until it is on, nothing can read or write the place from outside Studio, so no code work can start. See [[Toolchain]].
-- [ ] **Save the place.** The latest hub work exists only in the open Studio session. Publish when ready.
+- [ ] **Save the place.** The latest hub work, including the 2026-10-21 readability rebuild, exists only in the open Studio session. Publish when ready.
 - [ ] Set `Lighting.Technology = Future` by hand (Explorer → Lighting → Properties). Scripts can't set it.
 - [ ] Review or remove the Studio plugins `cloud_4771536187` and `cloud_7352299243`. They inject GUI scripts and errors into every playtest.
 
@@ -32,8 +31,9 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 
 ## Hub backlog
 
-- [ ] Interiors: the quartermaster's customer side (bare walls), plus armory, Services, cells and medical.
-- [ ] Declutter the exterior and set a focal hierarchy so vendors, lockers and the gate read first.
+- [ ] Interiors: the vendor customer sides now have a dado, window lamps and (quartermaster) a notice board, but are still thin. Then Services, cells and medical.
+- [ ] Declutter the exterior. The light hierarchy is done (2026-10-21: vendors, Services and both gates are the lit destinations); the clutter is not.
+- [ ] Three cell-block `ScreenGlow` monitor faces and one ivy mesh had been deleted by hand in the place; the 2026-10-21 rebuild restored them from code. If they were removed on purpose, take them out of `Sections.CellBlock` / `Sections.Nature`.
 - [ ] The No Dawn UI pass (not started).
 - [ ] Small: `Kit.debris` reads as blocky; `HubAssets.Bus` and `Pickup` are unused; `DevTools.KitDraft` and `SectionsDraft` match live code and can be deleted.
 - [ ] Living hub steps 2–5 (NPC routines, VFX, crows, events), parked. Favour sound and motion over more props.

@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, home]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # No Dawn — Home
@@ -11,14 +11,14 @@ updated: 2026-10-20
 - Scale: 1 stud ≈ 0.28 m
 - Source of truth: the place itself. This vault is the record, versioned at [github.com/troubledkiller69-lgtm/nodawn](https://github.com/troubledkiller69-lgtm/nodawn). The place itself is still not under git.
 
-## Status at a glance (2026-10-18)
+## Status at a glance (2026-10-21)
 
 | Area | State |
 |---|---|
 | Phase 1 systems (A–G) | Done. Unit tests 137/137. Acceptance 15 passed, 5 partial, 0 failed |
-| Hub | 10,693 parts, 109 lights, 0 text, 59 NPCs. Realism v2, v3 and Stage 4 vehicles done |
+| Hub | 10,795 parts, 122 lights, 0 text, 59 NPCs. Realism v2, v3, Stage 4 vehicles and the readability pass done |
 | Stage 4 | Bus, pickup and wreck built at real scale; gates and paths verified. Captures outstanding |
-| Blocking | The place is not saved or published — the latest work lives only in the open Studio session |
+| Blocking | The place is not saved or published — the latest work lives only in the open Studio session. The Studio MCP is on |
 | Next | Stage 4 captures, Stage 5 verify, then interiors, declutter, the No Dawn UI |
 
 ## Start here

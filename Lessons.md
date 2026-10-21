@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, lessons]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Lessons
@@ -94,5 +94,17 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **A blank white `screen_capture` with only the view cube drawn means Studio isn't rendering its viewport**
   (2026-10-18, after a long idle: window minimized or screen locked). `execute_luau` still works. Don't retry
   captures in a loop: keep doing the non-visual work and ask the user to bring Studio to the front.
+- **`execute_luau` output is capped at 100,000 characters** (2026-10-21). The Kit (155k) came back cut short with
+  no warning. Return big sources in `string.sub` chunks and check the total against `#Source`.
+- **A long call can outlast the MCP and still finish.** A full `HubBuilder.build()` came back "Target is not
+  reachable (ExecuteLuau.runCode, DMN_ID_EDIT)" but completed. Check `Workspace.Hub` (part count, a part the change
+  adds) before running it again.
+- **`StudioMCP.exe` needs ~10 s after starting to see Studio.** An immediate `list_roblox_studios` returns an empty
+  list even with the toggle on. Wait, then list.
+- **Find hand edits in `Workspace.Hub` before a rebuild.** Build the current code into a detached folder (Ground's
+  `workspace.Terrain` swapped for a stub that reads through and drops writes, Atmosphere and Surface skipped) and
+  diff part keys against the live hub. Key rotations by their vectors, not Euler angles (`-0,180` and `0,-180` are
+  the same), and compare NPCs as whole models: live limbs settle and accessory welds convert.
+- **`py -3.14` is not on Lando's machine.** Plain `python` (3.11) there has Pillow.
 - **Studio plugins cloud_4771536187 and cloud_7352299243 throw errors in every playtest** (a shop/trading/chat UI kit,
   a "Base Qi" thumbnail GUI). They are not in the place; ignore them when judging the game's console.

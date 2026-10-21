@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, record, ledger]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # SDD ledger — plan: tasks/todo.md (Realism pass v2)
@@ -160,6 +160,43 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   NightLamp 27 unchanged.
 - Captures: not taken. After the usage-limit break every screen_capture came back blank white (only the view cube
   drawn), even from the user's own view, so the viewport was not rendering. Visual check still owed.
+
+## Readability pass (2026-10-21)
+- Backups: DevTools.SectionsBackup_20261021 (all 13 modules), KitBackup_20261021 (154,752 chars),
+  TerrainBackup_20261021 (TerrainRegion of the compound, 89 x 17 x 85 cells from cell (-44, -6, -44)). Edited on
+  KitDraft and SectionsDraft (Yard, Admin, Supply, FrontField, People, Detail), test-built, then promoted with
+  UpdateSourceAsync. Changed: Kit (palette SteelPainted, Kit.busAsset band), Yard, Admin, Supply, FrontField,
+  People, Detail.
+- Pre-rebuild hand-edit check: the current code built into a detached folder (Ground with its terrain stubbed,
+  Atmosphere and Surface skipped) matched the live Workspace.Hub part for part, except four parts the code builds
+  that the place no longer had: the three CellBlock ScreenGlow monitor faces (with their lights) at the cell-block
+  desk and one Nature ivy mesh at (-97, 7, -80). Someone deleted them by hand; the rebuild restored them. Nothing
+  hand-added existed, so nothing was lost. Rechecked against the backups just before the rebuild: unchanged.
+- Ruling: grey painted steel (Plastic) is a palette entry, `SteelPainted` — the Stage 2 Metal ruling applied to
+  frames and housings, since Metal and DiamondPlate render near-black at night — cost if wrong: painted gate frames
+  look less like galvanised pipe up close.
+- Ruling: the field gate's solid LeafFrame stays as the invisible collider and a decorative tube frame goes round
+  the wire (the Stage 2 invisible-collider pattern) — cost: none; collision identical.
+- Ruling: destinations get light, not signs: floods (no shadows, decorative heads, NightLamp-tagged) at the vendor
+  doors, the Services canopy, both field-gate aprons and the main gate. Garage and cell-block lighting were left
+  alone; the destinations were raised past them — cost if wrong: perf, 13 more lights, none shadow-casting.
+- Ruling: the vendor rooms differ by colour and furniture, not text — armory olive partition, gunmetal dado, hazard
+  line; quartermaster green dado, blank-note board (paper is flat, so flat notes are allowed) — cost: none.
+- Ruling: the bus band is plated over rather than re-textured, from its own Random(40418), so the existing plates
+  keep their look — cost if wrong: the bus reads more like a wall above the windows.
+- Gates (backup SectionsBackup_20261021, oldKit KitBackup_20261021): every section "shared rng: unchanged",
+  collidable parts removed 0 / added 0 except People (the three moved NPCs). Admin PASS. Yard REVIEW = +2
+  NightLamp SpotLights, 12 "buried" = the new tube frame inside its own invisible LeafFrame. Supply REVIEW = +4
+  NightLamp PointLights (window lamps). FrontField REVIEW = +2 SpotLights, 7 "buried" = bus BandPlates inside the
+  bus asset's own bounds collider. Detail REVIEW = +3 SpotLights. People REVIEW = Survivor6, 18, 20 moved; buried
+  = their own accessory handles. All "buried" flags are visuals inside their own prop (Stage 2 ruling).
+- LeakProbe Yard 70,180 sweeps, Supply 26,980: 0 deeper, 0 earlier.
+- Lighting compared before and after the rebuild (Atmosphere rewrites it): unchanged.
+- Build: 10,795 parts (+102 from this pass, +4 restored), 122 lights; Vendor 2, VaultTerminal 2, HubSpawn 8,
+  Npc 52, NpcStill 7, NightLamp 38; 0 text. No runtime code changed, so no unit run.
+- Console after the rebuild: "ContentId rbxassetid://203785492 failed: asset type does not match" — not referenced
+  by any code in this pass; source not traced.
+- Captures: `Screenshots/readability`, before and after from the same camera positions.
 
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
