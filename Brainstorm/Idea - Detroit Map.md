@@ -1,10 +1,12 @@
 ---
 tags: [idea, raids, map, detroit]
-status: shaping
-updated: 2026-10-20
+status: decided
+updated: 2026-10-21
 ---
 
 # Idea - Detroit Map
+
+> **Decided 2026-10-21.** Eastern Market + the Cut on the real grid is the first raid map, built from OpenStreetMap data in its own place: [[Map - How It Is Built]]. The frame is 1,600 × 3,500 studs (Mack Avenue to the Fisher Freeway), not 3,200, so both short edges are real edges. The extract, infected and player-count numbers below are still open in [[Open Items]].
 
 **The pitch:** a 1:1 crop of Eastern Market and the Dequindre Cut, overgrown, at night, in the rain. Low brick sheds, warehouse roofs, a sunken rail corridor, and a prairie eating the blocks east of St. Aubin. The grapple is the roof route. The infected are the population.
 

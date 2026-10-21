@@ -53,6 +53,21 @@ These need a published place, a second client, or hardware.
 - **Signs.** All 71 removed on 2026-10-17. Handoff §4.9 asked for signage; the ruling overrides it.
 - **Day/night cycling.** The hub is a permanent foggy night. Living Hub step 5 contradicts this and is obsolete.
 
+## Raid map — Detroit
+
+See [[Map - How It Is Built]].
+
+- [ ] **Create the raid place** (Studio → View → Asset Manager → Places → right-click → Add New Place) and open it. Scripts can't create places.
+- [ ] Install `DevTools.MapBuilder` into it and run the first full build, then captures from street level, a roof and the Cut.
+- [ ] Copy `ServerStorage.DevTools.HubAssets` from the hub into the raid place (Studio copy and paste between the two windows): the cars, pickup, dumpsters, HVAC, foliage and razor coils the props pass reuses. Meshes can't be moved by script.
+- [ ] Overgrowth pass by age band, once [[Work Order - Detroit Overgrowth Meshes]] lands.
+- [ ] Props pass: wrecked cars, dead utility poles and lines, dumpsters, market stalls in the sheds, barricades where streets meet the boundary.
+- [ ] The Cut's other exits: the greenway ramps (data exported) and stairs beside each bridge.
+- [ ] 15–18 enterable buildings with real interiors (stair core, upper floor); the rest stay sealed shells.
+- [ ] Gameplay markers: 24 spawns in 8 clusters, 5 extracts (3 active per server), ~500 loot nodes.
+- [ ] Credits UI: "Map data © OpenStreetMap contributors" (ODbL). The world itself stays textless.
+- [ ] Save and publish the raid place.
+
 ## Phase 2 prerequisites
 
 - [ ] Publish first, then clear the multi-client tests above.

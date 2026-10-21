@@ -18,6 +18,7 @@ updated: 2026-10-21
 | Phase 1 systems (A–G) | Done. Unit tests 150/150. Acceptance 15 passed, 5 partial, 0 failed. Currency shown as Dollars ($) |
 | Hub | 10,795 parts, 122 lights, 0 text, 59 NPCs. Realism v2, v3, Stage 4 vehicles and the readability pass done |
 | Stage 4 | Bus, pickup and wreck built at real scale; gates and paths verified. Captures outstanding |
+| Raid map | Detroit (Eastern Market + the Cut) from OpenStreetMap, 1,600 × 3,500 studs. Builder written and dry-run (~38k parts); waiting on the raid place. [[Map - How It Is Built]] |
 | Blocking | The place is not saved or published — the latest work lives only in the open Studio session. The Studio MCP is on |
 | Next | Stage 4 captures, Stage 5 verify, then interiors, declutter, the No Dawn UI |
 
@@ -38,6 +39,7 @@ updated: 2026-10-21
 - [[Hub - Build History]] — every pass in order
 - [[Phase 1 - Game Systems]] — milestones A–G, tests, acceptance results
 - [[Toolchain]] — where the code lives outside Studio, Rojo, and the Studio MCP bridge
+- [[Map - How It Is Built]] — the Detroit raid map: frame, OpenStreetMap pipeline, MapBuilder sections
 
 **What's next**
 - [[Open Items]] — the live list, and nothing else

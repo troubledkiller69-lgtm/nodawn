@@ -109,6 +109,18 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   (`RunUnitTest(filter)`, before the module under test exists) must run a fresh clone of the case under a new name,
   or the real case stays broken. Run the green check as the full suite on a playtest server: it starts with an
   empty require cache.
+- **Parts cap at 2,048 studs a side.** The raid map is 3,500 long: frame walls, fences and long path segments must be
+  built in pieces. Check the longest generated segment before building.
+- **`WriteVoxels` regions must sit on the 4-stud lattice.** Put a terrain grid's origin on a multiple of 4 (the map's
+  first grid started at Z -1910 and would have misaligned every chunk).
+- **Dry-run a section in a detached folder** to catch runtime errors without touching a place: build into a
+  `Folder` that is never parented to Workspace, count, destroy. Never for sections that write terrain or Lighting.
+- **The shell tool turns `\\n` written in a heredoc into a real newline**, which breaks generated Lua strings and
+  Windows paths (`\v` became a tab). Write generator scripts with the file tool, or use `string.char(10)` and forward
+  slashes.
+- **OpenStreetMap: one Overpass query, from a mirror.** The main server answers scripted queries with 406 (send a
+  User-Agent and POST) or "at capacity"; `maps.mail.ru/osm/tools/overpass/api/interpreter` returned the district
+  (5 MB) in one go. Credit "OpenStreetMap contributors" (ODbL) in the game's credits.
 - **`py -3.14` is not on Lando's machine.** Plain `python` (3.11) there has Pillow.
 - **Studio plugins cloud_4771536187 and cloud_7352299243 throw errors in every playtest** (a shop/trading/chat UI kit,
   a "Base Qi" thumbnail GUI). They are not in the place; ignore them when judging the game's console.
