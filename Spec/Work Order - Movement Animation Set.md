@@ -12,7 +12,7 @@ Back to [[Open Items]] · Source design: [[Idea - Movement and Hitbox Reconciled
 TASK: Third-person body clip set for No Dawn movement, stages v1 to v3.
 TARGET: Roblox Studio, stock blocky R15 (content/avatar/characterR15.rbxm). Authored in Blender 5.2.
 DELIVERABLE: animation/out/ND_Movement_<stage>.rbxm (KeyframeSequences), animation/NoDawn_Movement.blend,
-             animation/out/manifest.txt. Folder sits next to the vault, outside its git repo.
+             animation/out/manifest.txt. Folder is Desktop\No Dawn\animation, outside the vault and its git repo.
 SCALE: 1 stud = 0.28 m. Rig 5.0 studs tall; hip pivot 2.0 above the floor; leg hip-to-sole 2.0
        (thigh 0.822, shank 0.926, ankle-to-sole 0.252).
 BUDGET: baked 30 fps, linear easing, 15 joints. One KeyframeSequence per clip.
