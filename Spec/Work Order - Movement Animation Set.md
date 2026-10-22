@@ -1,7 +1,7 @@
 ---
 tags: [nodawn, workorder, animation]
 status: in-progress
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Work Order - Movement Animation Set
@@ -72,9 +72,20 @@ Held, not in this order:
 ## Progress
 
 - [x] v1 locomotion: Idle, Walk, Jog, Sprint
-  - 2026-10-20: `out/ND_Movement_v1.rbxm` (4 KeyframeSequences) and `out/manifest.txt` written; Lune export verify PASS.
-  - Loop seam 0.000°, stance slide ≤0.032 studs, sole below floor 0.000, head pitch within ±3°, 0 IK clamps.
-  - Review scene: `NoDawn_Movement.blend`; static part-CFrame preview `blender/static_preview.py`; `out/jog_cycle.gif`.
-- [ ] v1 remainder: SprintStop, CrouchIdle, CrouchWalk, Jump, Fall, LandSoft, LandHard, Vault, Mantle, Slide
+  - 2026-10-20: first export, 4 clips.
+  - 2026-10-21: rebuilt on the real R15 meshes against human gait data (Winter walk, Novacheck run), with joint
+    limits, balance and real-mesh floor contact gated. Walk 3.40 steps/s, step 1.76; Jog 3.00, step 3.33, bob 8.5 cm;
+    Sprint 3.73, step 5.36.
+- [x] v1 remainder: SprintStop, CrouchIdle, CrouchWalk, Jump, Fall, LandSoft, LandHard, Vault, Mantle, Slide
+  - 2026-10-21: `out/ND_Movement_v1.rbxm` holds all 14 KeyframeSequences; Lune verify PASS (max error 7.7e-6);
+    `out/manifest.txt` rewritten with the notes for code.
+  - Every ACCEPT line met (seam 0.000°, stance slide 0.000, no sole below the floor, head pitch inside ±3°), plus the
+    realism gates. Numbers, gates and design rulings: [[Realism Ledger#Movement animation set v1 (2026-10-21)]].
+  - Studio: every clip plays on the stock R15 with all 15 joints driven and no warnings, on a Motor6D rig and on the
+    AnimationConstraint rig this place gives players.
+  - Left for a human: insert the rbxm and Save to Roblox for asset ids (Pipeline step 4).
+
+![[nd_movement_v1_all_clips.jpg|900]]
+
 - [ ] v2
 - [ ] v3
