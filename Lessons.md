@@ -147,6 +147,12 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   and still had Shed 3 as 16 floating beams: the special builders only read rectangle roofs. Before a rebuild that
   should touch few buildings, store a signature per building (part count, position and volume sums) and diff it
   afterwards. The signature misses pure rotations; check those directly.
+- **A full terrain voxel draws its face about 2 studs past its cell** (centre + occupancy × 4, sideways too). Next
+  to a part wall that means terrain pokes through. Occupancy can pull a face back, but a thin row over air renders or
+  not depending on its neighbours (the same column was solid in 688 places and a hole in 310), and where a floor meets
+  solid cells the terrain rounds into a cove about 3 studs high and deep. Empty the cells near the wall instead, keep
+  everything that carries a walking surface full, and cover the gap with a part (the trench apron). Measure with
+  rays filtered to Terrain against rays filtered to the wall, at several heights.
 - **`screen_capture` writes its image into the session's `tool-results` folder** (`mcp-Roblox_Studio-blob-*.jpg`,
   1464×830). Copy that file into `Screenshots/<pass>/` byte for byte; nothing needs re-encoding.
 - **Rooftop captures: stand at the parapet corner.** Eye height 7 studs back from the parapet showed mostly parapet;

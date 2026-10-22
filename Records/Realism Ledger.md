@@ -281,7 +281,15 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   collidable frame wall. Total 38,505 parts, 4 lights. Output clean apart from one ContentId error that predates the
   build.
 - Captures: `Screenshots/detroit` — Adelaide Street at eye height, the roof of Eastern Cold Storage, the Cut at the
-  Division Street bridge. They show terrain bulging in front of the Cut's retaining walls (open item).
+  Division Street bridge. They showed terrain bulging in front of the Cut's retaining walls; fixed the same day
+  (`detroit_cut_division_bridge.jpg` before, `detroit_cut_division_bridge_walls_fixed.jpg` after; the walls' colour
+  fields show for the first time).
+- Ruling: every trench rim gets an **apron**, a concrete strip at street level from the back of the retaining wall to
+  10 studs behind its face (7.6 studs, about 2.1 m), and Ground empties the terrain under it near the rim. Terrain
+  alone can't meet a straight wall cleanly: full voxels draw past their cell, and thin ones over air render or not by
+  their neighbours. Reads as a sidewalk along the Cut and the freeway — cost if wrong: a 2.1 m concrete strip on
+  every rim; it runs under sidewalk slabs, into the four bridge decks and into the slaughterhouse's wall foot and
+  loading dock on the Cut's west rim. The bank's measured fit is in [[Map - How It Is Built]].
 
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema

@@ -56,9 +56,8 @@ These need a published place, a second client, or hardware.
 
 See [[Map - How It Is Built]].
 
-- [ ] The Cut's banks: terrain bulges 1–2 studs in front of the retaining walls on both sides (lumps where lit). Carve the trench-edge cells back behind the wall line in Ground, or thicken the walls toward the trench in Trenches ([[Map - How It Is Built]]).
 - [ ] Judge the parking lots from above: the pavement and dirt cells blend into soft pale blotches at 4-stud resolution (roof capture).
-- [ ] Commit `tools/` in the game repo: MapBuilder, the map pipeline and the 2026-10-21 fixes (`geo.py`, `tolua.py`, `Ground.lua`, `Buildings.lua`, `BuiltGrid.lua`) exist only on disk and in the raid place.
+- [ ] Commit `tools/` in the game repo: MapBuilder, the map pipeline and the 2026-10-21 fixes (`geo.py`, `tolua.py`, `Ground.lua`, `Buildings.lua`, `Trenches.lua`, `BuiltGrid.lua`) exist only on disk and in the raid place.
 - [ ] Import the overgrowth set into the raid place: 38 OBJ, Studio → File → Import 3D, unit Stud ([[Work Order - Detroit Overgrowth Meshes]], delivered 2026-10-21). Meshes can't be uploaded by script.
 - [ ] Overgrowth pass by age band: SurfaceAppearances, pivots from the manifest, LOD swap at 15 m.
 - [ ] Props pass: wrecked cars, dead utility poles and lines, dumpsters, market stalls in the sheds, barricades where streets meet the boundary.
