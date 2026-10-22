@@ -10,7 +10,9 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 ## Studio MCP
 - **SurfaceGui text needs a moment to render.** A `screen_capture` taken right after a rebuild showed blank signs. Never capture in the same batch as a rebuild; render first, then capture. Don't "fix" blank signs before re-capturing.
 - **Very distant aerial captures can time out and drop the MCP bridge.** This happened from 350 studs. Keep overview cameras within ~150 studs of the target. If the bridge drops, check `Get-Process RobloxStudioBeta`, wait ~15 s, then call `list_roblox_studios` again.
-- **`Lighting.Technology` can't be read or written from the plugin context.** Ask the user to set it.
+- **`Lighting.Technology` is deprecated and hidden from the Properties panel** (2026-10-21). It is superseded by
+  `LightingStyle` (Realistic / Soft) and `PrioritizeLightingQuality`, which MCP code can read and write. Future is
+  `Realistic` with quality prioritised; the hub already reads that, and MapBuilder's Atmosphere sets it.
 - **Pathfinding uses coarse voxels and doesn't model jump exploits.** Pair navigation checks with physical probes (PivotTo + MoveTo + Jump).
 - **`execute_luau` keeps one require cache for the whole Studio session.** After editing a module, `require(path)` in a later call can still return the old version, and that applies to every dependency the module requires by path. To get fresh code, require a clone placed beside the original (so relative paths still resolve), or pass freshly required config in explicitly (as `AppearanceLibrary.build(only, config)` does). Verify a just-edited value before trusting a run.
 - **Layered clothing on the blocky R15 body:** layered jackets and overshirts look good (real 3D collars, zips, folds). Layered pants merge the legs into a skirt shape, so pants stay classic. Raw layered assets from `GetObjects` often have no body Attachment; fetch them through `Players:CreateHumanoidModelFromDescription`, which adds it.
@@ -124,6 +126,19 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **`py -3.14` is not on Lando's machine.** Plain `python` (3.11) there has Pillow.
 - **Studio plugins cloud_4771536187 and cloud_7352299243 throw errors in every playtest** (a shop/trading/chat UI kit,
   a "Base Qi" thumbnail GUI). They are not in the place; ignore them when judging the game's console.
+- **Installing modules from disk into a place** (2026-10-21). MCP code can't fetch them: `HttpService` is off in the
+  raid place, and `InsertService:LoadLocalAsset` needs RobloxScript. `rojo build` a one-off project into an `.rbxm`,
+  then Explorer → right-click the parent → Insert → Import Roblox Model. Check every module's `#Source` against the
+  file size afterwards (Rojo turns CRLF into LF, so a CRLF file comes in short by its line count).
+- **Import Roblox Model from a long path inserts an empty `Script`.** Studio got the 8.3 short name `MAPBUI~1.RBX`,
+  didn't recognise `.RBX` and made a Script named after it. Copy the file to a short path first
+  (`%TEMP%\ndmb\MapBuilder.rbxm`).
+- **The open session is not on `C:\`, so the Studio MCP is missing** (2026-10-21). It was registered for the `C:/`
+  project only. It is now also registered (local scope) for the vault folder; a session opened anywhere else
+  starts without the Studio tools.
+- **Run-length rows need non-digit codes.** `Geo.runs` reads `(%d+)(%D)`; the trench grid used digit codes
+  (`"415091560"` is 415×0, 9×1, 56×0), so every row decoded to nothing and Ground sank the whole map to y -25 without
+  an error. Codes are letters now, and Ground asserts every decoded row is `nx` cells long.
 
 ## Asset generation (Claude side)
 - **Blender 5.2 installs headless from pip** (`pip install bpy==5.2.2`, Python 3.13): enough to re-import delivered

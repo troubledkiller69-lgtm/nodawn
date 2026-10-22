@@ -8,6 +8,7 @@ updated: 2026-10-22
 **No Dawn** is a Roblox survival extraction shooter. The hub is a fortified prison modelled on the West Georgia prison from *The Walking Dead*, permanently foggy and rainy. Phase 1 (done) is the hub and everything a player keeps between raids: a persistent profile, survivor creation, a grid inventory, a personal vault, Dollars and two vendors. Phase 2 adds raids, run as separate places.
 
 - Place: `placeholder`, PlaceId **119649394550657**, UniverseId **10771286228**
+- Raid place: `Detroit`, PlaceId **120733035297566**, same universe
 - Scale: 1 stud ≈ 0.28 m
 - Source of truth: the place itself. This vault is the record, versioned at [github.com/troubledkiller69-lgtm/nodawn](https://github.com/troubledkiller69-lgtm/nodawn). The place itself is still not under git.
 
