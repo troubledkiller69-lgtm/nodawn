@@ -124,3 +124,11 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **`py -3.14` is not on Lando's machine.** Plain `python` (3.11) there has Pillow.
 - **Studio plugins cloud_4771536187 and cloud_7352299243 throw errors in every playtest** (a shop/trading/chat UI kit,
   a "Base Qi" thumbnail GUI). They are not in the place; ignore them when judging the game's console.
+
+## Asset generation (Claude side)
+- **Blender 5.2 installs headless from pip** (`pip install bpy==5.2.2`, Python 3.13): enough to re-import delivered
+  OBJ files and render review shots with Cycles on CPU, with no Blender install.
+- **Say linear or sRGB when a spec gives an albedo value.** "Value 0.15" as sRGB is darker than wet asphalt; as
+  linear reflectance it is an ordinary leaf. Ruled linear for the overgrowth set ([[Realism Ledger]]).
+- **Coplanar double-sided cards render black in Cycles** when the back copy wins the depth tie. Offset the back copy
+  (0.02 studs); Roblox culls back faces anyway, and the offset also rules out z-fighting.

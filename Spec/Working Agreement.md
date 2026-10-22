@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, process]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Working Agreement
@@ -82,4 +82,3 @@ These are waiting on a handoff, not on code:
 - Grapple: attach, swing loop, release. Three clips.
 - Surface footstep sets and gear rustle. About 110 files.
 - Stance-specific silhouettes for crouch and prone, once the clips exist.
-- Detroit overgrowth meshes: tree of heaven, sumac, knotweed, mulberry, vine curtains, grass ([[Work Order - Detroit Overgrowth Meshes]]).
