@@ -82,7 +82,7 @@ Held, not in this order:
   - Every ACCEPT line met (seam 0.000°, stance slide 0.000, no sole below the floor, head pitch inside ±3°), plus the
     realism gates. Numbers, gates and design rulings: [[Realism Ledger#Movement animation set v1 (2026-10-21)]].
   - Studio: every clip plays on the stock R15 with all 15 joints driven and no warnings, on a Motor6D rig and on the
-    AnimationConstraint rig this place gives players.
+    AnimationConstraint rig that `CreateHumanoidModelFromDescription` builds in this place.
   - Left for a human: insert the rbxm and Save to Roblox for asset ids (Pipeline step 4).
 
 ![[nd_movement_v1_all_clips.jpg|900]]

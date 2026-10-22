@@ -139,6 +139,17 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **Run-length rows need non-digit codes.** `Geo.runs` reads `(%d+)(%D)`; the trench grid used digit codes
   (`"415091560"` is 415×0, 9×1, 56×0), so every row decoded to nothing and Ground sank the whole map to y -25 without
   an error. Codes are letters now, and Ground asserts every decoded row is `nx` cells long.
+- **Rigs built from a HumanoidDescription here have AnimationConstraint joints, not Motor6Ds** (2026-10-21).
+  `CreateHumanoidModelFromDescription` returned 15 `AnimationConstraint`s, 14 `BallSocketConstraint`s and no `Motor6D`
+  (the avatar joint upgrade). The Animator drives `AnimationConstraint.Transform` exactly as it drives a Motor6D, so
+  clips play unchanged; find joints by `Attachment1.Parent`, not `Part1`.
+- **`RegisterKeyframeSequence` ids load asynchronously.** Right after `LoadAnimation`, `track.Length` is 0 and the joints
+  sit at rest. Wait for `Length > 0` before sampling poses.
+- **Exact pose checks need one fresh rig per clip.** Stopping a track and loading the next on the same Animator, with
+  only `StepAnimations(0)` between, left the stopped clip blended into the next one's samples (rotation-matrix errors
+  up to 1.1). On fresh rigs the same clips matched to 1e-4.
+- **Throwaway rigs go in a WorldModel under CoreGui.** Animations play there, nothing is added to the place or sent to
+  Team Create collaborators, and nothing has to be staged far from the hub.
 
 ## Asset generation (Claude side)
 - **Blender 5.2 installs headless from pip** (`pip install bpy==5.2.2`, Python 3.13): enough to re-import delivered
@@ -147,3 +158,9 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   linear reflectance it is an ordinary leaf. Ruled linear for the overgrowth set ([[Realism Ledger]]).
 - **Coplanar double-sided cards render black in Cycles** when the back copy wins the depth tie. Offset the back copy
   (0.02 studs); Roblox culls back faces anyway, and the offset also rules out z-fighting.
+- **R15 thighs are a stud thick and touch at rest.** The legs can't cross or stack sideways, so poses that need it are
+  out: the vault is a one-hand tuck vault, the slide keeps the hips 0.5 above the floor, crouches splay the knees 8–15°.
+- **Roll a toed-out foot about its own heel and toe edges.** Pivoting a yawed foot about the un-yawed edge slid the
+  planted foot 0.12 studs a step; the pivot now includes the yaw.
+- **The R15 shin overlaps its own foot block.** Shin vertices inside the foot's footprint are hidden by the foot, so the
+  floor check skips them and counts only visible dig.

@@ -85,7 +85,7 @@ See [[Map - How It Is Built]].
 - [ ] Movement animation set: v1 delivered 2026-10-21 (14 clips, `Desktop\No Dawn\animation\out\ND_Movement_v1.rbxm`); v2 and v3 next with Claude ([[Work Order - Movement Animation Set]]).
 - [ ] Insert `ND_Movement_v1.rbxm` in Studio and Save to Roblox for the 14 asset ids (human step).
 - [ ] Wire the v1 clips (Nyx), per `out/manifest.txt`: playback speed = speed / `AuthoredSpeed`; footsteps from the `Footstep` markers or `StepLength`; HumanoidRootPart follows `RootPath` on SprintStop, Jump, Vault and Mantle, plus (h − authored) on y for other obstacle heights; the moving crouch sits 1.16 below standing, not 1.4.
-- [ ] Player characters here have `AnimationConstraint` joints, not `Motor6D` (avatar joint upgrade). Code that looks joints up as `Motor6D` (aim, head look, ragdoll) finds none.
+- [ ] Check the joint type on spawned characters in a playtest. A rig built from a `HumanoidDescription` here comes out with `AnimationConstraint` joints, not `Motor6D` (avatar joint upgrade, seen 2026-10-21), so joint code (aim, head look, ragdoll) must not assume `Motor6D`.
 
 ## Phase 2 — design decisions
 

@@ -241,9 +241,10 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 - Studio check: every clip rebuilt in Studio, played and sampled with `Animator:StepAnimations` on two rigs in a
   CoreGui WorldModel (nothing added to the place). Motor6D copy of the authored R15: every joint Transform within
   1.2e-4 of the authored pose and every part within 0.0005 studs of our forward kinematics, so the gates and the
-  Blender review show what Roblox plays. The rig this place gives players (`CreateHumanoidModelFromDescription`) has
-  AnimationConstraint joints, not Motor6Ds (avatar joint upgrade); all 15 joints driven, same transforms. Output clean
-  apart from the known plugins.
+  Blender review show what Roblox plays. A rig built from a HumanoidDescription here
+  (`CreateHumanoidModelFromDescription`) has AnimationConstraint joints, not Motor6Ds (the avatar joint upgrade;
+  Workspace carries `ImprovedAnimationConstraint`); all 15 joints driven, same transforms. Output clean apart from the
+  known plugins.
 - Ruling: footstep stride is the clip's `StepLength` attribute (walk 1.76, jog 3.33, sprint 5.36 studs), not the metre
   strides in [[Idea - Movement and Hitbox Reconciled]]; the R15 leg is 0.56 m, so cadence follows it — cost if wrong:
   footsteps timed off the metre strides fire out of step with the feet.
