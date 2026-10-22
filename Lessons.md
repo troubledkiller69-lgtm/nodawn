@@ -153,6 +153,17 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   solid cells the terrain rounds into a cove about 3 studs high and deep. Empty the cells near the wall instead, keep
   everything that carries a walking surface full, and cover the gap with a part (the trench apron). Measure with
   rays filtered to Terrain against rays filtered to the wall, at several heights.
+- **Import 3D turns OBJ meshes 180° about Y** (2026-10-22). A file's -Z front faces +Z after import, and "Set Pivot
+  to Scene Origin" puts `PivotOffset` at `(cx, -cy, cz)` of the file's bbox centre, which is the file origin. Keep it;
+  `CFrame.new(-bbox_centre)` flips x and z. Check on an asymmetric mesh's vertices (`CreateEditableMeshAsync` on the
+  MeshId) before trusting any pivot formula.
+- **Import 3D follows `mtllib` and uploads the maps it names, per file.** Import copies of the OBJ without their `.mtl`
+  and upload the PNGs once with `upload_image`. All 38 files go in one queue: File → Import, shift-click a range in
+  the file dialog, Start Import. The Import Queue panel docks under the viewport and shrinks `screen_capture` to a
+  strip; close it before capturing.
+- **Screen control in Windows file dialogs:** typing works only in the File name box (the address bar and the file
+  list refuse keys). Type a folder path ending in `\` and press Enter as its own key press to navigate.
+- **In Git Bash on this machine `find` is Windows `find.exe`.** Use PowerShell (`Get-ChildItem -Recurse`) or Python.
 - **`screen_capture` writes its image into the session's `tool-results` folder** (`mcp-Roblox_Studio-blob-*.jpg`,
   1464×830). Copy that file into `Screenshots/<pass>/` byte for byte; nothing needs re-encoding.
 - **Rooftop captures: stand at the parapet corner.** Eye height 7 studs back from the parapet showed mostly parapet;

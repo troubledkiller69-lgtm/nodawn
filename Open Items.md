@@ -58,8 +58,8 @@ See [[Map - How It Is Built]].
 
 - [ ] Judge the parking lots from above: the pavement and dirt cells blend into soft pale blotches at 4-stud resolution (roof capture).
 - [ ] Commit `tools/` in the game repo: MapBuilder, the map pipeline and the 2026-10-21 fixes (`geo.py`, `tolua.py`, `Ground.lua`, `Buildings.lua`, `Trenches.lua`, `BuiltGrid.lua`) exist only on disk and in the raid place.
-- [ ] Import the overgrowth set into the raid place: 38 OBJ, Studio → File → Import 3D, unit Stud ([[Work Order - Detroit Overgrowth Meshes]], delivered 2026-10-21). Meshes can't be uploaded by script.
-- [ ] Overgrowth pass by age band: SurfaceAppearances, pivots from the manifest, LOD swap at 15 m.
+- [ ] Overgrowth pass by age band: place the 38 templates in `DevTools.OvergrowthAssets` (imported and wired 2026-10-22, [[Work Order - Detroit Overgrowth Meshes]]), LOD swap at 15 m, collision. Imported fronts face +Z.
+- [ ] Judge the knotweed and grass tufts at night: they read paler, blue-grey, than the trees, sumac and vines (`overgrowth_detroit_lineup.jpg`).
 - [ ] Props pass: wrecked cars, dead utility poles and lines, dumpsters, market stalls in the sheds, barricades where streets meet the boundary.
 - [ ] The Cut's other exits: the greenway ramps (data exported) and stairs beside each bridge.
 - [ ] 15–18 enterable buildings with real interiors (stair core, upper floor); the rest stay sealed shells.

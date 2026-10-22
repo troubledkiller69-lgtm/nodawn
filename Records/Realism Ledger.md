@@ -291,6 +291,17 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   every rim; it runs under sidewalk slabs, into the four bridge decks and into the slaughterhouse's wall foot and
   loading dock on the Cut's west rim. The bank's measured fit is in [[Map - How It Is Built]].
 
+## Overgrowth meshes in the raid place (2026-10-22)
+- 38 OBJ imported and wired; numbers, texture ids and checks in [[Work Order - Detroit Overgrowth Meshes]].
+- Ruling: imported from copies of the OBJ without their `.mtl`, so Import 3D uploads meshes only and the 18 maps go
+  up once each through `upload_image` — cost if wrong: none; the importer would otherwise re-upload each species' maps
+  for every file.
+- Ruling: pivots stay as the importer set them, on each mesh's base, not `CFrame.new(-bbox_centre)` from the manifest:
+  the importer turns meshes 180° about Y, which flips the manifest's x and z (measured on tree C's trunk vertices) —
+  cost if wrong: none; all 38 agree with the manifest under the turn to 0.001.
+- Capture: `Screenshots/overgrowth/overgrowth_detroit_lineup.jpg`, one of each species on an open lot at night, then
+  removed. Alpha cut-outs work; knotweed and grass tufts read paler than the rest (open item).
+
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
   pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.
