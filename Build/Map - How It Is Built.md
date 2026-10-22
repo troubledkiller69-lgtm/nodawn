@@ -85,6 +85,27 @@ First build in the raid place (PlaceId 120733035297566), 2026-10-21, one section
 |---|---|---|---|---|
 | Atmosphere | 0 | 0 | 0.0 s | Lighting children, LightingStyle Realistic, six NoDawn MaterialVariants, Mud override |
 | Ground | 0 | 0 | 0.7 s | 480 × 956 cells, 3,597,892 terrain cells; voxel diff against BuiltGrid: 0 of 458,880 columns off. Cut 15,346 cells, freeway 19,100, both floors at y -25 |
+| Streets | 11,015 | 4 | 0.7 s | Sidewalks 8,550, curbs 536, paint 1,823, bridges 106; all anchored, largest side 765, y -6.4 to 4.3 |
+| Trenches | 2,736 | 0 | 0.2 s | Cut 1,702, freeway 1,034; greenway parts sit on the Cut floor (-25.1, -24.6); 108 chain-link Textures, no text |
+| Buildings | 22,995 | 0 | 2.2 s | 111 footprints, world y -0.01 to 71.05, none floating or buried; 167 HVAC units from the HubAssets mesh |
+| Boundary | 1,759 | 0 | 0.1 s | 6 invisible frame walls (x ±802, z ±1,752, y -50 to 550), quarantine line 441, fences 1,312; 612 rays from the centre and both trench floors all stop at a collidable wall |
+
+Map total: **38,505 parts, 4 lights**, against the note's 50–70k before overgrowth and props.
+
+Captures, 2026-10-21 (`Screenshots/detroit`): Adelaide Street at eye height between Sheds 3 and 2; the north-west
+corner of Eastern Cold Storage's roof (70.9 studs, the tallest building) looking down Adelaide; the Cut's greenway
+looking north to the Division Street bridge.
+
+![[detroit_street_adelaide.jpg|600]]
+![[detroit_roof_cold_storage.jpg|600]]
+![[detroit_cut_division_bridge.jpg|600]]
+
+In the Cut, terrain pokes 1–2 studs in front of the retaining walls on both banks (east wall face x 711.9, terrain
+710–711; west 643.9, terrain 645–646): the solid voxels next to the trench cells bulge past the wall line. It reads as
+rounded lumps where the bank is lit. Open in [[Open Items]].
 
 Ground's first run sank the whole map: the trench rows used digit codes, which `Geo.runs` can't split (see
-[[Lessons]]). Fixed in `geo.py` and Ground (letter codes, plus a row-length assert) and rebuilt.
+[[Lessons]]). Fixed in `geo.py` and Ground (letter codes, plus a row-length assert) and rebuilt. Buildings' first run
+built 22,448 parts with three footprints incomplete and two roofs upside down; after the fix (`rectsOf` and
+`framesOf` in the Buildings section, the roof tilt sign) it is 22,995, and only those three buildings changed
+(rulings in [[Realism Ledger]]).

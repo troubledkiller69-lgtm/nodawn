@@ -139,6 +139,21 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **Run-length rows need non-digit codes.** `Geo.runs` reads `(%d+)(%D)`; the trench grid used digit codes
   (`"415091560"` is 415×0, 9×1, 56×0), so every row decoded to nothing and Ground sank the whole map to y -25 without
   an error. Codes are letters now, and Ground asserts every decoded row is `nx` cells long.
+- **A pane at +Z turned by `CFrame.Angles(-a, 0, 0)` lifts its outer edge.** `Angles(-0.5, 0, 0) * (0, 0, 1)` is
+  `(0, 0.48, 0.88)`. The Grant house and greenhouse roofs used `-tilt` with `tilt = atan2(rise, half) * side` and came
+  out as V roofs, eaves up and ridge at the wall head. Lower the outer edge with `+tilt` about X, or `-tilt` about Z.
+  Check a roof by its edge heights, not by eye in code: inner edge above outer.
+- **Check a section building by building, not by its total.** Buildings matched the dry run's 22,448 parts exactly
+  and still had Shed 3 as 16 floating beams: the special builders only read rectangle roofs. Before a rebuild that
+  should touch few buildings, store a signature per building (part count, position and volume sums) and diff it
+  afterwards. The signature misses pure rotations; check those directly.
+- **`screen_capture` writes its image into the session's `tool-results` folder** (`mcp-Roblox_Studio-blob-*.jpg`,
+  1464×830). Copy that file into `Screenshots/<pass>/` byte for byte; nothing needs re-encoding.
+- **Rooftop captures: stand at the parapet corner.** Eye height 7 studs back from the parapet showed mostly parapet;
+  3–4 studs in from a corner, looking down within ~150 studs, shows the street. Past ~250 studs the raid's fog hides
+  everything anyway.
+- **Measure tilted parts by their world bounds.** `Position.Y - Size.Y / 2` on a rotated roof slab reported parts 58
+  studs underground. Use `|RightVector.Y|·X/2 + |UpVector.Y|·Y/2 + |LookVector.Y|·Z/2`.
 - **Rigs built from a HumanoidDescription here have AnimationConstraint joints, not Motor6Ds** (2026-10-21).
   `CreateHumanoidModelFromDescription` returned 15 `AnimationConstraint`s, 14 `BallSocketConstraint`s and no `Motor6D`
   (the avatar joint upgrade). The Animator drives `AnimationConstraint.Transform` exactly as it drives a Motor6D, so

@@ -261,6 +261,28 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 - Captures: `Screenshots/animation-v1` — every clip at its key frame, the sheet from before this pass, gait strips, and
   vault, mantle and slide sequences.
 
+## Detroit raid map, first build (2026-10-21)
+- The raid place (PlaceId 120733035297566) built from `DevTools.MapBuilder` one section at a time, numbers in
+  [[Map - How It Is Built]]. HubAssets copied from the hub; MapBuilder installed from `tools/mapbuilder` by Rojo build
+  and Import Roblox Model, every module checked against its file.
+- Found while building, fixed in code and rebuilt: Ground sank the whole map (trench codes were digits, which the
+  run-length reader can't split); Shed 3 came out as 16 floating eave beams and both greenhouses had no roof (their
+  builders read only rectangle roofs, and those three footprints only have triangles); the Grant house and greenhouse
+  roof slopes were tilted the wrong way (eaves up, ridge down). A signature of every other building (part count,
+  position and volume sums) was unchanged by the fix: 108 of 108.
+- Ruling: Future is `LightingStyle = Realistic` with `PrioritizeLightingQuality` on; `Technology` is deprecated and
+  hidden. The hub already reads that — cost: none.
+- Ruling: Shed 3, a cross with chamfered inner corners in OpenStreetMap, is built as three rectangles (the east-west
+  bar, the north and south arms), with the four chamfered corners open to the sky under the eave beam — cost if wrong:
+  four triangles about 17 studs a side with no deck over them.
+- Ruling: the greenhouses keep their real orientation, about 28° off the street grid; their glass gable is built in
+  each greenhouse's own frame — cost: none.
+- Boundary closes the frame: 612 level rays from the map centre (three heights) and both trench floors all stop at a
+  collidable frame wall. Total 38,505 parts, 4 lights. Output clean apart from one ContentId error that predates the
+  build.
+- Captures: `Screenshots/detroit` — Adelaide Street at eye height, the roof of Eastern Cold Storage, the Cut at the
+  Division Street bridge. They show terrain bulging in front of the Cut's retaining walls (open item).
+
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
   pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.
