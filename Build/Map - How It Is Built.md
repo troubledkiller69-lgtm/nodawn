@@ -38,7 +38,14 @@ the game's credits must say so; nothing in the world carries text.
    every wall edge classed by what it faces (street, alley, lot, court, party), sidewalk slab runs trimmed at
    crossings, curbs, centre lines, the Cut and freeway trenches, bridges, and the terrain material grid.
 3. `tolua.py`: → `Data/BuiltGrid`, `BuiltStreets`, `BuiltBuildings` (generated Luau; never hand-edited).
-4. Install the modules into the raid place's `ServerStorage.DevTools.MapBuilder` and rebuild.
+   Run-length codes are letters: materials `G A C L P M`, trench `N` none, `C` the Cut, `F` the freeway.
+4. Install the modules into the raid place's `ServerStorage.DevTools.MapBuilder` and rebuild. MCP code can't read
+   files from disk, so install by hand: `rojo build` a project with MapBuilder as the root and Kit, Geo, Data and
+   Sections under it, copy the `.rbxm` to a short path, then right-click DevTools → Insert → Import Roblox Model.
+   Check each module's `#Source` against the file afterwards.
+
+The pipeline is deterministic: a rerun on 2026-10-21 reproduced all three Data modules byte for byte. Run it from a
+short folder; Windows won't start Python from a working directory with a very long path.
 
 ## The builder
 
@@ -71,3 +78,13 @@ Rules that differ from the hub:
 
 Dry run, 2026-10-21: Streets 11,015 parts, Trenches 2,736, Buildings 22,448, Boundary 1,759 — about 38k before
 overgrowth and props, against the note's 50–70k.
+
+First build in the raid place (PlaceId 120733035297566), 2026-10-21, one section at a time:
+
+| Section | Parts | Lights | Build | Checked |
+|---|---|---|---|---|
+| Atmosphere | 0 | 0 | 0.0 s | Lighting children, LightingStyle Realistic, six NoDawn MaterialVariants, Mud override |
+| Ground | 0 | 0 | 0.7 s | 480 × 956 cells, 3,597,892 terrain cells; voxel diff against BuiltGrid: 0 of 458,880 columns off. Cut 15,346 cells, freeway 19,100, both floors at y -25 |
+
+Ground's first run sank the whole map: the trench rows used digit codes, which `Geo.runs` can't split (see
+[[Lessons]]). Fixed in `geo.py` and Ground (letter codes, plus a row-length assert) and rebuilt.
