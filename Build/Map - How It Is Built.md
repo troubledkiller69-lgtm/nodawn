@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, map, detroit, tooling]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # Map - How It Is Built
@@ -9,7 +9,8 @@ Back to [[No Dawn - Home]] · Design: [[Idea - Detroit Map]], [[Reference - Detr
 
 The Detroit raid map: Eastern Market and the Dequindre Cut, 1:1 on the real street grid, built from OpenStreetMap
 data by code. It lives in its own place in the experience (raids are separate places; the hub never contains
-anything that can deal damage).
+anything that can deal damage). The raid place was added on 2026-10-22, with its default Baseplate and SpawnLocation
+removed, and saved empty.
 
 ## The frame
 

@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # Open Items
@@ -57,7 +57,7 @@ These need a published place, a second client, or hardware.
 
 See [[Map - How It Is Built]].
 
-- [ ] **Create the raid place** (Studio → View → Asset Manager → Places → right-click → Add New Place) and open it. Scripts can't create places.
+- [ ] Set `Lighting.Technology = Future` in the raid place by hand (scripts can't set it).
 - [ ] Install `DevTools.MapBuilder` into it and run the first full build, then captures from street level, a roof and the Cut.
 - [ ] Copy `ServerStorage.DevTools.HubAssets` from the hub into the raid place (Studio copy and paste between the two windows): the cars, pickup, dumpsters, HVAC, foliage and razor coils the props pass reuses. Meshes can't be moved by script.
 - [ ] Import the overgrowth set into the raid place: 38 OBJ, Studio → File → Import 3D, unit Stud ([[Work Order - Detroit Overgrowth Meshes]], delivered 2026-10-21). Meshes can't be uploaded by script.
