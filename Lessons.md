@@ -163,6 +163,14 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   strip; close it before capturing.
 - **Screen control in Windows file dialogs:** typing works only in the File name box (the address bar and the file
   list refuse keys). Type a folder path ending in `\` and press Enter as its own key press to navigate.
+- **`LocalTransparencyModifier` works in Edit mode and is never saved.** An edit-time capture can run the client's
+  foliage LOD module for the shot (LOD0 clones in a temporary folder, LOD1 hidden), then destroy it, without touching
+  `Workspace.Map`. Keep the module object in `_G` between the setup call and the capture.
+- **Check a client script in a playtest by reading, not driving:** `start_stop_play`, then `execute_luau` with
+  `datamodel_type = "Client"` (counts, tags, `LocalTransparencyModifier`), then stop. With no SpawnLocation the
+  character drops in at the origin, onto whatever stands there (a roof at y 29 in Detroit).
+- **`stylua` can take two passes to settle.** Its second run collapsed calls its first had wrapped. Run it until
+  `--check` is clean before mirroring a file into Studio, or the copies drift.
 - **In Git Bash on this machine `find` is Windows `find.exe`.** Use PowerShell (`Get-ChildItem -Recurse`) or Python.
 - **`screen_capture` writes its image into the session's `tool-results` folder** (`mcp-Roblox_Studio-blob-*.jpg`,
   1464×830). Copy that file into `Screenshots/<pass>/` byte for byte; nothing needs re-encoding.

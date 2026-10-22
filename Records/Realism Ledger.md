@@ -302,6 +302,25 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 - Capture: `Screenshots/overgrowth/overgrowth_detroit_lineup.jpg`, one of each species on an open lot at night, then
   removed. Alpha cut-outs work; knotweed and grass tufts read paler than the rest (open item).
 
+## Overgrowth pass, Detroit (2026-10-22)
+- MapBuilder's new Overgrowth section: 7,368 parts, map 45,985. Layout, bands and checks in [[Map - How It Is Built]];
+  captures in `Screenshots/detroit` (`overgrowth_*.jpg`: the market at 5 years, the north lots at 25, the roof edge
+  over them, the Cut).
+- Ruling: the 25-year pull follows vacant ground (the blurred share of grass and mud cells) in the north half, not a
+  line on the map. The note's "prairie east of St. Aubin" lies outside the frame (St. Aubin runs just east of the
+  Cut); the north lots stand in for it. 17% of the frame is 25 years — cost if wrong: retune two numbers in `makeAge`.
+- Ruling: 12-year ailanthus are the delivered 18–25 m trees scaled 0.3–0.5 (6–10 m). Their leaf cards shrink with
+  them, which brings the "super-tuft" leaves (1.75× real) back to about real size — cost if wrong: young trees read
+  thin; a dedicated 8 m variant would be a new work order.
+- Ruling: foliage never collides or blocks raycasts; every tree over 18 studs gets an invisible trunk cylinder that
+  does both (cover behind a trunk, not behind leaves). Shrubs and knotweed are walk-through — cost if wrong: thickets
+  give concealment but no cover; a "slows you" volume would be code, not art.
+- Ruling: the LOD1 mesh is what the place holds; the client swaps in LOD0 within 15 m. The opposite (LOD0 in the place,
+  LOD1 far away) would double the instances on every client — cost: Studio's edit view shows LOD1 everywhere.
+- Ruling: 12–45% of buildings stay bare by age (the Hashima control image), more in the young market band.
+- The Cut is dense: sumac thickets either side of the greenway, which stays clear. Open item: thin it if the shortcut
+  needs sightlines.
+
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
   pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.

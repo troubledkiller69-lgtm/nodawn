@@ -19,7 +19,7 @@ updated: 2026-10-22
 | Phase 1 systems (A–G) | Done. Unit tests 150/150. Acceptance 15 passed, 5 partial, 0 failed. Currency shown as Dollars ($) |
 | Hub | 10,795 parts, 122 lights, 0 text, 59 NPCs. Realism v2, v3, Stage 4 vehicles and the readability pass done |
 | Stage 4 | Bus, pickup and wreck built at real scale; gates and paths verified. Captures outstanding |
-| Raid map | Detroit (Eastern Market + the Cut) from OpenStreetMap, 1,600 × 3,500 studs. Builder written and dry-run (~38k parts). Raid place created (PlaceId above); first build done: 38,617 parts, all six sections, captures in `Screenshots/detroit`. Overgrowth meshes imported and wired (38 templates, 6 looks); the overgrowth pass is next. [[Map - How It Is Built]] |
+| Raid map | Detroit (Eastern Market + the Cut) from OpenStreetMap, 1,600 × 3,500 studs. Builder written and dry-run (~38k parts). Raid place created (PlaceId above); first build done: 38,617 parts, all six sections, captures in `Screenshots/detroit`. Overgrowth pass done 2026-10-22: 7,368 parts by age band, client LOD at 15 m; map 45,985 parts. Props next. [[Map - How It Is Built]] |
 | Blocking | The place is not saved or published — the latest work lives only in the open Studio session. The Studio MCP is on |
 | Next | Stage 4 captures, Stage 5 verify, then interiors, declutter, the No Dawn UI |
 

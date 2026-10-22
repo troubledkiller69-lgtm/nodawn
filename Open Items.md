@@ -57,9 +57,10 @@ These need a published place, a second client, or hardware.
 See [[Map - How It Is Built]].
 
 - [ ] Judge the parking lots from above: the pavement and dirt cells blend into soft pale blotches at 4-stud resolution (roof capture).
-- [ ] Commit `tools/` in the game repo: MapBuilder, the map pipeline and the 2026-10-21 fixes (`geo.py`, `tolua.py`, `Ground.lua`, `Buildings.lua`, `Trenches.lua`, `BuiltGrid.lua`) exist only on disk and in the raid place.
-- [ ] Overgrowth pass by age band: place the 38 templates in `DevTools.OvergrowthAssets` (imported and wired 2026-10-22, [[Work Order - Detroit Overgrowth Meshes]]), LOD swap at 15 m, collision. Imported fronts face +Z.
+- [ ] Commit `tools/` in the game repo: MapBuilder, the map pipeline and the 2026-10-21/22 work (`geo.py`, `tolua.py`, `Ground.lua`, `Buildings.lua`, `Trenches.lua`, `Overgrowth.lua`, `Runtime/`, `MapBuilder.lua`, `BuiltGrid.lua`) exist only on disk and in the raid place.
 - [ ] Judge the knotweed and grass tufts at night: they read paler, blue-grey, than the trees, sumac and vines (`overgrowth_detroit_lineup.jpg`).
+- [ ] Judge the Cut's density: sumac thickets close the views either side of the greenway (`overgrowth_cut_division.jpg`). Thin the Cut layer if the shortcut needs sightlines.
+- [ ] Overgrowth leftovers: 13 of 368 tree crowns reach a building wall; one lot plant stands on asphalt. Tighten the crown clearance in the Overgrowth section if they show.
 - [ ] Props pass: wrecked cars, dead utility poles and lines, dumpsters, market stalls in the sheds, barricades where streets meet the boundary.
 - [ ] The Cut's other exits: the greenway ramps (data exported) and stairs beside each bridge.
 - [ ] 15–18 enterable buildings with real interiors (stair core, upper floor); the rest stay sealed shells.
