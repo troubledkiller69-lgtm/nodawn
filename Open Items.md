@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # Open Items
@@ -11,7 +11,7 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 
 ## Blocking
 
-- [ ] **Save the place.** The latest hub work, including the 2026-10-21 readability rebuild, exists only in the open Studio session. Publish when ready.
+- [ ] **Save the place.** The latest hub work, including the 2026-10-21 readability rebuild and the 2026-10-22 movement wiring and first-person view, exists only in the open Studio session. Publish when ready.
 - [ ] Review or remove the Studio plugins `cloud_4771536187` and `cloud_7352299243`. They inject GUI scripts and errors into every playtest.
 
 ## Stage 4 close-out
@@ -78,13 +78,12 @@ See [[Map - How It Is Built]].
 - [ ] Deploy `Shared.Rules.HitSelect` and `Shared.Rules.Rewind`, then run `nodawn/tests/run_rules.lua`. Both are pure; no rig needed.
 - [ ] Rewrite `HitboxService` to a margin ray plus `HitSelect`, set `HumanoidRootPart.CanQuery = false` at spawn, and silence accessory handles.
 - [ ] Run the synthetic-rig probe (blocked: Studio closed). Verify `Spherecast.Distance` semantics while it is open.
-- [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
+- [ ] Stance layer: stand and crouch shipped with the movement wiring (`MovementRules`, `MovementService`, `MovementController`, `Movement` channel, 2026-10-22); prone and lean, and the stance hitboxes, remain.
 - [ ] `Shared.Rules.WoundRules` and `SurvivalRules` with tests; wound state, treatment actions, hunger/thirst meters.
 - [ ] Schema pass: rename the profile key `wallet.chits` (and `Economy.StartingChits` / `MaxChits` with it) through a migration. Player-facing text already says Dollars (2026-10-21).
 - [ ] Movement animation set: v1 delivered 2026-10-21 (14 clips, `Desktop\No Dawn\animation\out\ND_Movement_v1.rbxm`); v2 and v3 next with Claude ([[Work Order - Movement Animation Set]]).
-- [ ] Insert `ND_Movement_v1.rbxm` in Studio and Save to Roblox for the 14 asset ids (human step).
-- [ ] Wire the v1 clips (Nyx), per `out/manifest.txt`: playback speed = speed / `AuthoredSpeed`; footsteps from the `Footstep` markers or `StepLength`; HumanoidRootPart follows `RootPath` on SprintStop, Jump, Vault and Mantle, plus (h − authored) on y for other obstacle heights; the moving crouch sits 1.16 below standing, not 1.4.
-- [ ] Check the joint type on spawned characters in a playtest. A rig built from a `HumanoidDescription` here comes out with `AnimationConstraint` joints, not `Motor6D` (avatar joint upgrade, seen 2026-10-21), so joint code (aim, head look, ragdoll) must not assume `Motor6D`.
+- [ ] Save the 14 KeyframeSequences in `ServerStorage.Animations.ND_Movement_v1` to Roblox (right-click → Save to Roblox) and put the ids in `Shared.Config.AnimationIds` (human step). Studio playtests already play the clips; a live server keeps Roblox's Animate script, and sprint stop, slide, vault and mantle stay off, until every id is set.
+- [ ] Movement follow-ups (wiring shipped 2026-10-22, see [[Realism Ledger]]): crouch doesn't shrink the hitbox yet; see fall damage on the first raid playtest (the hub is all safe zone); lean and prone wait for the v2 clips; grapple (v3) next.
 
 ## Phase 2 — design decisions
 

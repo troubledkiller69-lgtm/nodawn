@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, record, ledger]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # SDD ledger — plan: tasks/todo.md (Realism pass v2)
@@ -260,6 +260,47 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   slides the planted feet.
 - Captures: `Screenshots/animation-v1` — every clip at its key frame, the sheet from before this pass, gait strips, and
   vault, mantle and slide sequences.
+
+## Movement wiring (2026-10-22)
+- The v1 clips play in the hub, built from the vault's design as written (user: "you wire it all in", "Build it from
+  the vault's movement design as written, and tell me the choices you made"). [[Idea - Movement and Hitbox
+  Reconciled]] wins on conflicts; [[Idea - Movement Frame]] and [[Idea - Running Feel]] fill in. Code and plan in
+  `Desktop\No Dawn\movement` (`src/` matches the place byte for byte; `tasks/todo.md`).
+- Shipped: `Config.Movement`, `Config.MovementClips` (generated from clips.json), `Config.AnimationIds` (0 until Save
+  to Roblox), `Rules.MovementRules` (pure, tested), `Rules.TraversalProbe` (the rays both sides measure obstacles
+  with), `MovementService` (Movement channel: State, Slide, Traverse; Stance, Gait, Stamina and Load attributes;
+  server stamina; traversal re-measure; overspeed watchdog; fall damage through DamageService), and on the client
+  `MovementController`, `CharacterAnimator`, `FirstPersonView` with `Rules.FirstPersonRules`.
+- As played (per-frame logs): jog 0→9.5 in 0.25 s; sprint 10→19.5 in 0.6 s, also from standing, a crouch or a slide;
+  sprint stop 0.2 s; walk 6; crouch 4; jump 4.04; slide 28→4 over 0.9 s; sprint turn ~145–150°/s; hard landing from
+  10 studs holds speed to 2 for 0.45 s. Stamina −7/s sprinting, −8 jump, −15 slide, −10 vault or mantle, regen 5/s
+  after 2.5 s, all charged by the server.
+- Vault and mantle follow the clip's root path offset by the real obstacle: a 4.0 wall 2.6 away and a 3.6 ledge 1.0
+  away land exactly. Forged traversals are refused and the character is put back.
+- First person (user: "i want it so i can see my self in first person like my arms or my body when i look down"):
+  the camera rides the eyes of the animated head and everything below the neck is drawn; the head and anything worn
+  on it or at the neck stay hidden. Camera within 0.008 studs of the eyes looking down, 0.26 off a wall the face
+  touches. Captures: `Screenshots/movement-wiring`.
+- Unit suite 166/166, every new test seen failing first. Console clean apart from the known plugins.
+- Ruling: speeds from the Reconciled table (walk 6, jog 10, sprint 20/16/13 by load, crouch 4); Movement Frame's 9/5
+  and Running Feel's jog 9 are superseded, and the clips are authored at these — cost if wrong: retune
+  `Config.Movement`; playback rates follow (cycle rate = speed / 2·step length).
+- Ruling: the turn limit (150°/s, 90 heavy) applies only while sprinting; at jog it would make A→D strafing take most
+  of a second — cost if wrong: jog turning stays instant.
+- Ruling: a soft screen-edge vignette below 35 and 15 stamina stands in for the breathing and sway the notes ask for
+  (no audio, no weapons yet); not a bar — cost: remove it when breathing lands.
+- Ruling: no bob, roll or FOV effects until a settings screen can carry the 0–100% sliders the notes require — cost:
+  the camera is steadier than the design's maximum.
+- Ruling: mantle from 3.4 studs (lower, the authored path dips the body into the floor; a lower deep ledge is a jump);
+  vault 3–4.5 studs with depth ≤ 1.2 — cost if wrong: 3.0–3.4 deep ledges need a jump.
+- Ruling: gravity stays 196.2 and jump height 4 (Reconciled leaves 110–120 open) — cost if changed: jump timing and
+  the fall loop.
+- Ruling: the server judges players' movement by position only; its copy of a client-owned root reports no usable
+  velocity (peak 17 against a real 39.6) — cost: jumps are charged ~0.3 s late.
+- Ruling: the eyes sit 0.12 above the head's centre and 0.22 behind the face (0.15 left the camera 0.03 off a wall at
+  a glancing angle) — cost: looking straight down shows a little more collar.
+- Not seen: fall damage (the hub is all safe zone and DamageService refuses there). Live servers need the asset ids.
+  Crouch keeps the standing hitbox.
 
 ## Detroit raid map, first build (2026-10-21)
 - The raid place (PlaceId 120733035297566) built from `DevTools.MapBuilder` one section at a time, numbers in

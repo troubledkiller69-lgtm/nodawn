@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, lessons]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # Lessons
@@ -190,6 +190,24 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   up to 1.1). On fresh rigs the same clips matched to 1e-4.
 - **Throwaway rigs go in a WorldModel under CoreGui.** Animations play there, nothing is added to the place or sent to
   Team Create collaborators, and nothing has to be staged far from the hub.
+- **The server's copy of a client-owned character has no usable velocity** (2026-10-22). Through a 39.6 studs/s jump
+  the server read `AssemblyLinearVelocity.Y` 0 while the root was already rising, then 17 at most; positions replicate
+  fine (peak 4.09). Check players' movement on the server by position (a jump = the root 1.5 above its last height on
+  the ground), never by velocity or the server-side `HumanoidStateType`, which lagged too.
+- **The new PlayerModule (Input Action System) has no `GetControls`.** Its ControlModule calls `Humanoid:Move` every
+  frame at `RenderPriority.Input`. Read `Humanoid.MoveDirection` at Input + 1 and call `Move` again there to override
+  it; speed ramps, the sprint heading, slides and stops all took.
+- **First-person body: Roblox re-hides the character every frame.** Its TransparencyController put a
+  `LocalTransparencyModifier` of 0 back to 1 within two frames, so set it every frame at `RenderPriority.Camera + 1`.
+  The camera sits 0.5 behind its subject (root + (0, 1.5, 0) + `CameraOffset`, root space) along the look; for an
+  eye camera aim the subject at the eyes plus last frame's `Focus − CFrame`. Occlusion pull-in is off at that distance.
+- **A playtest you start can be driven by the user mid-test** (2026-10-22). Twice the user played in my session
+  while I sent keys and teleported. Watch 1.5 s of input and movement before each scripted move, log `InputBegan`
+  during runs, and treat any key you didn't send as the user: stop and hand back.
+- **Studio can be reopened mid-task under a new `studio_id`.** Call `list_roblox_studios` again, confirm the place
+  (name, PlaceId, `Workspace.Hub`), and checksum what you installed; Team Create had kept every script edit.
+- **Simulated keys land late.** `user_keyboard_input` reached the game ~7.8 s after the previous `execute_luau`
+  returned. Align logs by logged key events, not by wall time.
 
 ## Asset generation (Claude side)
 - **Blender 5.2 installs headless from pip** (`pip install bpy==5.2.2`, Python 3.13): enough to re-import delivered
