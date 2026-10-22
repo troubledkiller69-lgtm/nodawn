@@ -12,7 +12,6 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 ## Blocking
 
 - [ ] **Save the place.** The latest hub work, including the 2026-10-21 readability rebuild, exists only in the open Studio session. Publish when ready.
-- [ ] Set `Lighting.Technology = Future` by hand (Explorer → Lighting → Properties). Scripts can't set it.
 - [ ] Review or remove the Studio plugins `cloud_4771536187` and `cloud_7352299243`. They inject GUI scripts and errors into every playtest.
 
 ## Stage 4 close-out
@@ -57,9 +56,7 @@ These need a published place, a second client, or hardware.
 
 See [[Map - How It Is Built]].
 
-- [ ] Set `Lighting.Technology = Future` in the raid place by hand (scripts can't set it).
-- [ ] Install `DevTools.MapBuilder` into it and run the first full build, then captures from street level, a roof and the Cut.
-- [ ] Copy `ServerStorage.DevTools.HubAssets` from the hub into the raid place (Studio copy and paste between the two windows): the cars, pickup, dumpsters, HVAC, foliage and razor coils the props pass reuses. Meshes can't be moved by script.
+- [ ] Finish the first build: Streets, Trenches, Buildings, Boundary (Atmosphere and Ground done 2026-10-21), then captures from street level, a roof and the Cut.
 - [ ] Import the overgrowth set into the raid place: 38 OBJ, Studio → File → Import 3D, unit Stud ([[Work Order - Detroit Overgrowth Meshes]], delivered 2026-10-21). Meshes can't be uploaded by script.
 - [ ] Overgrowth pass by age band: SurfaceAppearances, pivots from the manifest, LOD swap at 15 m.
 - [ ] Props pass: wrecked cars, dead utility poles and lines, dumpsters, market stalls in the sheds, barricades where streets meet the boundary.
