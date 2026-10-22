@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-22
+updated: 2026-10-21
 ---
 
 # Open Items
@@ -82,7 +82,10 @@ See [[Map - How It Is Built]].
 - [ ] Stance layer: `StanceRules`, `StanceService`, `MovementController`, `Movement` channel.
 - [ ] `Shared.Rules.WoundRules` and `SurvivalRules` with tests; wound state, treatment actions, hunger/thirst meters.
 - [ ] Schema pass: rename the profile key `wallet.chits` (and `Economy.StartingChits` / `MaxChits` with it) through a migration. Player-facing text already says Dollars (2026-10-21).
-- [ ] Movement animation set: work order written, in progress with Claude ([[Work Order - Movement Animation Set]]).
+- [ ] Movement animation set: v1 delivered 2026-10-21 (14 clips, `Desktop\No Dawn\animation\out\ND_Movement_v1.rbxm`); v2 and v3 next with Claude ([[Work Order - Movement Animation Set]]).
+- [ ] Insert `ND_Movement_v1.rbxm` in Studio and Save to Roblox for the 14 asset ids (human step).
+- [ ] Wire the v1 clips (Nyx), per `out/manifest.txt`: playback speed = speed / `AuthoredSpeed`; footsteps from the `Footstep` markers or `StepLength`; HumanoidRootPart follows `RootPath` on SprintStop, Jump, Vault and Mantle, plus (h − authored) on y for other obstacle heights; the moving crouch sits 1.16 below standing, not 1.4.
+- [ ] Player characters here have `AnimationConstraint` joints, not `Motor6D` (avatar joint upgrade). Code that looks joints up as `Motor6D` (aim, head look, ragdoll) finds none.
 
 ## Phase 2 — design decisions
 
