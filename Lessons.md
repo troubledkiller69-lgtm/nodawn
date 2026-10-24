@@ -258,3 +258,12 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   planted foot 0.12 studs a step; the pivot now includes the yaw.
 - **The R15 shin overlaps its own foot block.** Shin vertices inside the foot's footprint are hidden by the foot, so the
   floor check skips them and counts only visible dig.
+- **Blocky R15 arms reach only ~1.7 studs, shoulder joint to palm** (2026-10-24). A real-scale 4.2-stud shotgun can't be
+  shouldered square-on with the support hand on the forend; the hold blades the upper body 52° (waist yaw, head turned
+  back) and slides the support hand back along the gun to the furthest point it reaches. The upper arm's shoulder
+  attachment sits half a stud to the side, so aim the attachment-to-attachment vector in IK, not the part's -Y.
+- **Classic Shirt/Pants don't draw on cloned limbs** unless the clones sit in a model with a Humanoid and a copy of the
+  Shirt (first-person weapon arms, 2026-10-24).
+- **To act on a playtest's live module state**, parent a new Script (server) or LocalScript (PlayerGui) during play:
+  it shares the game's module instances, whereas `require` from `execute_luau` gets a fresh copy. Granting test guns
+  this way writes to the Studio profile.
