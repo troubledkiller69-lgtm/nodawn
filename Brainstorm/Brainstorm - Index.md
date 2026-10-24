@@ -53,12 +53,11 @@ updated: YYYY-MM-DD
 - Weapon instance state in the inventory, and whether the schema needs a v3 migration first.
 
 ### Movement
-- [[Idea - Movement Frame]] — stances, slide, lean, mantle, and a grounded version of the DL2 grapple
+- [[Idea - Movement Frame]] — stances, slide, lean, mantle
 - [[Idea - Running Feel]] — speeds, acceleration, stride, stamina, surface and breathing. The realism detail layer
 - [[Idea - Hitbox Model]] — damage reads the animated body, not the capsule. The lean fix and the stance state machine
 - [[Idea - Movement and Hitbox Reconciled]] — four research passes folded into one design. Supersedes the open questions in the three notes above
-- [[Idea - Grapple]] — a swing, not a zip. The DL1/DL2 correction, the pendulum, and what the map owes it
-- Lean and prone force the `HitboxService` decision; the grapple forces a map with rooftops worth reaching.
+- Lean and prone force the `HitboxService` decision.
 
 ### Infected
 - [[Reconciliation - GPT Design Pass]] — dynamic infected scaling (4–5 per player, cap 100), lighting in the vision check, attack telegraphs.

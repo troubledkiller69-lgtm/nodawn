@@ -83,7 +83,6 @@ Pool of 100. Server-owned, client-predicted, same pattern as ammo.
 | Slide | 15 |
 | Mantle | 10 |
 | Melee swing | 8 |
-| Grapple | 20, plus 5/s reeling |
 
 - Regen 5/s after 2.5 s without spending; 2/s while walking.
 - Below 25: cannot start a sprint. Existing sprint continues.

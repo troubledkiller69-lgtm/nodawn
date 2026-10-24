@@ -140,7 +140,7 @@ Attachments are inventory items with their own `uid`, lootable and lost on death
 
 - **The Cut (below grade, dark, tight):** pump, MP5, pistol, weapon light, melee. Sound carries; a gunshot is a map event.
 - **Market streets (20–40 studs):** SKS, AKM, AR-15. The workhorse range band.
-- **Roofs (long):** Mosin, AR-15 with a scope. The grapple makes a roof a route; a bolt-action makes it a threat.
+- **Roofs (long):** Mosin, AR-15 with a scope. A bolt-action makes a roof a threat.
 - **Basements and sheds:** shotgun, pistol, melee, light. The places where a rifle is too long.
 - **The counter to a roof:** the Cut, interiors, smoke, and the fact that a bolt-action is a liability at five studs. Do not add a second sniper rifle until the roof game is measured.
 

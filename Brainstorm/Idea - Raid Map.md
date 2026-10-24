@@ -63,7 +63,7 @@ Three silhouettes visible from anywhere, so a player is never lost and never nee
 
 ## Extraction points
 
-Five, each testing a different system. Requirements are never permanent gear — the same rule as the grapple: nothing you can lose may gate an exit.
+Five, each testing a different system. Requirements are never permanent gear: nothing you can lose may gate an exit.
 
 | Extract | Where | Requirement | What it costs |
 |---|---|---|---|

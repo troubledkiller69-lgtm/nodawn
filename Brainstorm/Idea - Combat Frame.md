@@ -1,7 +1,7 @@
 ---
 tags: [idea, combat]
 status: shaping
-updated: 2026-10-18
+updated: 2026-10-23
 ---
 
 # Idea - Combat Frame
@@ -59,6 +59,8 @@ Per weapon instance: `mag`, `chamber`, `reserve`.
 - Reserve ammo lives in the inventory as an ammo item, not as a number on the weapon. Reloading moves rounds from inventory to the magazine as one transaction through `InventoryTx`.
 
 That last point matters: ammo is an item, so it can be looted, sold and lost on death without inventing a parallel system.
+
+**Reload and mag check (user, 2026-10-23):** "tap r to reload or x on console / square then hold to check mag and ammo count like pull mag out look at it put it back in kinda anim". Tap R (X on Xbox, Square on PlayStation) reloads; holding the same button checks the magazine: the hand pulls the mag, the player looks at it, and it goes back in. The check is how the rounds left are learned. To settle with the state machine above: the check is its own state (no firing until the mag is seated again), and an interrupted check must leave the mag in the gun.
 
 ## 5. Damage model
 

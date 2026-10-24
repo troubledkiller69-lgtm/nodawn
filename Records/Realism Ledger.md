@@ -1,11 +1,45 @@
 ---
 tags: [nodawn, record, ledger]
-updated: 2026-10-22
+updated: 2026-10-23
 ---
 
 # SDD ledger — plan: tasks/todo.md (Realism pass v2)
 
 Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · History: [[Tracker]]
+
+## Survival needs, wounds and stress (2026-10-24)
+- Built from [[Idea - Injury and Survival]] and Master Context §10, finishing the task ChatGPT started (its staged
+  copies were reference only; its movement copies predated prone and lean). Full report, schema, contract and config:
+  `Desktop\No Dawn\survival\README.md`. Profile schema v3.
+- As played (Studio, Studio DataStore, scripted keyboard and gamepad codes): rest drain 0.0632 per 10 s against
+  0.0626; nutrition 20 / hydration 8 / stress 60 gave `StaminaRegenScale` 0.35 and stamina came back at 1.73/s
+  against 1.75. Beans +30 once; a replayed request id returned the first answer; unowned, locker, equipped, bad
+  payload and spam were refused. Bullet 30 to the upper arm opened a deep wound, melee 10 a hand scratch, a fall only
+  stress; bleeding ran 0.81 HP/s against 0.84 with no wounds from the ticks. Sprinting cancelled a dressing and a hit
+  interrupted a bandage, both items kept. Death cleared wounds and stress; a rejoin came back at the saved health.
+  Studio suite 205/205, offline 22/22 and 16/16.
+- Ruling: meters drain in the hub at half rate (the note: raid only; raids don't exist yet). Needs and bleeding
+  can't take a survivor below 25 HP inside a safe zone. Cost: the hub is a small sink, not a free one.
+- Ruling: wounds only from confirmed `Bullet`, `Melee` and `Infected` hits a survivor lives through (the note §5.2);
+  falls add stress only. Needs and bleeding go through `DamageService.applyCondition`, which can't open a wound.
+- Ruling: three families in v1 (scratch, laceration, deep); lodged bullet, fracture, burn, bite and infection wait
+  for their treatments. A bandage stops any bleed but works loose on a deep wound after 8 min; a field dressing
+  holds and gives back 10 HP. Health regenerates (0.2/s, 15 s after damage) only when fed, watered and not bleeding;
+  Roblox's own regeneration is off (`StarterCharacterScripts.Health`).
+- Ruling: death clears wounds and stress; meters carry over, topped up to 30. Leaving keeps the last health.
+- Found in play and fixed (pre-existing in InventoryScreen): after a respawn the inventory opened empty (its
+  hologram folder in PlayerGui is wiped on respawn), and arrows, D-pad, Return and A did nothing once a selection
+  existed (Roblox's GUI navigation takes them). See [[Lessons]].
+- Not done: pain, painkillers, fractures, infection, squad treatment and the hub medical ward; a physical controller
+  and a published multiplayer test; the generated moodle art.
+
+## Blender asset location and rifle visual pass (2026-10-23)
+- Main editable Blender file: `C:\Users\howar\Documents\NoDawn\blender\NoDawn_Rebuilt_Assets.blend`. The rifle lives in `02_AR15` alongside the other seven asset collections.
+- Copied from `C:\Users\howar\Documents\Codex\2026-10-23\drive-b\outputs\NoDawn_Rebuilt_Assets.blend`; SHA-256 matched before edits. That source remains a backup, not the active working copy. Desktop `m16.blend` is not the main project.
+- Pre-pass backup: `C:\Users\howar\Documents\NoDawn\blender\backups\NoDawn_Rebuilt_Assets_before_AR_realism_2026-10-23.blend`.
+- Visual pass: rounded upper receiver, continuous tapered handguard ribs, distinct charcoal alloy/phosphate steel/polymer materials, shallow modeled grip checkering, receiver controls, rear aperture, recessed ejection port, and cut muzzle-shroud slots. No text or markings. Existing fixed-stock silhouette retained.
+- Reference: https://www.youtube.com/watch?v=oAsC25m40J0 — inspected video close-ups for receiver appearance and surface finish; this is not an exact replica of the video's carbine configuration.
+- Validation: actual Blender renders of both sides; finite evaluated geometry check. Roblox import, material baking, animation, and gameplay remain unverified by this pass.
 
 ## Setup (2026-10-17)
 - Backups in ServerStorage.DevTools: SectionsBackup_20261017d (12 section modules), KitBackup_20261017d (65,559 chars),
@@ -263,9 +297,9 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 
 ## Movement wiring (2026-10-22)
 - The v1 clips play in the hub, built from the vault's design as written (user: "you wire it all in", "Build it from
-  the vault's movement design as written, and tell me the choices you made"). [[Idea - Movement and Hitbox
-  Reconciled]] wins on conflicts; [[Idea - Movement Frame]] and [[Idea - Running Feel]] fill in. Code and plan in
-  `Desktop\No Dawn\movement` (`src/` matches the place byte for byte; `tasks/todo.md`).
+  the vault's movement design as written, and tell me the choices you made").
+  [[Idea - Movement and Hitbox Reconciled]] wins on conflicts; [[Idea - Movement Frame]] and [[Idea - Running Feel]]
+  fill in. Code and plan in `Desktop\No Dawn\movement` (`src/` matches the place byte for byte; `tasks/todo.md`).
 - Shipped: `Config.Movement`, `Config.MovementClips` (generated from clips.json), `Config.AnimationIds` (0 until Save
   to Roblox), `Rules.MovementRules` (pure, tested), `Rules.TraversalProbe` (the rays both sides measure obstacles
   with), `MovementService` (Movement channel: State, Slide, Traverse; Stance, Gait, Stamina and Load attributes;
@@ -301,6 +335,37 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   a glancing angle) — cost: looking straight down shows a little more collar.
 - Not seen: fall damage (the hub is all safe zone and DamageService refuses there). Live servers need the asset ids.
   Crouch keeps the standing hitbox.
+
+## Prone and lean (2026-10-23)
+- Built from [[Idea - Movement Frame]] (Stances, Lean), [[Idea - Hitbox Model]] §6–8 and
+  [[Idea - Movement and Hitbox Reconciled]], plus the user's control: "make prone pressing crouch twice rapidly".
+  Clips in [[Work Order - Movement Animation Set]] v2; code in `Desktop\No Dawn\movement` (`MovementRules`,
+  `LeanProbe`, `MovementController`, `MovementService`, `CharacterAnimator`, `FirstPersonView`).
+- As played (per-frame logs): two crouch taps 0.27 s apart went crouch → prone over ToProne, and the server set
+  `Stance = prone`; W crawled at 2.0 studs/s on the crawl loop; a tap played FromProne into the crouch and jump stood
+  up. Q leaned the head 0.65 studs with the view rolled 17.4° of the 18 (easing in over 0.3 s) and `Lean = left` on
+  the server; E with W shuffled at exactly 4.0 studs/s with the walk loop stepping under the lean; crouched, the
+  head went 0.70 over. A wall 1.4 studs to the left refused Q (head stayed at 0.03) while E leaned 0.67 the other
+  way, steady, no flicker. Studio suite 170/170, offline 16/16; console clean apart from the known plugins.
+- Ruling (user): a second crouch tap within 0.3 s of the tap that crouched goes prone; a tap while prone gets up to
+  a crouch; jump while prone stands up. Going down always passes the crouch (the server refuses stand → prone).
+  Moving and further taps are held while lying down or getting up (0.5 s / 0.6 s) — cost: a third quick tap is
+  dropped, not queued.
+- Ruling: prone 2 studs/s (Reconciled over Movement Frame's 2.5), no sprint, no jump, no footsteps. Prone → stand
+  takes FromProne's 0.6 s plus the crouch's 0.2 s rise: the note's 0.8 s.
+- Ruling: Q/E held (gamepad: D-pad left/right; no touch button yet), standing or crouched, never sprinting or prone;
+  4 studs/s shuffle; 18° camera roll in first person, the camera's alone.
+- Ruling: the lean is a 25° spine bend on an upper-body clip, not the note's 0.4 hip shift + 12°, so the legs keep
+  the gait loop underneath (Pose Weight 0 below the waist) — cost: the bend sits higher in the spine than the note's.
+- Ruling: the clearance cast runs at head height from above the root, the head's half-width plus 0.9 sideways
+  (`LeanProbe`), checked by the client every frame and again by the server. The note's 0.9 from the chest centre
+  never leaves the 2-stud torso and missed a wall 1.4 away — cost: a lean also refuses when only the head side is
+  blocked.
+- Not done: leaning has no stamina cost or cooldown (Reconciled asks for both, without numbers); E is also the
+  ProximityPrompt key, so leaning right beside a vendor also opens its prompt; ToProne lifts the head ~0.4 studs
+  mid-way as the thighs swing through (the floor guard holds the body up); the hitboxes still use the standing
+  capsule for prone (Hitbox Model: by design, damage follows the animated body once `HitboxService` ships).
+- Capture: `Screenshots/movement-v2/prone_side.jpg`.
 
 ## Detroit raid map, first build (2026-10-21)
 - The raid place (PlaceId 120733035297566) built from `DevTools.MapBuilder` one section at a time, numbers in

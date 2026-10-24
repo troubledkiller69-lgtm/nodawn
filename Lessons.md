@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, lessons]
-updated: 2026-10-22
+updated: 2026-10-23
 ---
 
 # Lessons
@@ -8,6 +8,14 @@ updated: 2026-10-22
 Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 
 ## Studio MCP
+- **`execute_luau` runs in its own Lua state** (2026-10-24). `require` there gives fresh copies of the game's
+  modules (PlayerDataService read "uninitialized"). To reach live server state, go through a BindableFunction
+  (DevProbe), or, for a playtest only, parent a Script at runtime that sets one up. It is gone when play stops.
+- **A Folder in PlayerGui is wiped on respawn**, and with it every SurfaceGui inside (2026-10-24). Only LayerCollectors
+  with `ResetOnSpawn = false` survive. Anything built once into PlayerGui must rebuild after a respawn.
+- **Once `GuiService.SelectedObject` is set, Roblox's GUI navigation takes the arrows, D-pad, Return and A**
+  (2026-10-24). They arrive with gameProcessed = true and never reach ContextActionService; the engine moves the
+  selection by NextSelection* and fires `Activated`. Follow `SelectedObject` and handle `Activated`.
 - **SurfaceGui text needs a moment to render.** A `screen_capture` taken right after a rebuild showed blank signs. Never capture in the same batch as a rebuild; render first, then capture. Don't "fix" blank signs before re-capturing.
 - **Very distant aerial captures can time out and drop the MCP bridge.** This happened from 350 studs. Keep overview cameras within ~150 studs of the target. If the bridge drops, check `Get-Process RobloxStudioBeta`, wait ~15 s, then call `list_roblox_studios` again.
 - **`Lighting.Technology` is deprecated and hidden from the Properties panel** (2026-10-21). It is superseded by
@@ -208,6 +216,34 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
   (name, PlaceId, `Workspace.Hub`), and checksum what you installed; Team Create had kept every script edit.
 - **Simulated keys land late.** `user_keyboard_input` reached the game ~7.8 s after the previous `execute_luau`
   returned. Align logs by logged key events, not by wall time.
+- **`Humanoid:ChangeState` lands on the humanoid's next step** (2026-10-23). In the frame you call it, `GetState()`
+  still returns the old state, so a Physics → Freefall change read as grounded for that frame, which restarted
+  the fall loop's delay and blended walk and jog into the air pose for ~0.15 s. Keep the last answer until the
+  requested state arrives (`MovementController.step`: Physics with no action running).
+- **While the user works in Studio, ask before each playtest** (2026-10-23). Two tests ended mid-run while the user
+  was bringing in guns and items, and the second run's keys reached the game but moved nothing. Check
+  `get_studio_state` before reading results, and keep test rigs in the play session so nothing is left behind.
+- **A character's Animator resets every Motor6D inside the character, every frame** (2026-10-23). A held model's own
+  joints, posed through `Motor6D.Transform` from a RenderStep, read 0 on Heartbeat; two test clones showed it (in
+  the character a joint read 0, outside it 1.19). Keep a held model with its own joints outside the
+  character and weld it to the hand.
+- **Imported parts need not face their model's way** (2026-10-23). Import 3D turned every part of a model half round about
+  Y; turning the parts back fixed the positions, but each part's `LookVector` still points out the back, so a part
+  aimed with `CFrame.lookAlong` faces backwards. Attachments built in model space keep the model's axes: pose through
+  them (`part.CFrame = target * attachment.CFrame:Inverse()`).
+- **Sweep carried gear through every clip before picking a mount** (2026-10-23). Play each KeyframeSequence at speed 0,
+  step `TimePosition`, and test each part with `GetPartsInPart` against the limbs and against the floor height. One
+  standing check passed a back mount that the sweep showed hitting the head in 12 of 15 clips.
+- **A Pose at Weight 0 leaves that joint to the clips underneath** (2026-10-23). The leans key only the
+  upper body; their LowerTorso and leg Poses are Weight 0 (needed as parents in the hierarchy), and in play the walk
+  loop kept stepping under a lean at full weight. Use it for any upper-body layer.
+- **Check a clearance ray reaches past the body it guards** (2026-10-23). The note's 0.9-stud lean cast from the
+  chest centre ended inside the 2-stud torso and let a head lean into a wall 1.4 away. Cast where the moving part
+  goes, from a point that doesn't move with it, or a lean in progress re-checks a longer ray and flickers.
+- **To hold a third-person shot in a first-person playtest**, bind a RenderStep after the camera scripts (Camera + 5)
+  that sets `CFrame` each frame, and turn `Humanoid.AutoRotate` off for the shot (2026-10-23). The MCP puts a client
+  camera set Scriptable back to Custom when the call ends, and in first person the character turns to face the
+  camera, so a shot placed relative to the root orbits. Restore both afterwards.
 
 ## Asset generation (Claude side)
 - **Blender 5.2 installs headless from pip** (`pip install bpy==5.2.2`, Python 3.13): enough to re-import delivered

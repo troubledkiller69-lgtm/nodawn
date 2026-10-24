@@ -109,8 +109,7 @@ Player 100 HP, standard infected 80. The M1911A1's .45 does 50 — two torso sho
 **Refuse:**
 
 - **Tarkov's inertia stop.** The 2021 patch made stopping feel like input lag and the community never forgave it. Ramp *up*, not *down*.
-- **The DL2 grapple as a general traversal tool.** Anchors only, charges only, loud, lost on death — or don't ship it.
-- **Hunt's no-jump, no-prone minimalism.** Good for Hunt, wrong for a game with a grapple and rooftops.
+- **Hunt's no-jump, no-prone minimalism.** Good for Hunt, wrong for a game with rooftops.
 - **Squad and Ready or Not pacing.** At 224 metres across, you need escape velocity when a horde turns.
 - **Lean spam and slide spam.** Both need a cooldown and a stamina cost or they become the only way anyone moves.
 

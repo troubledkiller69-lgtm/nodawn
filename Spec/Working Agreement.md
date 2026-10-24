@@ -79,6 +79,5 @@ DO NOT: modify existing meshes, add signage, bake AO into albedo.
 These are waiting on a handoff, not on code:
 
 - Movement clips: walk, jog, sprint, crouch, lean, slide, vault, mantle, jump, land, breath. About 19 body clips and 8 first-person clips.
-- Grapple: attach, swing loop, release. Three clips.
 - Surface footstep sets and gear rustle. About 110 files.
 - Stance-specific silhouettes for crouch and prone, once the clips exist.

@@ -101,7 +101,7 @@ Painkillers subtract 30 for 5 minutes. Pain does not decay while a wound is untr
 
 **Fracture** is a limb flag, not a wound with bleed.
 
-- Leg: no sprint, no jump, no mantle; walk ×0.6. Grapple attach is allowed, the launch leap is not.
+- Leg: no sprint, no jump, no mantle; walk ×0.6.
 - Arm: recoil +50%, reload +50%, melee −40%. Two-handed weapons still fire; they just punish.
 - Splint: walk ×0.8, no sprint/jump; arm penalties halve. The fracture remains until the hub.
 - No torso or head fractures in v1. Blunt hits there are concussion/internal bleeding.
@@ -227,7 +227,6 @@ This is the sink the open server needed. [[Idea - Raid Frame]] removed the serve
 4. Bite virus in v1 or v4? **Recommend v4.**
 5. Wounds persist through extraction? **Recommend yes; the hub ward is the sink.**
 6. Can the secure container hold meds and food? **Recommend yes, small items only.**
-7. Does a splinted leg allow the grapple? **Recommend attach yes, launch leap no.**
 
 ## 14. Sources
 

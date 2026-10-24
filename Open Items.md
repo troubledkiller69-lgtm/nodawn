@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-22
+updated: 2026-10-23
 ---
 
 # Open Items
@@ -33,7 +33,7 @@ The live list. Finished work leaves this note; it does not accumulate here. Anyt
 - [ ] Interiors: the vendor customer sides now have a dado, window lamps and (quartermaster) a notice board, but are still thin. Then Services, cells and medical.
 - [ ] Declutter the exterior. The light hierarchy is done (2026-10-21: vendors, Services and both gates are the lit destinations); the clutter is not.
 - [ ] Three cell-block `ScreenGlow` monitor faces and one ivy mesh had been deleted by hand in the place; the 2026-10-21 rebuild restored them from code. If they were removed on purpose, take them out of `Sections.CellBlock` / `Sections.Nature`.
-- [ ] The No Dawn UI pass (not started).
+- [ ] The No Dawn UI pass: the user is having ChatGPT build the main HUD (stamina, health, etc.). What it can read is in [[HUD Hooks]].
 - [ ] Small: `Kit.debris` reads as blocky; `HubAssets.Bus` and `Pickup` are unused; `DevTools.KitDraft` and `SectionsDraft` match live code and can be deleted.
 - [ ] Living hub steps 2–5 (NPC routines, VFX, crows, events), parked. Favour sound and motion over more props.
 - [ ] Judge by ear and eye: soundscape volumes, the boulders, and whether more boulders are wanted.
@@ -50,6 +50,7 @@ These need a published place, a second client, or hardware.
 ## Decided — do not reopen
 
 - **Signs.** All 71 removed on 2026-10-17. Handoff §4.9 asked for signage; the ruling overrides it.
+- **No grapple** (user, 2026-10-23: "lets remove the grapple completely i though it would work well with this type of game and i was mistook"). Code, clips, the GR-04 model and its notes were removed; don't bring it back.
 - **Day/night cycling.** The hub is a permanent foggy night. Living Hub step 5 contradicts this and is obsolete.
 
 ## Raid map — Detroit
@@ -78,12 +79,12 @@ See [[Map - How It Is Built]].
 - [ ] Deploy `Shared.Rules.HitSelect` and `Shared.Rules.Rewind`, then run `nodawn/tests/run_rules.lua`. Both are pure; no rig needed.
 - [ ] Rewrite `HitboxService` to a margin ray plus `HitSelect`, set `HumanoidRootPart.CanQuery = false` at spawn, and silence accessory handles.
 - [ ] Run the synthetic-rig probe (blocked: Studio closed). Verify `Spherecast.Distance` semantics while it is open.
-- [ ] Stance layer: stand and crouch shipped with the movement wiring (`MovementRules`, `MovementService`, `MovementController`, `Movement` channel, 2026-10-22); prone and lean, and the stance hitboxes, remain.
-- [ ] `Shared.Rules.WoundRules` and `SurvivalRules` with tests; wound state, treatment actions, hunger/thirst meters.
+- [ ] Stance layer: stand, crouch (2026-10-22), prone and lean (2026-10-23, see [[Realism Ledger]]) shipped; the stance hitboxes wait on `HitboxService`. Lean follow-ups: a stamina cost and cooldown (no numbers in the notes), a touch button, and E doubling as the ProximityPrompt key.
+- [x] `SurvivalRules` with tests; wound state, treatment actions, nutrition/hydration meters, stress, Injuries tab (2026-10-24, see [[Realism Ledger]]; report in `Desktop\No Dawn\survival\README.md`). Follow-ups: pain and painkillers, fractures, infection, squad treatment, the hub medical ward, a physical controller pass, a published multiplayer check, and dropping the hub drain once raids exist.
 - [ ] Schema pass: rename the profile key `wallet.chits` (and `Economy.StartingChits` / `MaxChits` with it) through a migration. Player-facing text already says Dollars (2026-10-21).
-- [ ] Movement animation set: v1 delivered 2026-10-21 (14 clips, `Desktop\No Dawn\animation\out\ND_Movement_v1.rbxm`); v2 and v3 next with Claude ([[Work Order - Movement Animation Set]]).
-- [ ] Save the 14 KeyframeSequences in `ServerStorage.Animations.ND_Movement_v1` to Roblox (right-click → Save to Roblox) and put the ids in `Shared.Config.AnimationIds` (human step). Studio playtests already play the clips; a live server keeps Roblox's Animate script, and sprint stop, slide, vault and mantle stay off, until every id is set.
-- [ ] Movement follow-ups (wiring shipped 2026-10-22, see [[Realism Ledger]]): crouch doesn't shrink the hitbox yet; see fall damage on the first raid playtest (the hub is all safe zone); lean and prone wait for the v2 clips; grapple (v3) next.
+- [ ] Movement animation set: v1 delivered 2026-10-21 (14 clips) and v2 2026-10-23 (8: leans and the prone set); all 22 in `Desktop\No Dawn\animation\out\ND_Movement_v1.rbxm` ([[Work Order - Movement Animation Set]]). ToProne's head lift mid-way is a polish item.
+- [ ] Save the 22 KeyframeSequences in `ServerStorage.Animations.ND_Movement_v1` to Roblox (right-click → Save to Roblox) and put the ids in `Shared.Config.AnimationIds` (human step). Studio playtests already play the clips; a live server keeps Roblox's Animate script, and sprint stop, slide, vault and mantle stay off, until every id is set.
+- [ ] Movement follow-ups (wiring shipped 2026-10-22, see [[Realism Ledger]]): crouch doesn't shrink the hitbox yet; see fall damage on the first raid playtest (the hub is all safe zone).
 
 ## Phase 2 — design decisions
 

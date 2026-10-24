@@ -1,6 +1,6 @@
 ---
-tags: [nodawn, home]
-updated: 2026-10-22
+tags: [ nodawn, home ]
+updated: 2026-10-23
 ---
 
 # No Dawn — Home
@@ -10,6 +10,7 @@ updated: 2026-10-22
 - Place: `placeholder`, PlaceId **119649394550657**, UniverseId **10771286228**
 - Raid place: `Detroit`, PlaceId **120733035297566**, same universe
 - Scale: 1 stud ≈ 0.28 m
+- Main Blender asset file (2026-10-23): `C:\Users\howar\Documents\NoDawn\blender\NoDawn_Rebuilt_Assets.blend`. Continue asset edits here; the rifle is collection `02_AR15`. The former `Documents\Codex\2026-10-23\drive-b\outputs` copy is retained as a pre-relocation backup. Desktop `m16.blend` is not the main asset file.
 - Source of truth: the place itself. This vault is the record, versioned at [github.com/troubledkiller69-lgtm/nodawn](https://github.com/troubledkiller69-lgtm/nodawn). The place itself is still not under git.
 
 ## Status at a glance (2026-10-22)

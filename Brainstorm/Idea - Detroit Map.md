@@ -8,7 +8,7 @@ updated: 2026-10-21
 
 > **Decided 2026-10-21.** Eastern Market + the Cut on the real grid is the first raid map, built from OpenStreetMap data in its own place: [[Map - How It Is Built]]. The frame is 1,600 × 3,500 studs (Mack Avenue to the Fisher Freeway), not 3,200, so both short edges are real edges. The extract, infected and player-count numbers below are still open in [[Open Items]].
 
-**The pitch:** a 1:1 crop of Eastern Market and the Dequindre Cut, overgrown, at night, in the rain. Low brick sheds, warehouse roofs, a sunken rail corridor, and a prairie eating the blocks east of St. Aubin. The grapple is the roof route. The infected are the population.
+**The pitch:** a 1:1 crop of Eastern Market and the Dequindre Cut, overgrown, at night, in the rain. Low brick sheds, warehouse roofs, a sunken rail corridor, and a prairie eating the blocks east of St. Aubin. The infected are the population.
 
 Supersedes [[Idea - Raid Map]]. That note proposed one highway exit at 800 × 800 studs; this one changes the place, the size and the density argument.
 
@@ -105,40 +105,18 @@ Five vertical layers:
 | Roof | 43–110 | shed truss, warehouse decks, water tanks, roof camps |
 | Sky | 110–170 | viaduct, cranes, the Gratiot towers |
 
-**Height is a currency, and the rope only spends it.** Every swing loses height. The route ladder descends: warehouse roof → shed truss → truck roof → Cut floor. The map has to sell height back with stairs, hatches, ladders and the viaduct ramp, or the roof line is a one-way trip.
+**Height is a currency.** The route ladder descends: warehouse roof → shed truss → truck roof → Cut floor. The map has to sell height back with stairs, hatches, ladders and the viaduct ramp, or the roof line is a one-way trip.
 
 **The ground has to compete.** Ground route: 0.75× the roof route's length at 2× the risk. Two of the three main extracts sit at street or basement level. Roofs get wind, exposure and silhouette; streets get cover, smoke, awnings and the infected.
 
-## 6. Grapple lines
-
-The rope locks at the distance you attach, up to 60 studs. Anchors are authored 35–45 studs (10–13 m) above the takeoff deck, spaced 35–45 studs along a route.
-
-| Crossing | Studs | Metres |
-|---|---|---|
-| Single rope | 70–85 | 20–24 |
-| Chained, two ropes | 90–130 | 25–36 |
-| Anchor above deck | 35–45 | 10–13 |
-| Anchor spacing along a route | 35–45 | 10–13 |
-| Minimum swing length | 20 | 5.6 |
-
-The geometry: an anchor 40 studs up with a 55-stud rope gives √(55² − 40²) ≈ 38 studs of horizontal reach at deck level, so one rope crosses about 75 studs. A low anchor gives a short pendulum, which is a drag, not a swing — do not author anchors below waist height.
-
-Three named lines to build first:
-
-- **The Cut bridges.** From the Cut floor, attach to a bridge underside 25 studs up, swing under it, land on the opposite embankment. The only way out of the Cut that is not a ladder.
-- **Shed 3 truss → St. Aubin roof.** Attach to a warehouse parapet from the shed ridge, cross St. Aubin, release onto the loading dock roof.
-- **Viaduct → Gratiot tower.** The long line. 110 studs to 143, two ropes, exposed to the whole southern map. It should feel like a bad idea that works.
-
-A swing line is a kill zone. Attach point, length and release fix the landing within 2–3 m, and anyone who sees the rope knows where it ends. The counterplay is the low point of the arc, the landing lip, and the fact that a solid hit severs the line.
-
-## 7. Loot, spawns, infected
+## 6. Loot, spawns, infected
 
 - **500 loot nodes** — one per ~800 m², refilling on the timers in [[Idea - Raid Frame]] §4. Hot: market stalls, Shed 3, the pharmacy on Russell. Warm: warehouses, offices, cold storage. Cold: prairie shells, the Cut service rooms. Food, water and medical supplies are their own class: the residential blocks, the market stalls and the pharmacy carry them.
 - **15–18 enterable buildings**, each with a full ground floor, a stair core and at least one upper floor. Below ~150 m² of enterable floor, seal it; one-room stubs teach players that doors are empty.
 - **24 spawns in 8 clusters**, ringing the long edges 80–120 m in, with three clusters pushed deeper. 120 m minimum separation plus a line-of-sight check, and late join uses the same set, chosen away from players. 8-second freeze, facing inward.
 - **4–5 infected per player, cap 100**, 20–24 active within 200 studs of any player, respawning at the edges. Noise-driven: gunfire pulls them, the market centre is a permanent hotspot, the prairie and the Cut hold more than the roofs. They are the pacing system that fills the ten minutes between PvP contacts.
 
-## 8. Vegetation
+## 7. Vegetation
 
 A gradient, not a district:
 
@@ -150,7 +128,7 @@ The paved market stays bare, the Cut is green, the prairie is a forest. That con
 
 Palette, fog and species are in [[Reference - Detroit Overgrowth]].
 
-## 9. What to cut, and what could go wrong
+## 8. What to cut, and what could go wrong
 
 - **No signage.** The Cut's graffiti is the signature the rule deletes. Replace it with abstract colour fields, blank enamel panels and structural marks, or the corridor reads sterile.
 - **The Cut is a natural funnel.** Give every segment at least three exits — bridge, ladder, rope — or it becomes a death pit with one mouth.
@@ -158,7 +136,7 @@ Palette, fog and species are in [[Reference - Detroit Overgrowth]].
 - **15–18 enterable buildings is a compromise.** If the map feels empty, add interiors before adding area.
 - **100 Humanoids is a server cost.** Twenty-four local is the budget; the rest are dormant. Measure before authoring the spawner.
 
-## 10. Open questions
+## 9. Open questions
 
 1. Is the whole district (0.7 km²) the expansion, or do we push north into the market sheds?
 2. Is the Cut playable at night, or a black hole that nobody enters? It needs its own light source — a few sodium lamps under the bridges.
@@ -166,7 +144,7 @@ Palette, fog and species are in [[Reference - Detroit Overgrowth]].
 4. Is the Gratiot tower the only landmark visible from everywhere, or does the map need a second silhouette for the north end?
 5. Answered: the infected count scales with players at 4–5 each, cap 100, 20–24 local.
 
-## 11. Decisions to approve
+## 10. Decisions to approve
 
 1. **Eastern Market + the Cut**, built on the real ~28° grid. Recommended: yes.
 2. **1,600 × 3,200 studs, 1:1 crop, 0.40 km².** Recommended: yes.

@@ -1,12 +1,12 @@
 ---
 tags: [nodawn, workorder, animation]
 status: in-progress
-updated: 2026-10-21
+updated: 2026-10-23
 ---
 
 # Work Order - Movement Animation Set
 
-Back to [[Open Items]] · Source design: [[Idea - Movement and Hitbox Reconciled]], [[Idea - Movement Frame]], [[Idea - Running Feel]], [[Idea - Grapple]] · Process: [[Working Agreement]]
+Back to [[Open Items]] · Source design: [[Idea - Movement and Hitbox Reconciled]], [[Idea - Movement Frame]], [[Idea - Running Feel]] · Process: [[Working Agreement]]
 
 ```
 TASK: Third-person body clip set for No Dawn movement, stages v1 to v3.
@@ -51,12 +51,11 @@ DO NOT: touch the place's Animate script, default Roblox animation ids, or any L
 | v1 | ND_Vault | one-shot | 0.40 s | Action | | obstacle 3–4.5 studs; code moves HRP |
 | v1 | ND_Mantle | one-shot | 0.70 s | Action | | ledge up to 4.5 studs; code moves HRP |
 | v1 | ND_Slide | one-shot | 0.90 s | Action | | head to about 2.2 studs |
-| v2 | ND_LeanL, ND_LeanR | hold | 0.3 s in | Action | | Root 0.4 lateral, spine 12°, head travel 0.7 |
+| v2 | ND_LeanL, ND_LeanR | hold | 0.3 s in | Action | | head travel 0.7 (built as a 25° spine bend, upper body only) |
 | v2 | ND_CrouchLeanL, ND_CrouchLeanR | hold | 0.3 s in | Action | | same, crouched |
 | v2 | ND_ProneIdle | loop | 4.0 s | Idle | | head about 0.8; readable outline: head and shoulders up, one knee bent |
 | v2 | ND_ProneCrawl | loop | 1 cycle | Movement | 2 studs/s | |
 | v2 | ND_ToProne, ND_FromProne | one-shot | 0.5 s / 0.8 s | Action | | |
-| v3 | ND_GrappleAttach, ND_GrappleSwing, ND_GrappleRelease | 1 loop + 2 one-shots | 0.2 / 1.0 / 0.15 s | Action | | left arm up, legs trailing |
 
 Held, not in this order:
 - **First-person clips (about 8).** These wait on the viewmodel decision, open question 2 in [[Idea - Movement and Hitbox Reconciled]]: a separate `Animator` with authored clips, or procedural arms.
@@ -87,5 +86,15 @@ Held, not in this order:
 
 ![[nd_movement_v1_all_clips.jpg|900]]
 
-- [ ] v2
-- [ ] v3
+- [x] v2: LeanL/R, CrouchLeanL/R, ProneIdle, ProneCrawl, ToProne, FromProne
+  - 2026-10-23: built in `animation/src/ndanim/stance.py`; every gate PASS and the 14 v1 clips came out
+    byte-identical. `out/ND_Movement_v1.rbxm` now holds 22 KeyframeSequences (Lune verify <= 7.7e-6).
+  - Prone lies along -Z with the HRP standing over the hips: body flat, head centre 0.95 above the floor
+    (a level R15 head on a flat torso can't sit at the note's 0.8), forearms ahead on the floor, the
+    right knee drawn up and out for the outline. The crawl is a 1.0 s low crawl at 2 studs/s, the
+    forearms planted in turn. ToProne (0.5 s) starts from CrouchIdle; FromProne (0.6 s) ends on it.
+  - The leans are upper body only: a 25 deg spine bend gives 0.64-0.71 studs of head travel (the note's
+    0.4 hip shift plus 12 deg, carried by the spine), and LowerTorso and the legs are exported at Pose
+    Weight 0, so the loop underneath keeps the legs while leaning or shuffling.
+  - Installed in the hub and played: see [[Realism Ledger#Prone and lean (2026-10-23)]].
+  - Left for a human: Save to Roblox for the eight new ids (Pipeline step 4).
