@@ -427,6 +427,9 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 - The Cut is dense: sumac thickets either side of the greenway, which stays clear. Open item: thin it if the shortcut
   needs sightlines.
 
+## Gun handling and walkers (2026-10-26)
+- The M1911A1/pump first-person, upper-body animation and infected visual/behavior pass is installed in the hub; see [[Combat - Weapon and Walker Pass]] for current behavior, verification, recovery and remaining checks. Gun visuals use six isolated clothing-matched arm parts while preserving the native body and movement. Weapon pose data plays without uploaded IDs. Infected have actual sculpted gaunt heads and last-seen search. Saving/publishing remain human actions.
+
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
   pass; Phase 1 records keep the old name. Player-facing text in the live notes now says Dollars.
