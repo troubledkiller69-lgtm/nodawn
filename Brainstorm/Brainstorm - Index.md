@@ -1,6 +1,6 @@
 ---
-tags: [nodawn, brainstorm]
-updated: 2026-10-20
+tags: [ nodawn, brainstorm ]
+updated: 2026-10-28
 ---
 
 # Brainstorm - Index
@@ -48,6 +48,7 @@ updated: YYYY-MM-DD
 - The profile-lock hand-off on teleport.
 
 ### Combat
+- [[Reference - First-Person and Gun Research]] — web research pack: camera/body/viewmodels, firearm state, hit detection, bounded diagnosis, realism candidates and a source/video register (2026-10-28)
 - [[Idea - Combat Frame]] — server-owned state, hitscan plus hit zones, noise as a system. The plan to approve before modelling a pistol
 - [[Idea - Weapon Roster]] — eight firearms at launch, chosen by job. The damage spine, the melee math fix, and the post-launch six
 - Weapon instance state in the inventory, and whether the schema needs a v3 migration first.

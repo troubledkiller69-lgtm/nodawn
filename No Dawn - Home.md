@@ -1,6 +1,6 @@
 ---
 tags: [ nodawn, home ]
-updated: 2026-10-23
+updated: 2026-10-28
 ---
 
 # No Dawn — Home
@@ -53,6 +53,7 @@ updated: 2026-10-23
 - [[How this is used]] — the daily scratchpad, and where its contents get triaged to
 
 **Reference and history**
+- [[Reference - First-Person and Gun Research]] — camera and gun system research, diagnostic method, realism opportunities, sources and YouTube study queue
 - [[Lessons]] — Studio and MCP gotchas. Read before touching the place
 - [[Realism Ledger]] — decisions, gate results, build numbers
 - [[Tracker]] — frozen Phase 1 checklist
