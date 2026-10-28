@@ -76,7 +76,7 @@ See [[Map - How It Is Built]].
 
 ## Phase 2 — code in progress
 
-- [ ] First-person revamp (2026-10-28, [[Realism Ledger]]): measured and working. Still to do: judge the camera arms and gun poses by eye for pistol and pump (hip, ADS, sprint, wall, reload and pump at −60°/0°/+60° pitch), then a two-client check that the third-person hold is unchanged. Save the place.
+- [ ] First-person revamp (2026-10-28, [[Realism Ledger]]): measured, and hip and ADS were tuned by eye for both guns (`Screenshots/fp-revamp`). Still to do: reloads, the pump stroke, the sprint/wall poses and steep pitch by eye; a two-client check that the third-person hold is unchanged; save the place.
 
 - [ ] Weapon/walker follow-up from [[Combat - Weapon and Walker Pass]] (2026-10-26): exact reference match after direct video upload, second-client replication, sustained combat outside hub and uneven-ground foot contact. M1911A1/pump grip-camera pass and 13 runtime weapon clips are installed and playtested; save/publish is still human-owned.
 - [ ] Existing regression: v1 appearance migration omits `eyewear`; suite reports 204/205. Catalog `gun.revolver_38` also lacks a runtime definition/model. Neither was expanded by the gun/walker pass.

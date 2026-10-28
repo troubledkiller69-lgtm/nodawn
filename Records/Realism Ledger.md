@@ -472,7 +472,19 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 - Ruling: the pistol's rear sight sits 1.95 studs (55 cm) from the eye at full aim, and its hip is 1.85 out. At the old
   1.08 (30 cm) the arms folded at the elbow; a real isosceles hold is near straight — cost: the pistol reads smaller
   on screen.
-- Open: judge the look by eye (hip, ADS, sprint, reloads), and do a two-client check of the third-person hold.
+- Visual pass (playtest 2, with captures):
+  - The first pass filled the bottom third of the aimed view with sleeves, and the upper arms showed as blocks in
+    both corners. Fixes: upper arms hidden in first person; forearms drawn 8 cm wide and hands 7 cm; shoulders
+    moved to (±0.72, −1.05, +0.15) so the forearms enter from the lower corners.
+  - The pump's bead was hidden behind the receiver: the rear aim point sits 1.75 cm above the receiver and the bead
+    6 cm below it. Aiming now lines the rear sight up with the bead.
+  - Ruling: the pump's eye relief is 1.1 studs (30 cm, cheek on the comb), and its firing elbow is raised out to the
+    side — cost: the firing hand still shows as a block under the receiver.
+- Open: reloads, the pump stroke and steep pitch by eye, and a two-client check of the third-person hold.
+
+![[firstpass_pistol_ads.jpg|400]] ![[after_pistol_ads.jpg|400]]
+![[firstpass_pump_ads.jpg|400]] ![[after_pump_ads.jpg|400]]
+![[after_pistol_hip.jpg|400]] ![[after_pump_hip.jpg|400]]
 
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
