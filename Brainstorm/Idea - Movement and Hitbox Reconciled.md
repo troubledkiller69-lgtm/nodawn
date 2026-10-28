@@ -1,10 +1,12 @@
 ---
-tags: [idea, combat, movement]
+tags: [ idea, combat, movement ]
 status: shaping
-updated: 2026-10-20
+updated: 2026-10-28
 ---
 
 # Idea - Movement and Hitbox, Reconciled
+
+> **Consolidated design baseline, not current build status.** Read the movement entries in [[Realism Ledger]] for later implementation choices, including retained gravity, authored stride and completed stance clips. [[Open Items]] owns remaining work. Older recommendations and estimates below do not reopen those rulings.
 
 Four research passes — movement systems, damage models, Roblox engine constraints, camera and feel — folded into one design. **Where this note contradicts [[Idea - Hitbox Model]] or [[Idea - Movement Frame]], this note wins.** Sources are named inline; anything I could not verify is marked.
 

@@ -1,10 +1,12 @@
 ---
-tags: [idea, movement]
+tags: [ idea, movement ]
 status: shaping
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 
 # Idea - Running Feel
+
+> **Earlier design draft.** Start with [[Idea - Movement and Hitbox Reconciled]] for the consolidated baseline. This note supplies background and detail where it does not conflict. Later implementation rulings in [[Realism Ledger]] take precedence; live tasks stay in [[Open Items]].
 
 The detail layer under [[Idea - Movement Frame]]. Speeds, acceleration, stride, bob, stamina, surface, breathing. Realism here is not animation quality — it is **weight and consequence**.
 

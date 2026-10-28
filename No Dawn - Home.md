@@ -53,7 +53,8 @@ updated: 2026-10-28
 - [[How this is used]] — the daily scratchpad, and where its contents get triaged to
 
 **Reference and history**
-- [[Reference - First-Person and Gun Research]] — camera and gun system research, diagnostic method, realism opportunities, sources and YouTube study queue
+- [[Reference - First-Person and Gun Research]] — consolidated camera/gun research, diagnosis, sources and sampled video review
+- [[Reference - Grounded Survival Improvements]] — other realism candidates and trade-offs
 - [[Lessons]] — Studio and MCP gotchas. Read before touching the place
 - [[Realism Ledger]] — decisions, gate results, build numbers
 - [[Tracker]] — frozen Phase 1 checklist

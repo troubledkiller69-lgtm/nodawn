@@ -30,6 +30,13 @@ else that looks like status is history.
 Never create a second status page. If you need a new heading, add it to the page that already owns
 that subject.
 
+Before adding a note, search for the existing subject owner and update it. Keep source links and video
+observations inside the research note they support unless they need an independently maintained subject.
+A new pass on the same topic is not a new note by default. When consolidating, preserve unique material,
+make the maintained destination explicit, and archive superseded copies with a forwarding banner.
+Requirements, proposals, implementation records and live tasks have different roles; linking them is
+preferable to repeating their contents.
+
 ## Note shape
 
 Live notes carry frontmatter and a nav line:

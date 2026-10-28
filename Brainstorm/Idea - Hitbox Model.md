@@ -1,10 +1,12 @@
 ---
-tags: [idea, combat, movement]
+tags: [ idea, combat, movement ]
 status: shaping
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 
 # Idea - Hitbox Model
+
+> **Earlier design draft.** Start with [[Idea - Movement and Hitbox Reconciled]] for the consolidated baseline. This note supplies background and detail where it does not conflict. Later implementation rulings in [[Realism Ledger]] take precedence; live tasks stay in [[Open Items]].
 
 Resolves the open problem in [[Idea - Movement Frame]] and feeds [[Idea - Combat Frame]]. One system, because it is the same question asked twice: **where is the player's body, and can a bullet reach it.**
 

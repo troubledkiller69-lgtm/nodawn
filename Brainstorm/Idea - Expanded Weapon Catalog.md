@@ -5,7 +5,7 @@ tags:
   - weapons
   - research
 status: research
-updated: 2026-10-23
+updated: 2026-10-28
 ---
 # Idea - Expanded Weapon Catalog (25 + 25)
 
@@ -15,7 +15,9 @@ Back to [[No Dawn - Home]] · Existing balance and launch scope: [[Idea - Weapon
 
 ## Research boundary
 
-The public No Dawn guide describes noise as a combat system: gunfire and sprinting attract nearby undead, and quieter weapons, suppressors and distractions support stealthier routes. It also describes gear wear, ammunition, carrying weight and expeditions. It does not publish a definitive weapon list or attachment compatibility table. This catalog therefore combines the project's existing roster and realism rules with real-world weapon families; it is a candidate pool, not a claim that all entries are already in the game.
+> **Source correction, 2026-10-28.** The linked No Dawn Promised website is an external game reference, not documentation of this Roblox No Dawn project. Its features and development status do not establish ours.
+
+This catalog is a long-term candidate pool built around the internal roster and realism rules. External game descriptions are comparison material only. Entries are not evidence of implementation or approval.
 
 The existing [[Idea - Weapon Roster]] remains authoritative for the first release: eight firearms and six melee concepts, with one M1911A1 as the first build. Treat the entries below as a long-term selection pool. Choose items by distinct role and provenance rather than implementing all fifty at once.
 
@@ -112,8 +114,8 @@ Melee has no firearm attachments. Let weapon condition, reach, stamina, noise, u
 
 ## Sources
 
-- [No Dawn Promised — Survival systems](https://nodawnpromised.com/survival/) — current guide describes noise, suppressors, gear wear, ammunition, weight and expedition choices.
-- [No Dawn Promised — Questions and answers](https://nodawnpromised.com/questions/) — development status and scope; multiplayer and the game remain in development.
+- [No Dawn Promised — Survival systems](https://nodawnpromised.com/survival/) — external comparison source only; not this Roblox project's feature documentation.
+- [No Dawn Promised — Questions and answers](https://nodawnpromised.com/questions/) — status of that external game only; not evidence of No Dawn's Roblox development status.
 - [[Idea - Weapon Roster]] — internal damage spine, launch scope, proposed firearm roles, attachment trade-offs and melee concepts.
 - [[Addendum - Infected and Firearms]] — internal requirement to research exact variants and attachment compatibility before implementation.
 

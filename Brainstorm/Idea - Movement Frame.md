@@ -1,10 +1,12 @@
 ---
-tags: [idea, movement]
+tags: [ idea, movement ]
 status: shaping
-updated: 2026-10-20
+updated: 2026-10-28
 ---
 
 # Idea - Movement Frame
+
+> **Earlier design draft.** Start with [[Idea - Movement and Hitbox Reconciled]] for the consolidated baseline. This note supplies background and detail where it does not conflict. Later implementation rulings in [[Realism Ledger]] take precedence; live tasks stay in [[Open Items]].
 
 First-person extraction shooter. Movement is not a traversal feature — it is how a player decides how much noise to make and how exposed to be. Reconciled against [[Idea - Combat Frame]] and [[Idea - Raid Frame]].
 

@@ -20,18 +20,9 @@ DayZ's official 1.29 article describes recognizable distant weapon sounds, exten
 
 Project Zomboid's official B42 feature page describes adaptive music intensity responding to events. It is a design reference, not a current-version guarantee. Its May 2026 developer post also reports fixes for disappearing firearm magazines, duplicated items and weapon-condition desync: a practical reminder that state integrity remains central even in mature survival systems. [B42 feature overview](https://projectzomboid.com/blog/upcoming-features-b42/), [developer bug-fix report](https://projectzomboid.com/blog/news/2026/05/reinforcing-the-barricades/)
 
-## Highest-value fixes to investigate first
+## Existing camera and combat issues
 
-| Candidate | Why it matters | Dependency/cost | Example acceptance |
-|---|---|---|---|
-| Camera/arms/ADS consistency | Every second of gunplay exposes it | Ownership audit and clear reference pose; medium | Same stance/pitch sequence stays connected and readable |
-| Shot obstruction | Cover should protect the player regardless of framing | Explicit muzzle/aim contract; medium | Camera sees target but blocked muzzle cannot shoot through wall |
-| Damage volumes matching stance | A visible prone/leaning body must be an honest target | Existing HitboxService work; medium–high | Debug hit volume agrees with visible exposed body |
-| Reload and mag-check continuity | Mechanical state is part of the survival decision | Transactions and interruption policy; medium | Cancel/re-equip/death produces no duplication or visual contradiction |
-| Native/remote pose consistency | Other players must see meaningful aiming/reloading cues | Replicated semantic state and two-client test; medium | Observer sees correct held weapon and action after late observation |
-| Existing eyewear migration regression | Appearance and ownership should survive migration | Known 204/205 failure in vault; small/unknown | Old-profile migration preserves eyewear |
-
-These are existing concerns or direct consequences of the current firearm contract. They are generally more valuable than adding gun variants before the foundation holds.
+Camera/arm consistency, muzzle obstruction, stance hit volumes, reload continuity and remote poses are covered by [[Reference - First-Person and Gun Research#Diagnostic method]]. The live tasks and the eyewear migration regression remain in [[Open Items]]. This note holds additional realism candidates; it does not repeat the combat backlog.
 
 ## Sound and sensory realism
 

@@ -48,17 +48,16 @@ updated: YYYY-MM-DD
 - The profile-lock hand-off on teleport.
 
 ### Combat
-- [[Reference - First-Person and Gun Research]] — web research pack: camera/body/viewmodels, firearm state, hit detection, bounded diagnosis, realism candidates and a source/video register (2026-10-28)
+- [[Reference - First-Person and Gun Research]] — maintained camera/gun research, diagnostic method, sources and timestamped video observations
+- [[Reference - Grounded Survival Improvements]] — additional realism candidates; research proposals, not live tasks
 - [[Idea - Combat Frame]] — server-owned state, hitscan plus hit zones, noise as a system. The plan to approve before modelling a pistol
-- [[Idea - Weapon Roster]] — eight firearms at launch, chosen by job. The damage spine, the melee math fix, and the post-launch six
+- [[Idea - Weapon Roster]] — launch-roster proposal, damage spine and balance
+- [[Idea - Expanded Weapon Catalog]] — long-term candidate pool; does not replace the launch proposal or document shipped weapons
 - Weapon instance state in the inventory, and whether the schema needs a v3 migration first.
 
 ### Movement
-- [[Idea - Movement Frame]] — stances, slide, lean, mantle
-- [[Idea - Running Feel]] — speeds, acceleration, stride, stamina, surface and breathing. The realism detail layer
-- [[Idea - Hitbox Model]] — damage reads the animated body, not the capsule. The lean fix and the stance state machine
-- [[Idea - Movement and Hitbox Reconciled]] — four research passes folded into one design. Supersedes the open questions in the three notes above
-- Lean and prone force the `HitboxService` decision.
+- [[Idea - Movement and Hitbox Reconciled]] — start here for the consolidated design; later build rulings are in [[Realism Ledger]] and remaining work is in [[Open Items]]
+- Background/detail drafts: [[Idea - Movement Frame]], [[Idea - Running Feel]], [[Idea - Hitbox Model]]. Read only where the baseline leaves detail unspecified.
 
 ### Infected
 - [[Reconciliation - GPT Design Pass]] — dynamic infected scaling (4–5 per player, cap 100), lighting in the vision check, attack telegraphs.
