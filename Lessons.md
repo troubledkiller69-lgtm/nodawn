@@ -267,3 +267,9 @@ Back to [[No Dawn - Home]] · Related: [[Working Agreement]], [[Design Rules]]
 - **To act on a playtest's live module state**, parent a new Script (server) or LocalScript (PlayerGui) during play:
   it shares the game's module instances, whereas `require` from `execute_luau` gets a fresh copy. Granting test guns
   this way writes to the Studio profile.
+- **A first-person wall check must exclude the camera's own viewmodel** (2026-10-28). A 0.15-radius `Spherecast` from the
+  eye kept hitting the camera-space `RightHand`, so aiming dropped out every third frame. Add the arms model to the
+  filter list.
+- **`execute_luau` in a playtest loads fresh module copies** (2026-10-28). `require(ClientState)` reported "connecting",
+  and the server's `PlayerDataService.getSession` returned nil. To probe live behaviour, read instances (the camera's
+  models, GUI text), or bind your own `RenderStep` at Camera+4 and sample from there.

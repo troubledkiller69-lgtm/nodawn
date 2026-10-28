@@ -462,8 +462,17 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
   the third-person clips and the reload/inspect hand paths (already in gun space).
 - Checks: Lune 23/23 (7 new: bob phase and amplitude, dips, FOV, comfort zeroing, springs equal at 30/60/240 fps);
   Studio suite 211/212, the one failure being the known eyewear regression. All 12 changed sources match their
-  mirrors by Adler-32. The playtest has not been run yet. Backups are in
+  mirrors by Adler-32. Backups are in
   `ServerStorage.NoDawnBackups.FirstPersonBeforeRevamp_20261028`.
+- Playtest 1 (measured; the Studio viewport wasn't rendering, so there are no captures):
+  - Pistol ADS sight 0.00–0.01 px from centre and steady, FOV 72.2. Pump 0.17 px, FOV 68.
+  - Jog bob 0.173 studs peak to peak at 3.0 Hz. Sprint bob 0.24, FOV 90, gun at low ready (−23°, 37° across).
+  - Reduce motion saved and survived a restart.
+  - Fixed during the test: the wall spherecast hit the view's own hand, so aiming dropped out every third frame.
+- Ruling: the pistol's rear sight sits 1.95 studs (55 cm) from the eye at full aim, and its hip is 1.85 out. At the old
+  1.08 (30 cm) the arms folded at the elbow; a real isosceles hold is near straight — cost: the pistol reads smaller
+  on screen.
+- Open: judge the look by eye (hip, ADS, sprint, reloads), and do a two-client check of the third-person hold.
 
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema
