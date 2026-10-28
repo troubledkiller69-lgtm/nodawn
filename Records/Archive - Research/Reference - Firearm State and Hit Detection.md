@@ -1,12 +1,6 @@
----
-tags:
-  - reference
-  - nodawn
-  - combat
-  - research
-updated: 2026-10-28
----
 # Reference - Firearm State and Hit Detection
+
+> **Superseded, 2026-10-28.** Consolidated into [[Reference - First-Person and Gun Research]]. Historical research retained verbatim below; this copy is not maintained.
 
 Back to [[No Dawn - Home]] · Research hub: [[Reference - First-Person and Gun Research]] · Contract: [[Addendum - Infected and Firearms]], [[Weapon - M1911A1 Build Spec]]
 

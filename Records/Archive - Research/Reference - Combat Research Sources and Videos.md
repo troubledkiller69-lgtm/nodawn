@@ -1,12 +1,6 @@
----
-tags:
-  - reference
-  - nodawn
-  - combat
-  - research
-updated: 2026-10-28
----
 # Reference - Combat Research Sources and Videos
+
+> **Superseded, 2026-10-28.** Consolidated into [[Reference - First-Person and Gun Research]]. Historical research retained verbatim below; this copy is not maintained.
 
 Back to [[No Dawn - Home]] · Research hub: [[Reference - First-Person and Gun Research]]
 
@@ -48,7 +42,7 @@ The Colt page's linked manual returned 404 during this pass. Do not cite that in
 
 ## YouTube study queue
 
-Four direct videos collected. Review status for all: **metadata/link verified or discovered; footage and transcript not reviewed**. Full playback was not accessible through this research tool.
+Four direct videos collected. **Updated 2026-10-28:** in-app browser playback worked; selected timestamped frames, on-screen code and short live-caption excerpts were reviewed. See [[Reference - Video Review - First Person and Guns]] for exact observations. This was not a full uninterrupted watch. Transcript panels did not load, and audio was not assessed. The table below retains the original study questions.
 
 | Order | Video | Creator / date where available | What to extract during an actual viewing |
 |---|---|---|---|
@@ -57,7 +51,7 @@ Four direct videos collected. Review status for all: **metadata/link verified or
 | 3 | [Roblox FPS Tutorial Part 2 Shooting, Replication, Recoil](https://www.youtube.com/watch?v=lLxCUNRdiDw) | Ampro, 2023-01-06 | Which effects run locally, what state replicates and how recoil composes; independently review authority/validation |
 | 4 | [DayZ Update 1.29 Weapon Audio Comparison](https://www.youtube.com/watch?v=EAJLaW5KDc0) | Official DayZ channel, 2026-04-08 | Compare close/distant sound identity and environment tails; reference listening only, not reusable audio assets |
 
-The Destiny YouTube URL was discovered via [Game Anim's talk link](https://www.gameanim.com/2017/04/03/art-destinys-first-person-animation/); the matching session is independently documented by GDC. YouTube fetches yielded a generic shell, errors or throttling. Titles/descriptions establish topic coverage only; no claims about exact demonstrated techniques or chapter times follow from them.
+The Destiny YouTube URL was discovered via [Game Anim's talk link](https://www.gameanim.com/2017/04/03/art-destinys-first-person-animation/); the matching session is independently documented by GDC. The initial web fetches yielded a generic shell, errors or throttling. The later browser visual review supplies the timestamped observations in the linked review note; those findings come from displayed video content rather than title/description inference.
 
 ## Study capture form
 

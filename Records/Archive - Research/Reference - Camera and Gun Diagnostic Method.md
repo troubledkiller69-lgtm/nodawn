@@ -1,12 +1,6 @@
----
-tags:
-  - reference
-  - nodawn
-  - combat
-  - research
-updated: 2026-10-28
----
 # Reference - Camera and Gun Diagnostic Method
+
+> **Superseded, 2026-10-28.** Consolidated into [[Reference - First-Person and Gun Research]]. Historical research retained verbatim below; this copy is not maintained.
 
 Back to [[No Dawn - Home]] · Research hub: [[Reference - First-Person and Gun Research]] · Existing work: [[Open Items]]
 
