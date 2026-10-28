@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, record, ledger]
-updated: 2026-10-23
+updated: 2026-10-28
 ---
 
 # SDD ledger — plan: tasks/todo.md (Realism pass v2)
@@ -429,6 +429,41 @@ Back to [[No Dawn - Home]] · Decisions and numbers: [[Hub - Build History]] · 
 
 ## Gun handling and walkers (2026-10-26)
 - The M1911A1/pump first-person, upper-body animation and infected visual/behavior pass is installed in the hub; see [[Combat - Weapon and Walker Pass]] for current behavior, verification, recovery and remaining checks. Gun visuals use six isolated clothing-matched arm parts while preserving the native body and movement. Weapon pose data plays without uploaded IDs. Infected have actual sculpted gaunt heads and last-seen search. Saving/publishing remain human actions.
+
+## First-person revamp (2026-10-28)
+- Asked for by the user: keep gait, head bob and jump height, but make them more realistic, and hold guns the way good
+  Roblox shooters do. Their answers: camera-space arms, a 4-stud jump with better feel, and comfort sliders. Built
+  from [[Reference - First-Person and Gun Research]], [[Idea - Movement and Hitbox Reconciled]] §4 and
+  [[Idea - Running Feel]]. Code mirrors live in `No Dawn/firstperson` and `movement`; the plan is `firstperson/tasks/todo.md`.
+- Ruling: the comfort panel (O) carries bob, roll and shake 0–100%, FOV 75–110 and reduce motion, saved on the profile
+  as `settings.comfort`. That meets the 2026-10-22 ruling's condition, so bob, roll and FOV effects are now on by default —
+  cost if wrong: set the defaults lower in `ComfortRules.defaults`.
+- Ruling: the arms hang from shoulders fixed to the camera (±0.62, −0.92, +0.18), not the body. The first-person
+  sleeves are drawn 1.3× long (an adult's 65 cm reach against the blocky arms' 1.7 studs), and the body hides its own
+  arms while a gun is out. This removes the 52° shotgun twist workaround from the first-person view and the slide of the
+  gun along the sight line. Third person is unchanged — cost if wrong: looking straight down shows camera arms over
+  an armless torso.
+- Ruling: the camera's head bob is locked to the gait phase, and the clips' own head bob is filtered out (vertical
+  follow 0.6 s while striding). Peak to peak: walk 0.12, jog 0.18, sprint 0.24 studs vertical (3.4 / 5 / 6.7 cm);
+  lateral at half the step rate 0.04 / 0.05 / 0.07; pitch ≤ 0.6°, roll ≤ 0.4°; aiming keeps 30% —
+  cost if wrong: retune `Movement.Camera.Bob`.
+- Ruling: FOV 85 base (Reconciled) over Running Feel's 70, +5 at a sprint; aiming keeps 85% (pistol) or 80% (pump) of
+  the base — cost if wrong: one number per weapon in `Config.Viewmodel`.
+- Ruling: the jump stays 4 studs at gravity 196.2 (the user: "keep jump height"). Only its feel changes: a 0.06 dip on
+  takeoff and a landing dip of 0.03 per stud dropped, clamped to 0.05–0.25, on top of the landing clip's own. A hard
+  landing adds 1.5° of pitch — cost if wrong: a real 0.45 m jump would be about 1.6 studs.
+- Ruling: sprinting carries the gun at low ready. It raises over 0.25 s and can fire 0.2 s into the raise; a wall
+  closer than the barrel lowers it and blocks fire past half lowered — cost if wrong: `Viewmodel.SprintRaise` and
+  `FireAfterRaise`.
+- Ruling: the camera kick from recoil is purely visual and springs back fully. The default camera re-reads its look
+  each frame, so the effect is taken off before it runs. Shots still use the look at the moment of the click —
+  cost: no partial-recovery "climb" yet.
+- Not changed: the shot direction (camera axis; the conflict with the M1911 spec stays open), server weapon rules,
+  the third-person clips and the reload/inspect hand paths (already in gun space).
+- Checks: Lune 23/23 (7 new: bob phase and amplitude, dips, FOV, comfort zeroing, springs equal at 30/60/240 fps);
+  Studio suite 211/212, the one failure being the known eyewear regression. All 12 changed sources match their
+  mirrors by Adler-32. The playtest has not been run yet. Backups are in
+  `ServerStorage.NoDawnBackups.FirstPersonBeforeRevamp_20261028`.
 
 ## Design rulings (2026-10-20)
 - Currency renamed **Chits → Dollars** (symbol `$`, code `USD`). The internal `wallet.chits` key stays until a schema

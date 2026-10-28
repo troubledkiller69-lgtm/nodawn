@@ -1,6 +1,6 @@
 ---
 tags: [nodawn, todo]
-updated: 2026-10-23
+updated: 2026-10-28
 ---
 
 # Open Items
@@ -75,6 +75,8 @@ See [[Map - How It Is Built]].
 - Raids as separate places; a profile-lock hand-off on teleport; teleport data for the deployment; server lifecycle (no timer, late join, loot respawn); raid damage rules; loot through `InventoryTx`.
 
 ## Phase 2 — code in progress
+
+- [ ] First-person revamp (2026-10-28, [[Realism Ledger]]): playtest and tune the camera arms and gun poses for pistol and pump (hip, ADS, sprint, wall, reload and pump at −60°/0°/+60° pitch), the head bob and the comfort panel (O). Then do a two-client check that the third-person hold is unchanged. Save the place afterwards.
 
 - [ ] Weapon/walker follow-up from [[Combat - Weapon and Walker Pass]] (2026-10-26): exact reference match after direct video upload, second-client replication, sustained combat outside hub and uneven-ground foot contact. M1911A1/pump grip-camera pass and 13 runtime weapon clips are installed and playtested; save/publish is still human-owned.
 - [ ] Existing regression: v1 appearance migration omits `eyewear`; suite reports 204/205. Catalog `gun.revolver_38` also lacks a runtime definition/model. Neither was expanded by the gun/walker pass.
